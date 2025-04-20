@@ -23,7 +23,7 @@ export function HomepageSolid(): JSX.Element {
       <div class="self-end">
         <LanguageSwitcher lang={lang()} t={t()} onChange={setLang} />
       </div>
-      <h1 class="text-5xl font-black text-center tracking-tight leading-tight">{t().title}</h1>
+      <h1 class="text-5xl text-center tracking-tight leading-tight font-grotesk font-bold">{t().title}</h1>
       <p class="text-xl text-center max-w-2xl text-gray-700">{t().description}</p>
       <a
         href="https://www.meetup.com/biere-code-beer-paris/"
