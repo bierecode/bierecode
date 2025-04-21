@@ -15,8 +15,17 @@ interface Translation {
 
 import '/src/components/pages/homepage/components/homepage/logo-wiggle.css';
 
+function detectLocale(): 'fr' | 'en' {
+  if (typeof window !== 'undefined' && navigator) {
+    const locales = navigator.languages || [navigator.language];
+    const found = locales.find((locale) => ['fr', 'en'].includes(locale.split('-')[0]));
+    return found ? (found.split('-')[0] as 'fr' | 'en') : 'fr';
+  }
+  return 'fr';
+}
+
 export function Homepage(): JSX.Element {
-  const [lang, setLang] = createSignal<'fr' | 'en'>('fr');
+  const [lang, setLang] = createSignal<'fr' | 'en'>(detectLocale());
   const translations: Record<'fr' | 'en', Translation> = { fr, en };
   const t = () => translations[lang()] ?? translations['fr'];
 
