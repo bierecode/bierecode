@@ -1,8 +1,8 @@
 import { createSignal } from 'solid-js';
 import type { JSX } from 'solid-js';
+import fr from '../../../../../locales/fr.json';
+import en from '../../../../../locales/en.json';
 import { LanguageSwitcher } from '../language-switcher/language-switcher';
-import fr from '../../locales/fr.json';
-import en from '../../locales/en.json';
 
 interface Translation {
   title: string;
@@ -13,7 +13,7 @@ interface Translation {
   english: string;
 }
 
-export function HomepageSolid(): JSX.Element {
+export function Homepage(): JSX.Element {
   const [lang, setLang] = createSignal<'fr' | 'en'>('fr');
   const translations: Record<'fr' | 'en', Translation> = { fr, en };
   const t = () => translations[lang()] ?? translations['fr'];
