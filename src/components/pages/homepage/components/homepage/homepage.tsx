@@ -3,6 +3,7 @@ import { createSignal, onMount } from 'solid-js';
 import en from '../../../../../locales/en.json';
 import fr from '../../../../../locales/fr.json';
 import { LanguageSwitcher } from '../language-switcher/language-switcher';
+import Markdown from 'solid-markdown';
 
 interface Translation {
   title: string;
@@ -11,6 +12,7 @@ interface Translation {
   language: string;
   french: string;
   english: string;
+  host: string;
 }
 
 import '/src/components/pages/homepage/components/homepage/logo-wiggle.css';
@@ -57,6 +59,7 @@ export function Homepage(): JSX.Element {
       </div>
       <h1 class="text-5xl text-center tracking-tight leading-tight font-grotesk font-bold">{translation().title}</h1>
       <p class="text-xl text-center max-w-2xl text-gray-700">{translation().description}</p>
+      <Markdown class="text-base text-center max-w-2xl text-gray-600" children={translation().host} />
       <a
         href="https://www.meetup.com/biere-code-beer-paris/"
         class="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-8 py-4 rounded-full shadow-lg transition-all transform hover:scale-105"
