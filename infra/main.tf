@@ -28,11 +28,13 @@ variable "account_id" {
   type        = string
 }
 
-resource "cloudflare_kv_namespace" "updates" {
+# Workers KV namespace used to store community update data. The namespace
+# is created automatically by Terraform when the deploy workflow runs.
+resource "cloudflare_workers_kv_namespace" "updates" {
   account_id = var.account_id
   title      = "bierecode-updates"
 }
 
 output "kv_namespace_id" {
-  value = cloudflare_kv_namespace.updates.id
+  value = cloudflare_workers_kv_namespace.updates.id
 }
