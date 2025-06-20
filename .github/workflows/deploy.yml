@@ -80,7 +80,10 @@ jobs:
         env:
           TF_VAR_api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           TF_VAR_account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        run: terraform import cloudflare_workers_kv_namespace.updates "$TF_STATE_NAMESPACE_ID"
+        # Terraform requires the ID in the form "accountID/namespaceID" when importing
+        # resources. We combine the account ID with the detected namespace ID to
+        # bring the existing namespace under Terraform management.
+        run: terraform import cloudflare_workers_kv_namespace.updates "$TF_VAR_account_id/$TF_STATE_NAMESPACE_ID"
 
       - name: Terraform fmt check
         working-directory: infra
