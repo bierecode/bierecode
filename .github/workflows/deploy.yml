@@ -124,6 +124,20 @@ jobs:
             npx wrangler pages project create "$PROJECT" --production-branch main
           fi
 
+      - name: Ensure custom domains exist
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          set -e
+          PROJECT="bierecode-site"
+          DOMAINS="www.bierecode.com bierecode.com"
+          for D in $DOMAINS; do
+            if ! npx wrangler pages project domain list "$PROJECT" | grep -q "$D"; then
+              npx wrangler pages project domain add "$PROJECT" "$D"
+            fi
+          done
+
       - name: Deploy to Cloudflare Pages
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

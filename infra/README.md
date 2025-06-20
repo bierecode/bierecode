@@ -14,6 +14,7 @@ The workflow expects these secrets:
 The workflow saves the Terraform state file to Workers KV so Terraform knows the namespace ID across runs. There is no additional backend configuration required.
 
 If the Cloudflare Pages project `bierecode-site` is missing, the workflow creates it automatically before deployment. This ensures the `wrangler pages deploy` step succeeds even on a fresh repository.
+The workflow also checks that the custom domains `www.bierecode.com` and `bierecode.com` are linked to the Pages project.
 
 ## Terraform State
 
@@ -27,3 +28,8 @@ provider. The resulting state file is then
 stored back in KV. This approach keeps state between GitHub Action runs without
 introducing another storage service.
 
+
+## Domains
+Both `www.bierecode.com` and `bierecode.com` are configured as custom
+Cloudflare Pages domains. A middleware function redirects requests for
+the apex domain to the `www` subdomain.
