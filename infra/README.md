@@ -13,3 +13,10 @@ The workflow expects these secrets:
 
 The configuration checks for an existing namespace titled `bierecode-updates`. If it already exists, Terraform simply outputs its ID instead of attempting to create a new one.
 
+## Terraform State
+
+The workflow does not rely on a remote backend. Instead, the Terraform state
+file `terraform.tfstate` is uploaded to the `bierecode-updates` KV namespace at
+the end of each deployment and downloaded at the start. This keeps state between
+GitHub Action runs without introducing another storage service.
+

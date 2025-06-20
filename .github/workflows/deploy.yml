@@ -38,6 +38,25 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
 
+      - name: Load Terraform state from KV
+        shell: bash
+        env:
+          CF_API: https://api.cloudflare.com/client/v4
+          CF_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -e
+          NS=$(curl -sf \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            "$CF_API/accounts/$CF_ACCOUNT_ID/storage/kv/namespaces?per_page=100" \
+            | jq -r '.result[] | select(.title=="bierecode-updates") | .id')
+          if [ -n "$NS" ]; then
+            curl -s -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+              "$CF_API/accounts/$CF_ACCOUNT_ID/storage/kv/namespaces/$NS/values/terraform.tfstate" \
+              -o infra/terraform.tfstate || true
+            echo "TF_STATE_NAMESPACE_ID=$NS" >> "$GITHUB_ENV"
+          fi
+
       - name: Terraform init
         working-directory: infra
         run: terraform init
@@ -59,6 +78,7 @@ jobs:
         run: |
           KV=$(terraform output -raw kv_namespace_id | tail -n 1)
           echo "KV_ID=$KV" >> "$GITHUB_ENV"
+          echo "TF_STATE_NAMESPACE_ID=$KV" >> "$GITHUB_ENV"
 
       - name: Inject KV namespace ID into wrangler.toml
         run: |
@@ -70,3 +90,15 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CF_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: npx wrangler pages deploy ./dist --project-name bierecode-site --branch main
+
+      - name: Upload Terraform state to KV
+        if: env.TF_STATE_NAMESPACE_ID != ''
+        env:
+          CF_API: https://api.cloudflare.com/client/v4
+          CF_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          curl -s -X PUT \
+            "$CF_API/accounts/$CF_ACCOUNT_ID/storage/kv/namespaces/$TF_STATE_NAMESPACE_ID/values/terraform.tfstate" \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            --data-binary "@infra/terraform.tfstate"
