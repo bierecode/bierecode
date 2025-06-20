@@ -131,10 +131,13 @@ jobs:
         run: |
           set -e
           PROJECT="bierecode-site"
+          # Add both the www and apex domain to the Cloudflare Pages project.
+          # Wrangler manages domains via the `pages domain` command group.
+          # We iterate through each desired domain and create it when missing.
           DOMAINS="www.bierecode.com bierecode.com"
           for D in $DOMAINS; do
-            if ! npx wrangler pages project domain list "$PROJECT" | grep -q "$D"; then
-              npx wrangler pages project domain add "$PROJECT" "$D"
+            if ! npx wrangler pages domain list "$PROJECT" | grep -q "$D"; then
+              npx wrangler pages domain add "$PROJECT" "$D"
             fi
           done
 
