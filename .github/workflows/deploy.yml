@@ -57,9 +57,14 @@ jobs:
             "$CF_API/accounts/$CF_ACCOUNT_ID/storage/kv/namespaces?per_page=100" \
             | jq -r '.result[] | select(.title=="bierecode-updates") | .id')
           if [ -n "$NS" ]; then
-            curl -s -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            if curl -sf \
+              -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
               "$CF_API/accounts/$CF_ACCOUNT_ID/storage/kv/namespaces/$NS/values/terraform.tfstate" \
-              -o infra/terraform.tfstate || true
+              -o infra/terraform.tfstate; then
+              echo "Existing Terraform state downloaded."
+            else
+              echo "No existing Terraform state found. Starting fresh."
+            fi
             echo "TF_STATE_NAMESPACE_ID=$NS" >> "$GITHUB_ENV"
           fi
 

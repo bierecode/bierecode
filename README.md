@@ -68,5 +68,4 @@ The repository includes a GitHub Actions workflow that builds the site, provisio
 - `CLOUDFLARE_API_TOKEN` – API token with permissions for Pages and Workers KV
 - `CLOUDFLARE_ACCOUNT_ID` – your Cloudflare account ID
 The Terraform module detects whether the namespace already exists and will reuse it on subsequent deployments. This prevents failures when redeploying the workflow.
-The workflow also saves the Terraform state file to the same KV namespace so the
-infrastructure definition is preserved between runs.
+The workflow also saves the Terraform state file to the same KV namespace. On each run it attempts to download this file before `terraform init`. If no state is available, Terraform starts with an empty state and the file is uploaded afterwards.

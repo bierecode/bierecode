@@ -7,10 +7,12 @@
 # The configuration first lists existing namespaces and reuses one if it
 # already exists. Otherwise a new namespace is created.
 #
-# GitHub Actions uploads the generated terraform.tfstate file into the
-# `bierecode-updates` KV namespace after each deployment. When the workflow
-# starts it downloads that state file so Terraform knows about previously
-# created resources.
+# GitHub Actions uploads the generated `terraform.tfstate` file into the
+# `bierecode-updates` KV namespace after each deployment. At the start of a
+# run the workflow attempts to download this file so Terraform knows about
+# previously created resources. If no state file exists yet Terraform simply
+# begins with an empty state and the new file is uploaded when the run
+# completes.
 
 terraform {
   required_providers {
