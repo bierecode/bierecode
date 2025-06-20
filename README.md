@@ -72,7 +72,7 @@ The workflow runs whenever you push to `main` or update a pull request targeting
 On each run the workflow downloads this file before `terraform init`. If the file is missing but the namespace already exists, the workflow imports that namespace into the new state so `terraform apply` can proceed. After the run the updated state file is uploaded back to KV.
 The import step uses the format `<account_id>/<namespace_id>` required by the Cloudflare provider.
 If the Cloudflare Pages project `bierecode-site` does not exist, the workflow creates it automatically before deploying.
-The workflow also ensures the custom domains `www.bierecode.com` and `bierecode.com` are configured for that project.
+Custom domains `www.bierecode.com` and `bierecode.com` are managed via the Cloudflare API. The workflow checks the current domain list and adds missing entries before deploying.
 
 ## Domains and Redirects
 The site uses custom domains `www.bierecode.com` and `bierecode.com`.
