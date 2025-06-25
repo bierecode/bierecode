@@ -1,6 +1,7 @@
 /**
  * Demo Days submissions API.
  *
+<<<<<<< 7k7xo0-codex/add-/demo-days-page-with-demo-submission-form
  * This file implements a tiny REST-style endpoint used by the `/demo-days`
  * page. Visitors can send a JSON payload describing the project they want to
  * demonstrate at the next meetup. Entries are persisted in the same KV
@@ -9,6 +10,10 @@
  * The Pages runtime injects the `UPDATES_KV` binding defined in `wrangler.toml`.
  * If that binding is missing the handler responds with a 500 error explaining
  * the misconfiguration instead of throwing an exception.
+=======
+ * Handles simple JSON submissions from the website's /demo-days page.
+ * Data is persisted in the existing KV namespace using the `demo:` key prefix.
+>>>>>>> main
  */
 
 interface DemoSubmission {
@@ -22,14 +27,21 @@ interface DemoSubmission {
 }
 
 interface Env {
+<<<<<<< 7k7xo0-codex/add-/demo-days-page-with-demo-submission-form
   UPDATES_KV?: KVNamespace;
+=======
+  UPDATES_KV: KVNamespace;
+>>>>>>> main
 }
 
 /** Retrieve stored submissions */
 async function handleGet(env: Env): Promise<Response> {
+<<<<<<< 7k7xo0-codex/add-/demo-days-page-with-demo-submission-form
   if (!env.UPDATES_KV) {
     return new Response('KV binding not configured', { status: 500 });
   }
+=======
+>>>>>>> main
   const { keys } = await env.UPDATES_KV.list({ prefix: 'demo:' });
   const items: DemoSubmission[] = [];
   for (const key of keys) {
@@ -42,9 +54,12 @@ async function handleGet(env: Env): Promise<Response> {
 
 /** Store a new submission */
 async function handlePost(request: Request, env: Env): Promise<Response> {
+<<<<<<< 7k7xo0-codex/add-/demo-days-page-with-demo-submission-form
   if (!env.UPDATES_KV) {
     return new Response('KV binding not configured', { status: 500 });
   }
+=======
+>>>>>>> main
   let body: Partial<DemoSubmission>;
   try {
     body = await request.json();
