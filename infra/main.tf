@@ -53,8 +53,8 @@ resource "cloudflare_workers_kv_namespace" "updates" {
 }
 
 resource "cloudflare_pages_project" "site" {
-  account_id       = var.account_id
-  name             = "bierecode-site"
+  account_id        = var.account_id
+  name              = "bierecode-site"
   production_branch = "main"
 
   deployment_configs {
