@@ -5,6 +5,7 @@ This project hosts the Bière Code website built with [Astro](https://astro.buil
 ## Features
 - **Community Updates API**: `/api/updates` backed by Cloudflare KV.
 - **Admin UI**: [`/admin`](docs/admin-ui.md) page to submit new posts or events.
+- **Demo Days Submissions**: `/demo-days` page lets developers propose live demos.
 - **Public Updates List**: `/updates` page shows all posts and events.
 - **Infrastructure as Code**: Terraform script in `infra/` sets up the KV namespace.
 - **Automated Deployment**: GitHub Actions runs Terraform and deploys to Cloudflare Pages.
