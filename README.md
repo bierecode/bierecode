@@ -86,4 +86,4 @@ The `functions/` directory is deployed as [Pages Functions](https://developers.c
 
 During development run `wrangler pages dev ./dist` after building to test these functions locally. When deploying through GitHub Actions the same directory is automatically compiled and uploaded to Cloudflare.
 
-Ensure the Pages project has a KV namespace binding named `UPDATES_KV`; otherwise the API routes will fail at runtime. You can add this binding under **Pages → Settings → Functions** in the Cloudflare dashboard.
+Terraform provisions the Pages project and attaches the `UPDATES_KV` namespace automatically. No manual configuration is required.

@@ -13,7 +13,7 @@ The workflow expects these secrets:
 
 The workflow saves the Terraform state file to Workers KV so Terraform knows the namespace ID across runs. There is no additional backend configuration required.
 
-If the Cloudflare Pages project `bierecode-site` is missing, the workflow creates it automatically before deployment. This ensures the deploy step succeeds even on a fresh repository.
+Terraform creates the `bierecode-site` Pages project and links the `UPDATES_KV` namespace so API routes can write to storage.
 Custom domains `www.bierecode.com` and `bierecode.com` are verified through the Cloudflare API and created when missing.
 
 ## Terraform State

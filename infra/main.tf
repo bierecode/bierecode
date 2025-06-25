@@ -52,6 +52,32 @@ resource "cloudflare_workers_kv_namespace" "updates" {
   title      = "bierecode-updates"
 }
 
+resource "cloudflare_pages_project" "site" {
+  account_id       = var.account_id
+  name             = "bierecode-site"
+  production_branch = "main"
+
+  deployment_configs {
+    preview {
+      kv_namespaces = [
+        {
+          binding = "UPDATES_KV"
+          id      = cloudflare_workers_kv_namespace.updates.id
+        }
+      ]
+    }
+
+    production {
+      kv_namespaces = [
+        {
+          binding = "UPDATES_KV"
+          id      = cloudflare_workers_kv_namespace.updates.id
+        }
+      ]
+    }
+  }
+}
+
 output "kv_namespace_id" {
   value = cloudflare_workers_kv_namespace.updates.id
 }
