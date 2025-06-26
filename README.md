@@ -84,6 +84,6 @@ single canonical hostname.
 ## Cloudflare Pages Functions
 The `functions/` directory is deployed as [Pages Functions](https://developers.cloudflare.com/pages/functions/). Any file inside this directory becomes an endpoint matching its path. For example, `functions/api/demo-days/index.ts` is served at `/api/demo-days`.
 
-During development run `wrangler pages dev ./dist` after building to test these functions locally. When deploying through GitHub Actions the same directory is automatically compiled and uploaded to Cloudflare.
+During development run `wrangler pages dev ./dist` after `npm run build` to test these functions locally. The default `npm run dev` server does not include Pages Functions, so requests to `/api/*` will return 404 errors. When deploying through GitHub Actions the same directory is automatically compiled and uploaded to Cloudflare.
 
 Terraform provisions the Pages project and attaches the `UPDATES_KV` namespace automatically. No manual configuration is required.

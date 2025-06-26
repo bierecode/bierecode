@@ -8,6 +8,11 @@
  * relative URL server-side, so fetching is deferred until the component mounts
  * in the client. The initial HTML rendered by Astro therefore contains only a
  * loading message which is replaced once the client finishes fetching data.
+ *
+ * During development use `wrangler pages dev ./dist` after running
+ * `npm run build` to test this API locally. The standard `astro dev`
+ * server does not include Pages Functions, so requests to `/api/updates`
+ * would return 404s.
  */
 import { createSignal, Show, For, onMount } from 'solid-js';
 import type { JSX } from 'solid-js';
@@ -34,7 +39,11 @@ async function fetchUpdates(): Promise<Update[]> {
   // throw `TypeError: Failed to parse URL` during server-side rendering if we
   // attempt to call `fetch` with a relative path. By only calling this helper
   // after the component mounts we ensure it never runs in that environment.
-  const res = await fetch('/api/updates');
+  //
+  // Construct an absolute URL from the current page's origin so `fetch` never
+  // receives a relative path even in strict environments.
+  const endpoint = new URL('/api/updates', window.location.origin);
+  const res = await fetch(endpoint);
   if (!res.ok) throw new Error('Failed to fetch');
   return res.json();
 }
