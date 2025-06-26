@@ -70,6 +70,7 @@ The repository includes a GitHub Actions workflow that builds the site, provisio
 - `CLOUDFLARE_ACCOUNT_ID` – your Cloudflare account ID
 The Terraform state file is stored in the same KV namespace between deployments so Terraform remembers resource IDs such as the KV namespace and D1 database. The workflow runs whenever you push to `main` or update a pull request targeting `main`.
 On each run the state file is downloaded before `terraform init`. If it is missing but the resources already exist, the workflow imports them (KV namespace, Pages project, and D1 database) into the new state so `terraform apply` can proceed. Immediately after `terraform apply` the updated state file is uploaded back to KV so later steps cannot leave it stale.
+The workflow then updates `wrangler.toml` with the actual resource IDs so local development and deployments reference the correct KV namespace and D1 database.
 The import commands use the format `<account_id>/<resource_id>` required by the Cloudflare provider.
 If the Cloudflare Pages project `bierecode-site` does not exist, the workflow creates it automatically before deploying.
 Custom domains `www.bierecode.com` and `bierecode.com` are managed via the Cloudflare API. The workflow checks the current domain list and adds missing entries before deploying.

@@ -142,6 +142,14 @@ jobs:
           echo "KV_ID=$KV" >> "$GITHUB_ENV"
           echo "TF_STATE_NAMESPACE_ID=$KV" >> "$GITHUB_ENV"
 
+      - name: Capture D1 database ID
+        working-directory: infra
+        shell: bash
+        run: |
+          set -e
+          DB=$(jq -r '.outputs.d1_database_id.value' terraform.tfstate)
+          echo "DB_ID=$DB" >> "$GITHUB_ENV"
+
       - name: Upload Terraform state to KV
         if: env.TF_STATE_NAMESPACE_ID != '' && hashFiles('infra/terraform.tfstate') != ''
         shell: bash
@@ -162,6 +170,10 @@ jobs:
         run: |
           sed -i "s/id = \".*\"/id = \"$KV_ID\"/" wrangler.toml
           sed -i "s/preview_id = \".*\"/preview_id = \"$KV_ID\"/" wrangler.toml
+
+      - name: Inject D1 database ID into wrangler.toml
+        run: |
+          sed -i "s/database_id = \".*\"/database_id = \"$DB_ID\"/" wrangler.toml
 
       - name: Ensure Cloudflare Pages project exists
         env:

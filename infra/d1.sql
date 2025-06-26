@@ -1,3 +1,10 @@
+-- Schema for the Better Auth database used by Cloudflare D1
+--
+-- This file is applied automatically by Terraform when the database is first
+-- created. The tables match the standard schema expected by Better Auth when
+-- using the Kysely adapter. If you need to regenerate the schema you can run
+-- `npx better-auth migrations` and update this file.
+
 create table "user" (
   "id" text not null primary key,
   "name" text not null,
