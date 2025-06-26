@@ -11,8 +11,10 @@
  *
  * The component runs entirely on the client using SolidJS and communicates with
  * the `/api/updates` endpoint.
+ * The event-specific fields are conditionally displayed when the user selects
+ * the "Event" type so the form stays concise for regular posts.
  */
-import { createSignal } from 'solid-js';
+import { createSignal, Show } from 'solid-js';
 import type { JSX } from 'solid-js';
 
 interface UpdatePayload {
@@ -66,6 +68,7 @@ function buildBody(payload: UpdatePayload): Record<string, unknown> {
 /** Form component rendered on the /admin page */
 export function AdminForm(): JSX.Element {
   const [status, setStatus] = createSignal('');
+  const [type, setType] = createSignal<'post' | 'event'>('post');
 
   const handleSubmit = async (e: Event) => {
     e.preventDefault();
@@ -78,11 +81,13 @@ export function AdminForm(): JSX.Element {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(buildBody(payload)),
+      credentials: 'include',
     });
 
     if (res.ok) {
       setStatus('Posted successfully');
       form.reset();
+      setType('post');
     } else {
       setStatus(`Error: ${res.status}`);
     }
@@ -109,7 +114,13 @@ export function AdminForm(): JSX.Element {
         </div>
         <div class="space-y-1">
           <label class="block text-sm font-medium" for="type">Type</label>
-          <select id="type" name="type" class="w-full border rounded-md p-2" required>
+          <select
+            id="type"
+            name="type"
+            class="w-full border rounded-md p-2"
+            required
+            onInput={(e) => setType((e.target as HTMLSelectElement).value as 'post' | 'event')}
+          >
             <option value="post">Post</option>
             <option value="event">Event</option>
           </select>
@@ -118,13 +129,15 @@ export function AdminForm(): JSX.Element {
           <label class="block text-sm font-medium" for="tags">Tags</label>
           <input id="tags" name="tags" type="text" placeholder="Comma separated" class="w-full border rounded-md p-2" />
         </div>
-        <fieldset class="border p-4 rounded-md space-y-2">
-          <legend class="font-semibold text-sm">Event details</legend>
-          <input name="eventDate" type="date" class="w-full border rounded-md p-2" />
-          <input name="eventTime" type="time" class="w-full border rounded-md p-2" />
-          <input name="location" type="text" placeholder="Location" class="w-full border rounded-md p-2" />
-          <input name="duration" type="text" placeholder="Duration" class="w-full border rounded-md p-2" />
-        </fieldset>
+        <Show when={type() === 'event'}>
+          <fieldset class="border p-4 rounded-md space-y-2">
+            <legend class="font-semibold text-sm">Event details</legend>
+            <input name="eventDate" type="date" class="w-full border rounded-md p-2" />
+            <input name="eventTime" type="time" class="w-full border rounded-md p-2" />
+            <input name="location" type="text" placeholder="Location" class="w-full border rounded-md p-2" />
+            <input name="duration" type="text" placeholder="Duration" class="w-full border rounded-md p-2" />
+          </fieldset>
+        </Show>
         <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-md">Submit</button>
         <p class="text-sm text-center">{status()}</p>
       </form>

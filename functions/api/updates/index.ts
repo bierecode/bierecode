@@ -78,7 +78,8 @@ async function handleGet(env: Env, url: URL): Promise<Response> {
 
 async function handlePost(request: Request, env: Env): Promise<Response> {
   const auth = createAuth(env);
-  const { data } = await auth.api.getSession({ headers: request.headers });
+  // Pass the original Request so Better Auth can read the session cookie
+  const { data } = await auth.api.getSession(request);
   if (!data?.session) {
     return new Response('Unauthorized', { status: 401 });
   }
