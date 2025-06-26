@@ -14,6 +14,7 @@
 # Required repository secrets:
 #   CLOUDFLARE_API_TOKEN - API token with Pages and KV permissions
 #   CLOUDFLARE_ACCOUNT_ID - Cloudflare account ID
+#   BETTER_AUTH_SECRET - secret for signing authentication cookies
 name: Deploy to Cloudflare
 
 on:
@@ -80,6 +81,7 @@ jobs:
         env:
           TF_VAR_api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           TF_VAR_account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          TF_VAR_better_auth_secret: ${{ secrets.BETTER_AUTH_SECRET }}
         # Terraform requires the ID in the form "accountID/namespaceID" when importing
         # resources. We combine the account ID with the detected namespace ID to
         # bring the existing namespace under Terraform management.
@@ -90,6 +92,7 @@ jobs:
         env:
           TF_VAR_api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           TF_VAR_account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          TF_VAR_better_auth_secret: ${{ secrets.BETTER_AUTH_SECRET }}
         run: |
           set -e
           # Import the Cloudflare Pages project if it is not yet tracked in state.
@@ -105,6 +108,7 @@ jobs:
         env:
           TF_VAR_api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           TF_VAR_account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          TF_VAR_better_auth_secret: ${{ secrets.BETTER_AUTH_SECRET }}
           CF_API: https://api.cloudflare.com/client/v4
         run: |
           set -e
@@ -128,6 +132,7 @@ jobs:
         env:
           TF_VAR_api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           TF_VAR_account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          TF_VAR_better_auth_secret: ${{ secrets.BETTER_AUTH_SECRET }}
         run: terraform apply -auto-approve
 
       - name: Capture KV namespace ID

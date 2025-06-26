@@ -14,6 +14,7 @@ by Terraform:
 - `UPDATES_KV` – Workers KV namespace storing community updates.
 - `DB` – Cloudflare D1 database powering Better Auth. The workflow applies
   `infra/d1.sql` so the schema is ready before any requests.
+- Environment variable `BETTER_AUTH_SECRET` used by Better Auth to sign cookies.
 
 When running locally with `wrangler pages dev` these bindings are
 defined in `wrangler.toml` so the functions behave the same as in

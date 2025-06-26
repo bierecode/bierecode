@@ -13,10 +13,20 @@ import { D1Dialect } from 'kysely-d1';
  * without any additional configuration. The returned object provides both an
  * Express-style handler for requests and a client API for server-side usage.
  */
-export function createAuth(env: { DB: D1Database }) {
+export function createAuth(env: {
+  DB: D1Database;
+  BETTER_AUTH_SECRET?: string;
+  AUTH_SECRET?: string;
+}) {
   const db = new Kysely<any>({ dialect: new D1Dialect({ database: env.DB }) });
   return betterAuth({
+    secret: env.BETTER_AUTH_SECRET || env.AUTH_SECRET,
     database: { db, type: 'sqlite' },
     emailAndPassword: { enabled: true },
+    advanced: {
+      // Expose the session cookie across the entire site so
+      // endpoints like /api/updates can verify the logged in user.
+      defaultCookieAttributes: { path: '/' },
+    },
   });
 }

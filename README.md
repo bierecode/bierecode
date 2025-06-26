@@ -63,12 +63,14 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 
 ## Admin Authentication
 The admin interface and `/api/updates` endpoint now rely on [Better Auth](https://www.better-auth.com/docs/introduction). Sessions are stored in a Cloudflare D1 database, provisioned via Terraform. During local development Wrangler exposes the database through the `DB` binding defined in `wrangler.toml`.
+Better Auth uses a shared secret to sign session cookies. Configure the `BETTER_AUTH_SECRET` repository secret so Terraform can set an environment variable on the Pages project.
 Users can create an account at `/register` and sign in at `/login`.
 
 ## Continuous Deployment
 The repository includes a GitHub Actions workflow that builds the site, provisions the KV namespace with Terraform, and deploys everything to Cloudflare Pages. Configure these repository secrets:
 - `CLOUDFLARE_API_TOKEN` – API token with permissions for Pages and Workers KV
 - `CLOUDFLARE_ACCOUNT_ID` – your Cloudflare account ID
+- `BETTER_AUTH_SECRET` – secret used to sign Better Auth cookies
 The Terraform state file is stored in the same KV namespace between deployments so Terraform remembers resource IDs such as the KV namespace and D1 database. The workflow runs whenever you push to `main` or update a pull request targeting `main`.
 On each run the state file is downloaded before `terraform init`. If it is missing but the resources already exist, the workflow imports them (KV namespace, Pages project, and D1 database) into the new state so `terraform apply` can proceed. Immediately after `terraform apply` the updated state file is uploaded back to KV so later steps cannot leave it stale.
 The workflow then updates `wrangler.toml` with the actual resource IDs so local development and deployments reference the correct KV namespace and D1 database. After injecting the IDs it also executes `infra/d1.sql` against the remote database so the Better Auth tables exist before any requests hit the API.

@@ -49,6 +49,12 @@ variable "account_id" {
   type        = string
 }
 
+variable "better_auth_secret" {
+  description = "Secret used by Better Auth to sign cookies"
+  type        = string
+  sensitive   = true
+}
+
 resource "cloudflare_workers_kv_namespace" "updates" {
   account_id = var.account_id
   title      = "bierecode-updates"
@@ -78,6 +84,9 @@ resource "cloudflare_pages_project" "site" {
       d1_databases = {
         "DB" = cloudflare_d1_database.auth.id
       }
+      environment_variables = {
+        BETTER_AUTH_SECRET = var.better_auth_secret
+      }
     }
 
     production {
@@ -89,6 +98,9 @@ resource "cloudflare_pages_project" "site" {
       }
       d1_databases = {
         "DB" = cloudflare_d1_database.auth.id
+      }
+      environment_variables = {
+        BETTER_AUTH_SECRET = var.better_auth_secret
       }
     }
   }

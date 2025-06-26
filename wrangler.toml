@@ -12,6 +12,9 @@ preview_id = "00000000000000000000000000000000"
 # Environment variables for local development
 [vars]
 
+# Local secret for Better Auth session cookies
+BETTER_AUTH_SECRET = "dev-secret"
+
 [[d1_databases]]
 binding = "DB"
 database_name = "bierecode-auth"

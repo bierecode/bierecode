@@ -9,6 +9,11 @@ Authentication data is stored in a Cloudflare D1 database provisioned via Terraf
 backed by the D1 database. The Cloudflare `DB` binding is passed to the dialect
 which allows Better Auth to execute queries.
 
+The auth server reads `BETTER_AUTH_SECRET` (or `AUTH_SECRET`) from the
+environment so session cookies can be validated across requests. Terraform
+defines this variable on the Pages project and it is also configured in
+`wrangler.toml` for local development.
+
 ## Client Usage
 
 `src/lib/auth-client.ts` exposes a SolidJS auth client. Components can call
