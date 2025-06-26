@@ -63,6 +63,7 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 
 ## Admin Authentication
 The admin interface and `/api/updates` endpoint now rely on [Better Auth](https://www.better-auth.com/docs/introduction). Sessions are stored in a Cloudflare D1 database, provisioned via Terraform. During local development Wrangler exposes the database through the `DB` binding defined in `wrangler.toml`.
+Users can create an account at `/register` and sign in at `/login`.
 
 ## Continuous Deployment
 The repository includes a GitHub Actions workflow that builds the site, provisions the KV namespace with Terraform, and deploys everything to Cloudflare Pages. Configure these repository secrets:

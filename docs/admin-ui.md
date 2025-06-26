@@ -2,7 +2,7 @@
 
 This document outlines the design philosophy for the `/admin` interface.
 
-The admin page allows community organizers to publish new posts and events. It is built with SolidJS and styled using Tailwind CSS.
+The admin page allows community organizers to publish new posts and events. It is built with SolidJS and styled using Tailwind CSS. Access is restricted to authenticated users who may register at `/register` and log in via `/login`.
 
 ## Goals
 - **Clarity**: keep the interface focused on content entry with minimal distractions.
