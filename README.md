@@ -66,6 +66,9 @@ The admin interface and `/api/updates` endpoint now rely on [Better Auth](https:
 Better Auth uses a shared secret to sign session cookies. Configure the `BETTER_AUTH_SECRET` repository secret so Terraform can set an environment variable on the Pages project.
 Users can create an account at `/register` and sign in at `/login`.
 
+Requests that fail authentication are logged by the Pages Functions so you can
+inspect session lookup results in your Cloudflare dashboard.
+
 ## Continuous Deployment
 The repository includes a GitHub Actions workflow that builds the site, provisions the KV namespace with Terraform, and deploys everything to Cloudflare Pages. Configure these repository secrets:
 - `CLOUDFLARE_API_TOKEN` – API token with permissions for Pages and Workers KV

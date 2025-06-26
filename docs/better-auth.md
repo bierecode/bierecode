@@ -34,3 +34,11 @@ with the Better Auth CLI if needed. The deployment workflow automatically runs
 `wrangler d1 execute bierecode-auth --file infra/d1.sql` after Terraform
 creates the database so the tables exist before any authentication requests are
 processed.
+
+## Debugging and Logs
+
+To help troubleshoot authentication issues the `/api/updates` function logs the
+result of each session lookup. Failed logins print a warning that includes the
+request method and URL so you can quickly identify unauthorized attempts. The
+catch-all handler for `/api/auth/*` also logs every request path and the
+resulting HTTP status code returned by Better Auth.

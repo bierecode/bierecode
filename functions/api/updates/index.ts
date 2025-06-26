@@ -8,6 +8,9 @@
  *
  * The KV namespace binding is named `UPDATES_KV` and is provisioned by Terraform.
  * Build and deployment are handled automatically by GitHub Actions.
+ *
+ * Session lookups are logged so 401 errors can be diagnosed from the
+ * Cloudflare dashboard.
  */
 import { createAuth } from '../../../src/lib/auth-server';
 // Cloudflare Pages Function: Manage community updates
@@ -79,8 +82,10 @@ async function handleGet(env: Env, url: URL): Promise<Response> {
 async function handlePost(request: Request, env: Env): Promise<Response> {
   const auth = createAuth(env);
   // Pass the original Request so Better Auth can read the session cookie
-  const { data } = await auth.api.getSession(request);
+  const { data, error } = await auth.api.getSession(request);
+  console.log('[updates] session lookup', { session: data?.session?.id, error });
   if (!data?.session) {
+    console.warn('[updates] unauthorized', request.method, request.url);
     return new Response('Unauthorized', { status: 401 });
   }
 

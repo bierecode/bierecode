@@ -9,11 +9,20 @@
  * Auth. The library inspects the URL to determine which authentication action
  * to perform (login, logout, session lookup, etc.) and returns an appropriate
  * response. This keeps our function lightweight while delegating all auth logic
- * to the Better Auth library.
+ * to the Better Auth library. Every request and its resulting status code is
+ * logged for troubleshooting purposes.
  */
 import { createAuth } from '../../../src/lib/auth-server';
 
+// Helper to log the request and resulting status for easier debugging.
+function logAuth(request: Request, response: Response) {
+  const path = new URL(request.url).pathname;
+  console.log(`[auth] ${request.method} ${path} -> ${response.status}`);
+}
+
 export const onRequest: PagesFunction = async ({ request, env }) => {
   const auth = createAuth(env as any);
-  return auth.handler(request);
+  const res = await auth.handler(request);
+  logAuth(request, res);
+  return res;
 };
