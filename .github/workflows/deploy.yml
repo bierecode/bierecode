@@ -111,22 +111,25 @@ jobs:
           TF_VAR_account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: terraform apply -auto-approve
 
-      - name: Capture KV namespace ID
+      - name: Capture Terraform outputs
         working-directory: infra
         shell: bash
         run: |
           set -e
-          # `terraform output` prints the namespace ID stored in the state file.
-          # Using jq avoids any potential formatting issues and ensures we get
-          # the raw value without extra whitespace.
+          # `terraform output` prints the resource IDs stored in the state file.
+          # Using jq avoids formatting issues and ensures we capture raw values.
           KV=$(jq -r '.outputs.kv_namespace_id.value' terraform.tfstate)
+          D1=$(jq -r '.outputs.d1_database_id.value' terraform.tfstate)
           echo "KV_ID=$KV" >> "$GITHUB_ENV"
+          echo "D1_ID=$D1" >> "$GITHUB_ENV"
           echo "TF_STATE_NAMESPACE_ID=$KV" >> "$GITHUB_ENV"
 
-      - name: Inject KV namespace ID into wrangler.toml
+      - name: Inject Cloudflare IDs into wrangler.toml
         run: |
           sed -i "s/id = \".*\"/id = \"$KV_ID\"/" wrangler.toml
           sed -i "s/preview_id = \".*\"/preview_id = \"$KV_ID\"/" wrangler.toml
+          sed -i "s/database_id = \".*\"/database_id = \"$D1_ID\"/" wrangler.toml
+          sed -i "s/preview_database_id = \".*\"/preview_database_id = \"$D1_ID\"/" wrangler.toml
 
       - name: Ensure Cloudflare Pages project exists
         env:
