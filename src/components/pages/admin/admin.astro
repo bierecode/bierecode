@@ -1,8 +1,0 @@
----
-import { AdminDashboard } from './components/dashboard/admin-dashboard';
-
-const initialUser = Astro.locals.user;
-const initialSession = Astro.locals.session;
----
-
-<AdminDashboard client:load initialUser={initialUser} initialSession={initialSession} />

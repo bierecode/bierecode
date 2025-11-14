@@ -1,75 +1,84 @@
-**NOTE:** This was @raphaeltm's experiment in vibe-coding, experimenting with CloudFlare, and experimenting with Astro. Some of this stuff is a bit chaotic because of that 😅
-
 # Bière Code Site
 
-Bière Code runs on [Astro](https://astro.build) with Cloudflare Pages Functions for dynamic features. Community updates are stored in Workers KV, authentication is powered by [BetterAuth](https://better-auth.com), and admin data lives in a D1 database.
+Bière Code runs on [Astro](https://astro.build) as a fully static site. Community updates are managed as markdown files using Astro content collections.
 
 ## Stack
-- **Astro 5** for the public site and component rendering
-- **BetterAuth + Cloudflare D1** for credential & session management
-- **Cloudflare Pages Functions** for `/api/*` routes (updates, demo days, auth)
-- **Workers KV** for the community updates feed
-- **Tailwind CSS** for styling the admin UI
+- **Astro 5** for static site generation
+- **Astro Content Collections** for managing community updates
+- **MDX** for rich markdown content
+- **SolidJS** for interactive components
+- **Tailwind CSS** for styling
 
 ## Local Development
 1. **Install dependencies**
    ```bash
    npm install
    ```
-2. **Configure Wrangler**
-   The repo includes a starter `wrangler.toml` with placeholders. Update the file (or environment overrides) with real IDs/secrets when connecting to Cloudflare:
-   ```toml
-   [vars]
-   BETTER_AUTH_SECRET = "your-long-random-secret"
-   BETTER_AUTH_URL = "http://localhost:8788" # set to the Pages dev URL
-   ```
-   The file already defines the `UPDATES_KV` binding and a D1 database named `bierecode-auth`.
-3. **Run database migrations** (uses the bundled SQL files under `drizzle/`)
+2. **Run the development server**
    ```bash
-   npm run db:migrate
+   npm run dev
    ```
-   For a remote environment drop the `--local` flag: `npm run db:migrate:remote`.
-4. **Build the static site**
+   The site will be available at <http://localhost:4321>.
+3. **Build the static site**
    ```bash
    npm run build
    ```
-5. **Launch the full stack locally**
+4. **Preview the production build**
    ```bash
-   WRANGLER_PERSIST_TO=.wrangler/state npx wrangler pages dev ./dist --persist-to .wrangler/state
+   npm run preview
    ```
-   Wrangler serves the static build, the Pages Functions, BetterAuth, KV, and the D1 binding in one process (default URL: <http://localhost:8788>).
 
 ### Useful scripts
 | Command | Description |
 | --- | --- |
-| `npm run dev` | Astro dev server for static pages only (no functions/auth) |
+| `npm run dev` | Start Astro dev server |
 | `npm run build` | Production build to `dist/` |
 | `npm run preview` | Preview the static build |
-| `npm run db:generate` | Regenerate Drizzle schema from TypeScript definitions |
-| `npm run db:migrate` | Apply migrations to the local D1 database |
-| `npm run db:migrate:remote` | Apply migrations to the remote D1 database |
-| `npm run test:e2e` | Run the Playwright E2E suite (starts Wrangler dev server) |
 
-## Authentication
-- All admin and API writes go through BetterAuth (`/api/auth/*`).
-- Sessions are stored in D1; BetterAuth cookies are scoped to the site domain.
-- The admin UI (`/admin`) is powered by a dashboard shell. Use the **Create account** toggle to register new users; accounts can hold one of three roles: *(none)*, `manager`, or `admin`. Managers can publish and edit updates, admins can additionally manage roles.
-- The updates workspace supports full CRUD: create, edit, delete, review history, and jump to the public view for any entry.
-- Use Wrangler to promote an account to admin. Example (local):
-  ```bash
-  wrangler d1 execute bierecode-auth --local \
-    --command "UPDATE user SET role = 'admin' WHERE email = 'hello@bierecode.com';"
-  ```
+## Managing Content
 
-## Cloudflare Pages Functions
-- `/api/auth/*` is handled by BetterAuth and requires the `DB` binding plus the auth env vars.
-- `/api/updates` now trusts BetterAuth sessions (no more HTTP Basic). Authenticated managers or admins can create, update, or delete entries; `GET` remains public.
-- `/api/users` exposes an admin-only API for listing accounts and updating roles.
-- `/api/demo-days` continues to run with Pages Functions as before.
+### Community Updates
+Community updates are stored as markdown files in `src/content/updates/`. To add a new update:
 
-## Additional Docs
-- [`docs/admin-ui.md`](docs/admin-ui.md) – notes on the admin experience
-- [`docs/cloudflare-functions.md`](docs/cloudflare-functions.md) – Pages Functions deployment details
-- [`docs/running-locally.md`](docs/running-locally.md) – step-by-step local setup, including Wrangler usage
+1. Create a new `.md` file in `src/content/updates/`
+2. Add frontmatter with the required fields:
+   ```markdown
+   ---
+   title: "Your Update Title"
+   published: 2025-01-15T10:00:00Z
+   type: post  # or "event"
+   tags: ["tag1", "tag2"]
+   ---
 
-Feel free to adapt the layout or extend the auth flow with additional BetterAuth plugins (2FA, magic links, OAuth providers, etc.).
+   Your content here...
+   ```
+
+For events, you can add event details:
+```markdown
+---
+title: "Upcoming Meetup"
+published: 2025-01-15T10:00:00Z
+type: event
+tags: ["meetup"]
+event:
+  date: "2025-02-01"
+  time: "18:00"
+  location: "Paris, France"
+  duration: "2 hours"
+---
+
+Event details here...
+```
+
+The updates will automatically appear on the `/updates` page, sorted by publish date.
+
+## Deployment
+This is a static site that can be deployed to any static hosting provider:
+- Cloudflare Pages
+- Netlify
+- Vercel
+- GitHub Pages
+- Any other static hosting service
+
+Simply build the site with `npm run build` and deploy the `dist/` directory.
+

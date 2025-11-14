@@ -2,16 +2,3 @@ name = "bierecode-site"
 compatibility_date = "2024-05-05"
 pages_build_output_dir = "dist"
 
-# KV namespace binding for community updates
-[[kv_namespaces]]
-binding = "UPDATES_KV"
-id = "00000000000000000000000000000000"
-preview_id = "00000000000000000000000000000000"
-
-# D1 database binding for BetterAuth
-[[d1_databases]]
-binding = "DB"
-database_name = "bierecode-auth"
-database_id = "00000000-0000-0000-0000-000000000000"
-preview_database_id = "11111111-1111-1111-1111-111111111111"
-migrations_dir = "drizzle"

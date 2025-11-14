@@ -6,28 +6,18 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "db:generate": "drizzle-kit generate",
-    "db:migrate": "wrangler d1 migrations apply bierecode-auth --local",
-    "db:migrate:remote": "wrangler d1 migrations apply bierecode-auth",
-    "test:e2e": "playwright test",
-    "dev:pages": "WRANGLER_PERSIST_TO=.wrangler/state wrangler pages dev ./dist --persist-to .wrangler/state"
+    "astro": "astro"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.2.4",
     "@astrojs/solid-js": "^5.0.8",
     "@tailwindcss/vite": "^4.1.4",
     "astro": "^5.7.4",
-    "better-auth": "^1.3.13",
-    "drizzle-orm": "^0.44.5",
     "solid-js": "^1.9.5",
     "tailwindcss": "^4.1.4"
   },
   "devDependencies": {
-    "@better-auth/cli": "^1.3.13",
     "@cloudflare/workers-types": "^4.20250922.0",
-    "@playwright/test": "^1.48.2",
-    "drizzle-kit": "^0.31.4",
-    "wrangler": "^4.38.0"
+    "@playwright/test": "^1.48.2"
   }
 }
