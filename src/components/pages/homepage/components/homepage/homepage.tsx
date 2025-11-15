@@ -40,8 +40,6 @@ export function Homepage(): JSX.Element {
     applyLang();
   });
 
-  console.log('@@ language: ', translation().description);
-
   return (
     <div class="flex flex-col items-center justify-center min-h-screen gap-10 p-8 bg-gradient-to-br from-yellow-100 to-white text-gray-800">
       <img

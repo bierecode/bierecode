@@ -15,7 +15,6 @@ export function LanguageSwitcher(props: Props): JSX.Element {
   const handleChange = (e: Event) => {
     const target = e.target as HTMLSelectElement;
     const newLang = target.value as 'fr' | 'en';
-    console.log('@@ setting to: ', newLang);
     props.onChange?.(newLang);
   };
 

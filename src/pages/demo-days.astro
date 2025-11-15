@@ -1,31 +1,43 @@
+
 ---
 import Layout from '../layouts/main-layout.astro';
+import "/src/components/pages/homepage/components/homepage/logo-wiggle.css";
 ---
 
 <!-- @Copilot please create a page specifying that we plan to do a demo day  -->
 <!-- in January 2026 where developers can show off cool stuff they're working on -->
+
 <Layout title="Demo Days - January 2026">
-  <h1>Demo Days - January 2026</h1>
-  <p>
-    We are excited to announce that we will be hosting a Demo Day in January 2026! This event is an opportunity for developers to showcase the amazing projects and innovations they have been working on.
-  </p>
-  <h2>Event Details</h2>
-  <ul>
-    <li><strong>Date:</strong> January 15-16, 2026</li>
-    <li><strong>Location:</strong> Virtual (link to be provided upon registration)</li>
-    <li><strong>Who Can Participate:</strong> Open to all developers, designers, and tech enthusiasts</li>
-  </ul>
-  <h2>How to Participate</h2>
-  <p>
-    If you have a project you'd like to showcase, please register by filling out the <a href="/demo-days-registration">Demo Day Registration Form</a>. We welcome projects of all kinds, whether they are apps, websites, tools, or any other tech-related innovations.
-  </p>
-  <h2>What to Expect</h2>
-  <p>
-    During the Demo Day event, participants will have the opportunity to present their projects to an audience of peers, industry experts, and potential investors. There will also be networking sessions, Q&A panels, and workshops to help you refine your project and gain valuable feedback.
-  </p>
-  <h2>Stay Updated</h2>
-  <p>
-    Stay tuned for more updates and announcements regarding the Demo Day event. Follow us on our social media channels and subscribe to our newsletter for the latest information.
-  </p>
-  <p>We can't wait to see the incredible projects you'll bring to Demo Day 2026!</p>
+  <div class="flex flex-col items-center justify-center min-h-screen gap-10 p-8 bg-gradient-to-br from-yellow-100 to-white text-gray-800">
+    <img
+      src="/logo.svg"
+      alt="Bière Code Logo"
+      class="logo-wiggle mb-4"
+      width="120"
+      height="120"
+      loading="eager"
+      aria-hidden="false"
+    />
+    <h1 class="text-5xl text-center tracking-tight leading-tight font-grotesk font-bold">Demo Days - January 2026</h1>
+    <p class="text-xl text-center max-w-2xl text-gray-700">
+      We are excited to announce that we will be hosting a <span class="font-semibold text-yellow-700">Demo Day</span> in January 2026! This event is an opportunity for developers to showcase the innovative projects and cool stuff they have been working on.
+    </p>
+    <p class="text-lg text-center max-w-xl text-gray-600">We don't have a date yet, but stay tuned for more information coming soon!</p>
+    <div class="flex flex-col md:flex-row items-center gap-4 mt-6">
+      <a
+        href="https://www.meetup.com/biere-code-beer-paris/"
+        class="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-8 py-4 rounded-full shadow-lg transition-all transform hover:scale-105"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Join our Meetup
+      </a>
+      <a
+        href="/updates"
+        class="inline-block border border-yellow-400 text-yellow-800 font-semibold px-8 py-4 rounded-full shadow-lg/10 hover:bg-yellow-100 transition-all transform hover:scale-105"
+      >
+        See Updates
+      </a>
+    </div>
+  </div>
 </Layout>
