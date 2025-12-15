@@ -6,12 +6,14 @@ interface Props {
   title?: string;
   description?: string;
   image?: string;
+  hideFooter?: boolean;
 }
 
 const {
   title = "Bière & Code Paris",
   description = "Bière & Code is a friendly meetup in Paris to talk tech and enjoy craft beer in a relaxed atmosphere. Join us to connect, learn, and have a good time!",
   image = "/og-image.png",
+  hideFooter = false,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -44,7 +46,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 	</head>
 	<body>
 		<slot />
-		<Footer />
+		{!hideFooter && <Footer />}
 	</body>
 </html>
 
