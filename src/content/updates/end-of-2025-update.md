@@ -16,6 +16,17 @@ Join us for the final Bière & Code of 2025! This will be our last gathering of 
 
 Come share a drink, talk about your latest coding adventures, and celebrate the end of the year with the community.
 
+## 2025 Year in Review
+
+It's been an amazing first year for Bière & Code Paris! Here are some stats from our community in 2025:
+
+- **167** Total Members
+- **209** RSVPs across all events
+- **30** Active and engaged members
+- **10+** Different breweries visited!
+
+Thank you to everyone who joined us and made this community grow!
+
 ## Upcoming: Demo Day 2026
 
 We are also planning a special **Demo Day** to celebrate the group's 1-year anniversary!
