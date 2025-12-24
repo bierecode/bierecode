@@ -9,6 +9,7 @@ interface Translation {
   description: string;
   meetupLink: string;
   updatesLink: string;
+  aboutLink: string;
   language: string;
   french: string;
   english: string;
@@ -70,6 +71,12 @@ export function Homepage(props: { children?: JSX.Element }): JSX.Element {
           class="inline-block border border-yellow-400 text-yellow-800 font-semibold px-8 py-4 rounded-full shadow-lg/10 hover:bg-yellow-100 transition-all transform hover:scale-105"
         >
           {translation().updatesLink}
+        </a>
+        <a
+          href="/about"
+          class="inline-block border border-gray-300 text-gray-700 font-semibold px-8 py-4 rounded-full shadow-lg/10 hover:bg-gray-50 transition-all transform hover:scale-105"
+        >
+          {translation().aboutLink}
         </a>
       </div>
       {props.children}

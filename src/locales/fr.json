@@ -3,6 +3,19 @@
   "description": "Bière & Code est un meetup convivial à Paris pour discuter de tech et déguster de la bière artisanale dans une ambiance détendue. Rejoignez-nous pour échanger, apprendre, et passer un bon moment !",
   "meetupLink": "Rejoindre la page Meetup",
   "updatesLink": "Voir les updates",
+  "aboutLink": "À Propos",
+  "about": {
+    "title": "À Propos",
+    "description": "Rencontrez l'équipe derrière Bière & Code Paris.",
+    "raph": {
+      "role": "Fondateur et Hôte",
+      "bio": "Senior Developer Evangelist chez Defang et entrepreneur en série, Raph est profondément ancré dans l'écosystème startup. Fondateur d'Ephemere Creative et de Tembo Tech, il allie expertise technique et passion pour le mentorat, créant des ponts entre les technologies cloud complexes et les développeurs."
+    },
+    "miguel": {
+      "role": "Co-hôte",
+      "bio": "Senior Software Engineer chez Gencove (NYC), spécialisé dans les infrastructures Cloud à grande échelle et les systèmes Backend pour l'analyse génomique. Contributeur open-source actif et ancien digital nomad, Miguel apporte une perspective internationale et un fort esprit entrepreneurial, ayant conçu et lancé des produits à succès sur multiples plateformes."
+    }
+  },
   "language": "Langue :",
   "french": "Français",
   "english": "Anglais"
