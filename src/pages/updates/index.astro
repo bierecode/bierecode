@@ -29,53 +29,66 @@ function formatDate(date: Date): string {
   title="Community Updates - Bière & Code Paris"
   description="Stay in the loop with the latest announcements, event recaps, and community highlights straight from the Bière Code crew."
 >
-  <section class="min-h-screen bg-gradient-to-br from-yellow-50 via-white to-white py-16 px-6">
-    <div class="max-w-4xl mx-auto space-y-10">
-      <div class="flex justify-start">
-        <a href="/" class="inline-flex items-center text-sm font-medium text-yellow-600 hover:text-yellow-700 transition-colors group">
-          <Icon name="lucide:arrow-left" class="w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform" />
-          Back to Homepage
+  <!-- Navigation Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#fff0cb]/50 shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity duration-300">
+        <img src="/logo.svg" alt="Bière Code Logo" width={44} height={44} />
+        <span class="text-xl font-bold text-[#3f573e] font-grotesk hidden sm:block">Bière & Code</span>
+      </a>
+      <nav class="flex items-center gap-8">
+        <a href="/about" class="text-sm font-medium text-[#3f573e] hover:text-[#cc6c11] transition-colors duration-300 relative group">
+          About
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#cc6c11] transition-all duration-300 group-hover:w-full"></span>
         </a>
-      </div>
+        <a href="/updates" class="text-sm font-medium text-[#cc6c11] transition-colors duration-300 relative">
+          Updates
+          <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#cc6c11]"></span>
+        </a>
+      </nav>
+    </div>
+  </header>
 
-      <header class="text-center space-y-4">
-        <p class="uppercase tracking-[0.35em] text-xs text-yellow-700 font-semibold">Bière & Code</p>
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-900">Community Updates</h1>
-        <p class="text-gray-600 max-w-2xl mx-auto">
+  <section class="min-h-screen bg-gradient-to-br from-[#fff0cb] via-[#f6f3ec] to-white pt-32 pb-20 px-6">
+    <div class="max-w-4xl mx-auto space-y-10 md:space-y-12">
+      <header class="text-center space-y-4 md:space-y-6">
+        <p class="uppercase tracking-[0.4em] text-xs text-[#cc6c11] font-semibold">Bière & Code</p>
+        <h1 class="font-bold text-[#3f573e] leading-[1.4] font-grotesk" style="font-size: var(--font-size-section)">Community Updates</h1>
+        <p class="text-[#6b7280] max-w-2xl mx-auto leading-[1.7]" style="font-size: var(--font-size-body)">
           Stay in the loop with the latest announcements, event recaps, and community highlights straight from the Bière Code crew.
         </p>
       </header>
 
       {updates.length === 0 ? (
-        <p class="text-center text-gray-600">Encore aucun update. Revenez bientôt 🍻</p>
+        <p class="text-center text-[#6b7280]">Encore aucun update. Revenez bientôt 🍻</p>
       ) : (
-        <div class="space-y-6">
+        <div class="space-y-8">
           {updates.map(({ update, Content }) => (
-            <article class="relative rounded-3xl bg-white shadow-[0_20px_35px_-25px_rgba(17,24,39,0.35)] border border-yellow-100 overflow-hidden hover:bg-yellow-50/40 transition group">
+            <article class="relative rounded-3xl bg-white shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1)] border border-[#fff0cb]/30 overflow-hidden hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] hover:bg-[#fff0cb]/10 hover:-translate-y-1 transition-all duration-300 group">
               <div class="block p-6 md:p-8 space-y-4">
                 <div class="flex flex-wrap items-start justify-between gap-4">
                   <div class="space-y-2">
-                    <span class={`inline-flex items-center px-3 py-1 text-xs font-semibold tracking-wide uppercase rounded-full ${update.data.type === 'event' ? 'bg-purple-100 text-purple-700' : 'bg-yellow-100 text-yellow-700'}`}>
+                    <span class={`inline-flex items-center px-3 py-1 text-xs font-semibold tracking-wide uppercase rounded-full ${update.data.type === 'event' ? 'bg-[#1f7cec]/10 text-[#1f7cec]' : 'bg-[#fff0cb] text-[#cc6c11]'}`}>
                       {update.data.type === 'event' ? 'Event' : 'Post'}
                     </span>
-                    <h2 class="text-2xl font-semibold text-gray-900">
+                    <h2 class="text-2xl font-semibold text-[#3f573e]">
                       <a href={`/updates/${update.slug}`} class="before:absolute before:inset-0 focus:outline-none">
                         {update.data.title}
                       </a>
                     </h2>
                   </div>
-                  <div class="text-right text-xs text-gray-500 space-y-1">
+                  <div class="text-right text-xs text-[#6b7280] space-y-1">
                     <p>Published {formatDate(update.data.published)}</p>
                     {update.data.updated && update.data.updated.getTime() !== update.data.published.getTime() && (
                       <p>Updated {formatDate(update.data.updated)}</p>
                     )}
                   </div>
                 </div>
-                <div class="prose prose-sm max-w-none text-gray-600 prose-headings:font-bold prose-a:text-yellow-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl prose-a:relative prose-a:z-10">
+                <div class="prose prose-sm max-w-none text-[#6b7280] prose-headings:font-bold prose-headings:text-[#3f573e] prose-a:text-[#cc6c11] prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl prose-a:relative prose-a:z-10">
                   <Content />
                 </div>
                 {update.data.type === 'event' && update.data.event && (
-                  <div class="bg-yellow-50 border border-yellow-100 text-yellow-900 text-sm rounded-2xl px-4 py-3 space-y-1 relative z-10">
+                  <div class="bg-[#fff0cb]/30 border border-[#fff0cb] text-[#3f573e] text-sm rounded-2xl px-4 py-3 space-y-1 relative z-10">
                     {(update.data.event.date || update.data.event.time) && (
                       <p>
                         <strong class="font-semibold">When:</strong> {[update.data.event.date, update.data.event.time].filter(Boolean).join(' • ')}
@@ -96,7 +109,7 @@ function formatDate(date: Date): string {
                 {update.data.tags && update.data.tags.length > 0 && (
                   <div class="flex flex-wrap gap-2 pt-1 relative z-10">
                     {update.data.tags.map((tag) => (
-                      <span class="text-xs uppercase tracking-wide bg-gray-100 text-gray-600 px-3 py-1 rounded-full">#{tag}</span>
+                      <span class="text-xs uppercase tracking-wide bg-[#f6f3ec] text-[#6b7280] px-3 py-1 rounded-full">#{tag}</span>
                     ))}
                   </div>
                 )}

@@ -4,4 +4,40 @@
 
 @theme {
   --font-grotesk: 'Space Grotesk', 'ui-sans-serif', 'system-ui', 'sans-serif';
+  
+  /* Warm earth tones color palette */
+  --color-cream: #fff0cb;
+  --color-cream-light: #f6f3ec;
+  --color-orange: #cc6c11;
+  --color-orange-hover: #e07d1c;
+  --color-brown: #3f573e;
+  --color-blue-accent: #1f7cec;
+  --color-blue-hover: #3993ff;
+  --color-gray-light: #f5f5f5;
+  --color-gray-medium: #6b7280;
+  --color-gray-dark: #374151;
+  
+  /* Fluid typography scale */
+  --font-size-hero: clamp(2.5rem, 6vw, 4rem);
+  --font-size-hero-desc: clamp(1.125rem, 2.5vw, 1.375rem);
+  --font-size-section: clamp(1.75rem, 3.5vw, 2.25rem);
+  --font-size-card-title: clamp(1.25rem, 2vw, 1.5rem);
+  --font-size-body: clamp(1rem, 1.5vw, 1.125rem);
+  
+  /* Fluid spacing scale */
+  --spacing-section: clamp(3.75rem, 8vh, 6rem);
+  --spacing-hero-bottom: clamp(5rem, 10vh, 8rem);
+  --spacing-large: clamp(2.5rem, 5vh, 4rem);
+  --spacing-medium: clamp(1.5rem, 3vh, 2.5rem);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -1,9 +1,54 @@
 {
   "title": "Bière & Code Paris",
-  "description": "Bière & Code is a friendly meetup in Paris to talk tech and enjoy craft beer in a relaxed atmosphere. Join us to connect, learn, and have a good time!",
-  "meetupLink": "Go to Meetup page",
-  "updatesLink": "Read community updates",
-  "aboutLink": "About Us",
+  "tagline": "Where technology meets community",
+  "description": "A welcoming space for developers, engineers, and tech enthusiasts to explore ideas, share knowledge, and connect over great conversation and craft beer.",
+  "socialProof": "Join 150+ tech enthusiasts in Paris",
+  "meetupLink": "Join our next meetup",
+  "updatesLink": "Community updates",
+  "aboutLink": "About",
+  "events": {
+    "title": "Connect With Us",
+    "monthly": {
+      "title": "Monthly Meetups",
+      "description": "Every month, we gather for tech talks, project demos, and open networking. Typical format: 6pm arrival, 6:30 lightning talks, 7pm open discussion. Bring your projects, questions, or just your curiosity.",
+      "cta": "RSVP on Meetup"
+    },
+    "updates": {
+      "title": "Community Updates",
+      "description": "Event recaps, member spotlights, tech trends, and project showcases. Weekly posts keep you connected to what our community is building and learning together.",
+      "cta": "Read the latest"
+    },
+    "community": {
+      "title": "Open to All",
+      "description": "All languages, frameworks, and experience levels welcome. From students to senior engineers, career-switchers to founders—if you're curious about tech, you belong here.",
+      "cta": "Learn about us"
+    }
+  },
+  "firstTime": {
+    "title": "First Time?",
+    "subtitle": "Here's What to Expect",
+    "points": [
+      "No registration needed—just show up and introduce yourself",
+      "All skill levels welcome, from beginners to experts",
+      "Relaxed atmosphere: bring projects, questions, or just curiosity",
+      "Make friends, find collaborators, or simply enjoy good conversation"
+    ]
+  },
+  "why": {
+    "title": "Why Bière & Code?",
+    "learnTogether": {
+      "title": "Learn Together",
+      "description": "Share knowledge, discuss emerging technologies, and explore diverse perspectives. From debugging sessions to architecture debates, we grow by learning from each other."
+    },
+    "relax": {
+      "title": "Relax & Connect",
+      "description": "Tech doesn't have to be intense. Meet in a casual setting where you can be yourself, build genuine friendships, and find your work-life balance in the community."
+    },
+    "network": {
+      "title": "Grow Your Network",
+      "description": "Connect with fellow developers, discover collaboration opportunities, find mentors or mentees. Some of Paris's best tech friendships started over a beer."
+    }
+  },
   "about": {
     "title": "About Us",
     "description": "Meet the team behind Bière & Code Paris.",
@@ -15,6 +60,15 @@
       "role": "Co-host",
       "bio": "Senior Software Engineer at Gencove (NYC), specializing in high-scale Cloud Infrastructure and Backend systems for genomic analysis. An active open-source contributor and former digital nomad, Miguel brings a global perspective and strong entrepreneurial background to engineering, having built and launched successful products across multiple platforms."
     }
+  },
+  "footer": {
+    "mission": "Building a welcoming tech community in Paris, one beer at a time.",
+    "quickLinks": "Quick Links",
+    "connect": "Connect",
+    "info": "Info",
+    "location": "Paris, France",
+    "codeOfConduct": "Code of Conduct",
+    "builtWith": "Built with ❤️ by the community"
   },
   "language": "Language:",
   "french": "French",
