@@ -1,9 +1,28 @@
 {
   "title": "Bière & Code Paris",
-  "description": "Bière & Code is a friendly meetup in Paris to talk tech and enjoy craft beer in a relaxed atmosphere. Join us to connect, learn, and have a good time!",
-  "meetupLink": "Go to Meetup page",
-  "updatesLink": "Read community updates",
-  "aboutLink": "About Us",
+  "tagline": "Where technology meets community",
+  "description": "A welcoming space for developers, engineers, and tech enthusiasts to explore ideas, share knowledge, and connect over great conversation and craft beer.",
+  "meetupLink": "Join our next meetup",
+  "updatesLink": "Community updates",
+  "aboutLink": "About",
+  "events": {
+    "title": "Connect With Us",
+    "monthly": {
+      "title": "Monthly Meetups",
+      "description": "Join us every month for an evening of tech talks, demos, and networking. Whether you're a seasoned developer or just starting out, you'll find engaging conversations and a supportive community.",
+      "cta": "RSVP on Meetup"
+    },
+    "updates": {
+      "title": "Community Updates",
+      "description": "Stay informed about upcoming events, member projects, and highlights from our gatherings. Get insights into what our community is building and learning.",
+      "cta": "Read the latest"
+    },
+    "community": {
+      "title": "Open to All",
+      "description": "We believe the best conversations happen when diverse perspectives come together. All experience levels, backgrounds, and interests are welcome at our table.",
+      "cta": "Learn about us"
+    }
+  },
   "about": {
     "title": "About Us",
     "description": "Meet the team behind Bière & Code Paris.",

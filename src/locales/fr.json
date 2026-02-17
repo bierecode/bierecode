@@ -1,9 +1,28 @@
 {
   "title": "Bière & Code Paris",
-  "description": "Bière & Code est un meetup convivial à Paris pour discuter de tech et déguster de la bière artisanale dans une ambiance détendue. Rejoignez-nous pour échanger, apprendre, et passer un bon moment !",
-  "meetupLink": "Rejoindre la page Meetup",
-  "updatesLink": "Voir les updates",
+  "tagline": "Où la technologie rencontre la communauté",
+  "description": "Un espace accueillant pour les développeurs, ingénieurs et passionnés de tech qui souhaitent explorer des idées, partager leurs connaissances et échanger autour de conversations enrichissantes et de bières artisanales.",
+  "meetupLink": "Rejoindre notre prochain meetup",
+  "updatesLink": "Actualités de la communauté",
   "aboutLink": "À Propos",
+  "events": {
+    "title": "Rejoignez-nous",
+    "monthly": {
+      "title": "Meetups Mensuels",
+      "description": "Retrouvez-nous chaque mois pour une soirée de présentations tech, démos et networking. Que vous soyez développeur expérimenté ou débutant, vous trouverez des conversations engageantes et une communauté bienveillante.",
+      "cta": "S'inscrire sur Meetup"
+    },
+    "updates": {
+      "title": "Actualités de la Communauté",
+      "description": "Restez informé des événements à venir, des projets des membres et des moments forts de nos rencontres. Découvrez ce que notre communauté construit et apprend.",
+      "cta": "Lire les dernières news"
+    },
+    "community": {
+      "title": "Ouvert à Tous",
+      "description": "Nous croyons que les meilleures conversations naissent de la diversité des perspectives. Tous les niveaux d'expérience, origines et centres d'intérêt sont les bienvenus à notre table.",
+      "cta": "En savoir plus"
+    }
+  },
   "about": {
     "title": "À Propos",
     "description": "Rencontrez l'équipe derrière Bière & Code Paris.",
