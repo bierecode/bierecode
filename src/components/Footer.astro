@@ -30,18 +30,18 @@ const links = [
 ];
 ---
 
-<footer class="w-full py-8">
+<footer class="w-full py-8 md:py-12">
   <div class="max-w-4xl mx-auto px-4 flex justify-center items-center">
-    <div class="flex space-x-6">
+    <div class="flex space-x-6 md:space-x-8">
       {links.map((link) => (
         <a 
           href={link.url} 
           target="_blank" 
           rel="noopener noreferrer"
-          class="text-gray-400 hover:text-yellow-600 transition-colors duration-300"
+          class="text-[#6b7280] hover:text-[#cc6c11] transition-colors duration-300"
           aria-label={`Follow us on ${link.name}`}
         >
-          <Icon name={link.icon} class="w-5 h-5" />
+          <Icon name={link.icon} class="w-5 h-5 md:w-6 md:h-6" />
         </a>
       ))}
     </div>

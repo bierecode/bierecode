@@ -42,25 +42,27 @@ export function Homepage(props: { children?: JSX.Element }): JSX.Element {
   });
 
   return (
-    <div class="flex flex-col items-center justify-center min-h-screen gap-10 p-8 bg-gradient-to-br from-yellow-100 to-white text-gray-800">
+    <div class="flex flex-col items-center justify-center min-h-screen gap-16 p-8 md:p-16 bg-gradient-to-br from-[#fff0cb] via-[#f6f3ec] to-white text-[#3f573e]">
       <img
         src="/logo.svg"
         alt="Bière Code Logo"
-        class="logo-wiggle mb-4"
-        width={120}
-        height={120}
+        class="logo-wiggle mb-0"
+        width={140}
+        height={140}
         loading="eager"
         aria-hidden="false"
       />
       <div class="fixed top-4 right-4 z-50">
       <LanguageSwitcher language={lang()} translation={translation()} onChange={setLang} />
       </div>
-      <h1 class="text-5xl text-center tracking-tight leading-tight font-grotesk font-bold">{translation().title}</h1>
-      <p class="text-xl text-center max-w-2xl text-gray-700">{translation().description}</p>
-      <div class="flex flex-col md:flex-row items-center gap-4">
+      <div class="flex flex-col items-center gap-8 max-w-4xl">
+        <h1 class="text-4xl md:text-6xl text-center leading-[1.4] font-grotesk font-bold text-[#3f573e]">{translation().title}</h1>
+        <p class="text-lg md:text-xl text-center max-w-2xl text-[#6b7280] leading-[1.5]">{translation().description}</p>
+      </div>
+      <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6">
         <a
           href="https://www.meetup.com/biere-code-beer-paris/"
-          class="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-8 py-4 rounded-full shadow-lg transition-all transform hover:scale-105"
+          class="inline-block bg-[#cc6c11] hover:bg-[#e07d1c] text-white font-semibold px-10 py-4 rounded-[100px] shadow-md transition-all duration-300 hover:shadow-lg"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -68,13 +70,13 @@ export function Homepage(props: { children?: JSX.Element }): JSX.Element {
         </a>
         <a
           href="/updates"
-          class="inline-block border border-yellow-400 text-yellow-800 font-semibold px-8 py-4 rounded-full shadow-lg/10 hover:bg-yellow-100 transition-all transform hover:scale-105"
+          class="inline-block bg-[#f6f3ec] hover:bg-[#3993ff] hover:text-white text-[#3f573e] font-semibold px-10 py-4 rounded-[100px] shadow-md transition-all duration-300 hover:shadow-lg"
         >
           {translation().updatesLink}
         </a>
         <a
           href="/about"
-          class="inline-block border border-gray-300 text-gray-700 font-semibold px-8 py-4 rounded-full shadow-lg/10 hover:bg-gray-50 transition-all transform hover:scale-105"
+          class="inline-block bg-[#f6f3ec] hover:bg-[#3993ff] hover:text-white text-[#3f573e] font-semibold px-10 py-4 rounded-[100px] shadow-md transition-all duration-300 hover:shadow-lg"
         >
           {translation().aboutLink}
         </a>
