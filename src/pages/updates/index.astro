@@ -29,19 +29,32 @@ function formatDate(date: Date): string {
   title="Community Updates - Bière & Code Paris"
   description="Stay in the loop with the latest announcements, event recaps, and community highlights straight from the Bière Code crew."
 >
-  <section class="min-h-screen bg-gradient-to-br from-[#fff0cb] via-[#f6f3ec] to-white py-16 md:py-20 px-6">
-    <div class="max-w-4xl mx-auto space-y-10 md:space-y-12">
-      <div class="flex justify-start">
-        <a href="/" class="inline-flex items-center text-sm font-medium text-[#cc6c11] hover:text-[#e07d1c] transition-colors group">
-          <Icon name="lucide:arrow-left" class="w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform" />
-          Back to Homepage
+  <!-- Navigation Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#fff0cb]/50 shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity duration-300">
+        <img src="/logo.svg" alt="Bière Code Logo" width={44} height={44} />
+        <span class="text-xl font-bold text-[#3f573e] font-grotesk hidden sm:block">Bière & Code</span>
+      </a>
+      <nav class="flex items-center gap-8">
+        <a href="/about" class="text-sm font-medium text-[#3f573e] hover:text-[#cc6c11] transition-colors duration-300 relative group">
+          About
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#cc6c11] transition-all duration-300 group-hover:w-full"></span>
         </a>
-      </div>
+        <a href="/updates" class="text-sm font-medium text-[#cc6c11] transition-colors duration-300 relative">
+          Updates
+          <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#cc6c11]"></span>
+        </a>
+      </nav>
+    </div>
+  </header>
 
+  <section class="min-h-screen bg-gradient-to-br from-[#fff0cb] via-[#f6f3ec] to-white pt-32 pb-20 px-6">
+    <div class="max-w-4xl mx-auto space-y-10 md:space-y-12">
       <header class="text-center space-y-4 md:space-y-6">
-        <p class="uppercase tracking-[0.35em] text-xs text-[#cc6c11] font-semibold">Bière & Code</p>
-        <h1 class="text-4xl md:text-5xl font-bold text-[#3f573e] leading-[1.4]">Community Updates</h1>
-        <p class="text-[#6b7280] text-lg max-w-2xl mx-auto leading-[1.5]">
+        <p class="uppercase tracking-[0.4em] text-xs text-[#cc6c11] font-semibold">Bière & Code</p>
+        <h1 class="font-bold text-[#3f573e] leading-[1.4] font-grotesk" style="font-size: var(--font-size-section)">Community Updates</h1>
+        <p class="text-[#6b7280] max-w-2xl mx-auto leading-[1.7]" style="font-size: var(--font-size-body)">
           Stay in the loop with the latest announcements, event recaps, and community highlights straight from the Bière Code crew.
         </p>
       </header>
@@ -51,7 +64,7 @@ function formatDate(date: Date): string {
       ) : (
         <div class="space-y-8">
           {updates.map(({ update, Content }) => (
-            <article class="relative rounded-3xl bg-white shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1)] border border-[#fff0cb]/30 overflow-hidden hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] transition-all duration-300 group">
+            <article class="relative rounded-3xl bg-white shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1)] border border-[#fff0cb]/30 overflow-hidden hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] hover:bg-[#fff0cb]/10 hover:-translate-y-1 transition-all duration-300 group">
               <div class="block p-6 md:p-8 space-y-4">
                 <div class="flex flex-wrap items-start justify-between gap-4">
                   <div class="space-y-2">

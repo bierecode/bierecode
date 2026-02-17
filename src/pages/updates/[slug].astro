@@ -34,10 +34,30 @@ function formatDate(date: Date): string {
   title={`${update.data.title} - Bière & Code Paris`}
   description={`Read the latest update: ${update.data.title}`}
 >
-  <section class="min-h-screen bg-gradient-to-br from-[#fff0cb] via-[#f6f3ec] to-white py-16 md:py-20 px-6">
+  <!-- Navigation Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#fff0cb]/50 shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity duration-300">
+        <img src="/logo.svg" alt="Bière Code Logo" width={44} height={44} />
+        <span class="text-xl font-bold text-[#3f573e] font-grotesk hidden sm:block">Bière & Code</span>
+      </a>
+      <nav class="flex items-center gap-8">
+        <a href="/about" class="text-sm font-medium text-[#3f573e] hover:text-[#cc6c11] transition-colors duration-300 relative group">
+          About
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#cc6c11] transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="/updates" class="text-sm font-medium text-[#cc6c11] transition-colors duration-300 relative">
+          Updates
+          <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#cc6c11]"></span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="min-h-screen bg-gradient-to-br from-[#fff0cb] via-[#f6f3ec] to-white pt-32 pb-20 px-6">
     <div class="max-w-3xl mx-auto space-y-8 md:space-y-10">
       <div class="flex justify-start">
-        <a href="/updates" class="inline-flex items-center text-sm font-medium text-[#cc6c11] hover:text-[#e07d1c] transition-colors group">
+        <a href="/updates" class="inline-flex items-center text-sm font-medium text-[#cc6c11] hover:text-[#e07d1c] transition-colors duration-300 group">
           <Icon name="lucide:arrow-left" class="w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform" />
           Back to Updates
         </a>

@@ -2,6 +2,7 @@
   "title": "Bière & Code Paris",
   "tagline": "Où la technologie rencontre la communauté",
   "description": "Un espace accueillant pour les développeurs, ingénieurs et passionnés de tech qui souhaitent explorer des idées, partager leurs connaissances et échanger autour de conversations enrichissantes et de bières artisanales.",
+  "socialProof": "Rejoignez plus de 150 passionnés de tech à Paris",
   "meetupLink": "Rejoindre notre prochain meetup",
   "updatesLink": "Actualités de la communauté",
   "aboutLink": "À Propos",
@@ -9,18 +10,43 @@
     "title": "Rejoignez-nous",
     "monthly": {
       "title": "Meetups Mensuels",
-      "description": "Retrouvez-nous chaque mois pour une soirée de présentations tech, démos et networking. Que vous soyez développeur expérimenté ou débutant, vous trouverez des conversations engageantes et une communauté bienveillante.",
+      "description": "Chaque mois, nous nous retrouvons pour des présentations tech, démos de projets et networking. Format typique : 18h arrivée, 18h30 présentations éclair, 19h discussions ouvertes. Apportez vos projets, questions ou simplement votre curiosité.",
       "cta": "S'inscrire sur Meetup"
     },
     "updates": {
       "title": "Actualités de la Communauté",
-      "description": "Restez informé des événements à venir, des projets des membres et des moments forts de nos rencontres. Découvrez ce que notre communauté construit et apprend.",
+      "description": "Récaps d'événements, portraits de membres, tendances tech et présentations de projets. Des posts hebdomadaires pour rester connecté à ce que notre communauté construit et apprend ensemble.",
       "cta": "Lire les dernières news"
     },
     "community": {
       "title": "Ouvert à Tous",
-      "description": "Nous croyons que les meilleures conversations naissent de la diversité des perspectives. Tous les niveaux d'expérience, origines et centres d'intérêt sont les bienvenus à notre table.",
+      "description": "Tous les langages, frameworks et niveaux d'expérience sont les bienvenus. Des étudiants aux ingénieurs seniors, des reconversions aux fondateurs—si vous êtes curieux de tech, vous avez votre place ici.",
       "cta": "En savoir plus"
+    }
+  },
+  "firstTime": {
+    "title": "Première Fois ?",
+    "subtitle": "Voici à Quoi S'Attendre",
+    "points": [
+      "Pas d'inscription nécessaire—venez simplement et présentez-vous",
+      "Tous les niveaux bienvenus, des débutants aux experts",
+      "Ambiance décontractée : apportez projets, questions ou juste votre curiosité",
+      "Faites des rencontres, trouvez des collaborateurs ou profitez simplement de bonnes conversations"
+    ]
+  },
+  "why": {
+    "title": "Pourquoi Bière & Code ?",
+    "learnTogether": {
+      "title": "Apprendre Ensemble",
+      "description": "Partagez des connaissances, discutez des technologies émergentes et explorez diverses perspectives. Des sessions de débogage aux débats d'architecture, nous grandissons en apprenant les uns des autres."
+    },
+    "relax": {
+      "title": "Se Détendre & Se Connecter",
+      "description": "La tech n'a pas besoin d'être intense. Rencontrez-vous dans un cadre décontracté où vous pouvez être vous-même, construire de vraies amitiés et trouver votre équilibre vie pro-perso dans la communauté."
+    },
+    "network": {
+      "title": "Développer Votre Réseau",
+      "description": "Connectez-vous avec d'autres développeurs, découvrez des opportunités de collaboration, trouvez des mentors ou mentorés. Certaines des meilleures amitiés tech de Paris ont commencé autour d'une bière."
     }
   },
   "about": {
@@ -34,6 +60,15 @@
       "role": "Co-hôte",
       "bio": "Senior Software Engineer chez Gencove (NYC), spécialisé dans les infrastructures Cloud à grande échelle et les systèmes Backend pour l'analyse génomique. Contributeur open-source actif et ancien digital nomad, Miguel apporte une perspective internationale et un fort esprit entrepreneurial, ayant conçu et lancé des produits à succès sur multiples plateformes."
     }
+  },
+  "footer": {
+    "mission": "Construire une communauté tech accueillante à Paris, une bière à la fois.",
+    "quickLinks": "Liens Rapides",
+    "connect": "Se Connecter",
+    "info": "Infos",
+    "location": "Paris, France",
+    "codeOfConduct": "Code de Conduite",
+    "builtWith": "Fait avec ❤️ par la communauté"
   },
   "language": "Langue :",
   "french": "Français",

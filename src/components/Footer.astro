@@ -28,23 +28,74 @@ const links = [
     icon: "simple-icons:github"
   }
 ];
+
+const currentYear = new Date().getFullYear();
 ---
 
-<footer class="w-full py-8 md:py-12">
-  <div class="max-w-4xl mx-auto px-4 flex justify-center items-center">
-    <div class="flex space-x-6 md:space-x-8">
-      {links.map((link) => (
-        <a 
-          href={link.url} 
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="text-[#6b7280] hover:text-[#cc6c11] transition-colors duration-300"
-          aria-label={`Follow us on ${link.name}`}
-        >
-          <Icon name={link.icon} class="w-5 h-5 md:w-6 md:h-6" />
-        </a>
-      ))}
+<footer class="w-full bg-white border-t border-[#fff0cb]/30 mt-20">
+  <div class="max-w-6xl mx-auto px-6 py-12 md:py-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+      <!-- About Section -->
+      <div class="md:col-span-2 space-y-4">
+        <div class="flex items-center gap-3">
+          <img src="/logo.svg" alt="Bière Code Logo" width={40} height={40} />
+          <span class="text-xl font-bold text-[#3f573e] font-grotesk">Bière & Code</span>
+        </div>
+        <p class="text-[#6b7280] leading-[1.7] max-w-md">
+          Building a welcoming tech community in Paris, one beer at a time.
+        </p>
+        <p class="text-sm text-[#6b7280]">
+          <span class="inline-flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            Paris, France
+          </span>
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="space-y-4">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-[#3f573e]">Quick Links</h3>
+        <ul class="space-y-3">
+          <li>
+            <a href="/about" class="text-[#6b7280] hover:text-[#cc6c11] transition-colors duration-300">About Us</a>
+          </li>
+          <li>
+            <a href="/updates" class="text-[#6b7280] hover:text-[#cc6c11] transition-colors duration-300">Community Updates</a>
+          </li>
+          <li>
+            <a href="https://www.meetup.com/biere-code-beer-paris/" target="_blank" rel="noopener noreferrer" class="text-[#6b7280] hover:text-[#cc6c11] transition-colors duration-300">Join Meetup</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Connect -->
+      <div class="space-y-4">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-[#3f573e]">Connect</h3>
+        <div class="flex flex-wrap gap-4">
+          {links.map((link) => (
+            <a 
+              href={link.url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="text-[#6b7280] hover:text-[#cc6c11] transition-colors duration-300"
+              aria-label={`Follow us on ${link.name}`}
+            >
+              <Icon name={link.icon} class="w-6 h-6" />
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pt-8 border-t border-[#fff0cb]/30 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#6b7280]">
+      <p>© {currentYear} Bière & Code Paris. Built with ❤️ by the community.</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-[#cc6c11] transition-colors duration-300">Code of Conduct</a>
+      </div>
     </div>
   </div>
 </footer>
-
