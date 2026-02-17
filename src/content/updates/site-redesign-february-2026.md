@@ -1,65 +1,62 @@
 ---
-title: "Site Redesign: A Warmer, More Inviting Bière & Code"
+title: "Site Redesign: Built with Agentic Coding"
 published: 2026-02-17T11:00:00Z
 type: post
-tags: ["website", "design", "community"]
+tags: ["website", "ai", "community"]
 ---
 
-We're excited to share that the Bière & Code website has received a comprehensive redesign! The new look maintains our welcoming, community-focused spirit while providing a more sophisticated and warm visual experience.
+We're excited to share that the Bière & Code website has received a comprehensive redesign! But what's more interesting than the new look is *how* it was built.
 
-## What Changed?
+## Agentic Coding in Action
 
-The redesign ([PR #25](https://github.com/bierecode/bierecode/pull/25)) touched nearly every aspect of the site:
+This entire redesign ([PR #25](https://github.com/bierecode/bierecode/pull/25)) was created using **agentic coding** - a collaborative approach where AI agents handle the heavy lifting of software development while humans provide direction and make key decisions.
 
-### Visual Design
-- **New Color Palette**: Shifted from bright yellow to warm earth tones (cream #fff0cb, burnt orange #cc6c11, deep brown #3f573e)
-- **Refined Typography**: Fluid type system with responsive scaling for better readability across all devices
-- **Modern Layout**: Generous whitespace and breathing room between sections
-- **Enhanced Navigation**: Fixed header with smooth transitions and hover effects
+### What is Agentic Coding?
 
-### Homepage Restructure
-- Hero section with clear tagline: "Where technology meets community"
-- Three feature cards highlighting Monthly Meetups, Community Updates, and our Open to All philosophy
-- "Why Bière & Code?" section explaining our three pillars: Learn, Relax, Network
-- "First Time?" callout to help newcomers feel welcome
-- Prominent Meetup CTA for easy event access
+Unlike traditional AI coding assistants that simply autocomplete your code, agentic coding tools can:
+- Autonomously explore codebases to understand existing patterns
+- Plan and execute multi-step implementations
+- Iterate on designs based on feedback
+- Handle everything from design exploration to testing and deployment
 
-### Design Details
-- Pill-shaped buttons with smooth hover transitions
-- Card hover effects with subtle lift and background tint
-- Animated logo fade-in and navigation underlines
-- Strategic use of orange color reserved for primary actions
-- Enhanced footer with mission statement, quick links, and social connections
-
-### Content Improvements
-- More professional yet approachable tone throughout
-- Better bilingual support (English/French)
-- Social proof messaging ("Join 150+ tech enthusiasts")
-- Clearer event details and format information
-
-## The Stats
-
-The redesign involved:
-- **12 files changed**
-- **1,319 additions** and **144 deletions**
-- **4 commits** with iterative improvements
-- All pages updated consistently: homepage, about, updates, and demo days
+Think of it as having a skilled developer who can work through complex tasks independently, but always checks in with you on important decisions.
 
 ## Built with SAM & Claude Code
 
-This entire redesign was created using **Claude Code** through [SAM (Simple Agent Manager)](https://github.com/raphaeltm/simple-agent-manager), a project by Raph (founder of Bière & Code).
+The redesign was built using **Claude Code** (Anthropic's agentic coding tool) through [SAM (Simple Agent Manager)](https://github.com/raphaeltm/simple-agent-manager), a project by Raph (founder of Bière & Code).
 
-SAM provides a web interface for Claude Code, making it easy to collaborate on development tasks with AI assistance. From initial design exploration to implementation, testing, and this very update post - everything was built through the SAM interface!
+SAM provides a clean web interface for Claude Code, making it easy to:
+- Give high-level direction ("redesign the site with a warmer aesthetic")
+- Review and approve proposed changes
+- Iterate quickly without getting bogged down in implementation details
+- Maintain full control while letting the AI handle the tedious work
 
-## Design Inspiration
+### The Process
 
-The redesign drew inspiration from [beingnbecoming.org](https://beingnbecoming.org), adopting a warm, inviting aesthetic with generous spacing and thoughtful typography while maintaining the unique character of Bière & Code.
+Here's how the redesign unfolded:
+
+1. **Initial Direction**: "Redesign the site inspired by beingnbecoming.org"
+2. **Exploration**: Claude Code analyzed the existing site structure and the inspiration source
+3. **Planning**: Proposed a comprehensive plan covering colors, typography, layout, and content
+4. **Implementation**: Autonomously implemented changes across 12 files (1,300+ line changes)
+5. **Iteration**: Refined based on feedback across 4 commits
+6. **This Post**: Even this announcement was written by Claude Code!
+
+All while maintaining git history, running tests, and following best practices.
+
+## Why This Matters
+
+Agentic coding isn't about replacing developers - it's about amplifying what they can accomplish. With tools like SAM and Claude Code:
+- Solo developers can execute ambitious projects
+- Design iterations that would take hours happen in minutes
+- More time for creative decisions, less time on repetitive implementation
+- The codebase stays clean because the AI follows your project's conventions
 
 ## What's Next?
 
-The design is live! Check out the new look and let us know what you think. We're always iterating and improving based on community feedback.
+The new design is live! But more importantly, we're excited to explore how agentic coding can help us build more features faster while maintaining quality.
 
-Join us at our next meetup to discuss the redesign (and everything else tech!) over a beer.
+Interested in learning more about agentic coding, SAM, or Claude Code? Come chat about it at our next meetup over a beer!
 
 ---
 
