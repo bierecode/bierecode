@@ -116,7 +116,17 @@ export function Homepage(props: { children?: JSX.Element }): JSX.Element {
             <p class="text-sm uppercase tracking-[0.4em] text-[#cc6c11] font-semibold">{translation().tagline}</p>
             <h1 class="font-bold text-[#3f573e] leading-[1.2] font-grotesk" style={{ "font-size": "var(--font-size-hero)" }}>{translation().title}</h1>
             <p class="text-[#6b7280] leading-[1.7] max-w-2xl mx-auto" style={{ "font-size": "var(--font-size-hero-desc)" }}>{translation().description}</p>
-            <p class="text-sm font-medium text-[#cc6c11] pt-2">{translation().socialProof}</p>
+            <div class="flex flex-col items-center gap-4 pt-4">
+              <a
+                href="https://www.meetup.com/biere-code-beer-paris/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block bg-[#cc6c11] hover:bg-[#e07d1c] text-white font-semibold px-10 py-4 rounded-[100px] shadow-md transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
+              >
+                {translation().meetupLink}
+              </a>
+              <p class="text-sm font-medium text-[#cc6c11]">{translation().socialProof}</p>
+            </div>
           </div>
         </div>
       </section>
