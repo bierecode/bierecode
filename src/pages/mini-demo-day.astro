@@ -1,0 +1,79 @@
+---
+import Layout from '../layouts/main-layout.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Mini Demo Day #1 — Bière & Code"
+  description="Welcome to the first Mini Demo Day! A night of demos, drinks, and good vibes."
+>
+  <!-- Navigation Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#fff0cb]/50 shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity duration-300">
+        <img src="/logo.svg" alt="Bière & Code Logo" width={44} height={44} />
+        <span class="text-xl font-bold text-[#3f573e] font-grotesk hidden sm:block">Bière & Code</span>
+      </a>
+      <nav class="flex items-center gap-8">
+        <a href="/about" class="text-sm font-medium text-[#3f573e] hover:text-[#cc6c11] transition-colors duration-300 relative group">
+          About
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#cc6c11] transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="/updates" class="text-sm font-medium text-[#3f573e] hover:text-[#cc6c11] transition-colors duration-300 relative group">
+          Updates
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#cc6c11] transition-all duration-300 group-hover:w-full"></span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="flex flex-col items-center justify-center min-h-screen pt-32 pb-20 px-8 md:px-16 bg-gradient-to-br from-[#fff0cb] via-[#f6f3ec] to-white text-[#3f573e]">
+    <div class="flex flex-col items-center gap-8 max-w-4xl text-center">
+      <img
+        src="/logo.svg"
+        alt="Bière & Code Logo"
+        width="120"
+        height="120"
+        loading="eager"
+        class="opacity-0 animate-[fadeIn_0.6s_ease-out_forwards]"
+      />
+
+      <div class="space-y-6 opacity-0 animate-[fadeIn_0.6s_ease-out_0.2s_forwards]">
+        <p class="text-sm uppercase tracking-[0.4em] text-[#cc6c11] font-semibold">Tonight — March 19, 2026</p>
+        <h1 class="font-grotesk font-bold text-[#3f573e]" style="font-size: var(--font-size-hero); line-height: 1.1;">
+          Welcome to the First<br />Mini Demo Day
+        </h1>
+        <p class="text-[#6b7280] max-w-2xl mx-auto leading-[1.7]" style="font-size: var(--font-size-hero-desc);">
+          Grab a beer, find a seat, and get ready for some <span class="font-semibold text-[#cc6c11]">cool demos</span> from the community.
+        </p>
+      </div>
+
+      <div class="mt-8 opacity-0 animate-[fadeIn_0.6s_ease-out_0.4s_forwards]">
+        <div class="inline-flex items-center gap-3 bg-white/70 backdrop-blur-md rounded-full px-8 py-4 shadow-md border border-[#fff0cb]/50">
+          <span class="text-2xl">🍺</span>
+          <span class="font-grotesk font-medium text-[#3f573e]" style="font-size: var(--font-size-body);">Demos &middot; Drinks &middot; Good Vibes</span>
+          <span class="text-2xl">💻</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6 mt-16 opacity-0 animate-[fadeIn_0.6s_ease-out_0.6s_forwards]">
+      <a
+        href="https://www.meetup.com/biere-code-beer-paris/"
+        class="inline-block bg-[#cc6c11] hover:bg-[#e07d1c] text-white font-semibold px-10 py-4 rounded-[100px] shadow-md transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Join us on Meetup
+      </a>
+      <a
+        href="/"
+        class="inline-block bg-[#f6f3ec] hover:bg-[#3993ff] hover:text-white text-[#3f573e] font-semibold px-10 py-4 rounded-[100px] shadow-sm border border-[#fff0cb] transition-all duration-300 hover:shadow-md hover:scale-[1.02]"
+      >
+        bierecode.com
+      </a>
+    </div>
+  </div>
+
+  <Footer />
+</Layout>
