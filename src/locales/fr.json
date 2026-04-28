@@ -72,5 +72,101 @@
   },
   "language": "Langue :",
   "french": "Français",
-  "english": "Anglais"
+  "english": "Anglais",
+  "aiOrchestration": {
+    "title": "Bière & Code : Orchestration IA",
+    "tagline": "Maîtrisez l'art de l'automatisation des workflows IA",
+    "description": "Un hub communautaire dédié aux ingénieurs et développeurs passionnés par l'orchestration IA, l'automatisation des workflows et les systèmes intelligents. Apprenez auprès des leaders du secteur, collaborez sur des projets et façonnez l'avenir de l'intelligence automatisée.",
+    "coBrandingNote": "Une initiative spécialisée de Bière & Code",
+    "heroCtaLink": "Rejoindre la Communauté Orchestration IA",
+    "heroCtaDescription": "Connectez-vous avec les ingénieurs qui construisent la prochaine génération de systèmes IA",
+    "learn": {
+      "title": "Apprendre",
+      "description": "Maîtrisez les concepts et pratiques de l'orchestration IA",
+      "card1": {
+        "title": "Fondamentaux de l'Orchestration",
+        "description": "Des approfondissements sur l'orchestration de workflows, la planification des tâches et les systèmes distribués. Apprenez à concevoir des pipelines IA scalables et fiables qui alimentent les applications modernes."
+      },
+      "card2": {
+        "title": "Outils & Frameworks du Secteur",
+        "description": "Exploration pratique des principaux frameworks d'orchestration : Airflow, Temporal, Prefect, et plus. Comparez les approches et découvrez ce qui correspond à votre cas d'usage."
+      },
+      "card3": {
+        "title": "Études de Cas Réelles",
+        "description": "Apprenez auprès de praticiens qui ont construit des systèmes IA en production. Comprenez les défis, solutions et bonnes pratiques du terrain."
+      }
+    },
+    "connect": {
+      "title": "Connecter",
+      "description": "Construisez des relations avec d'autres ingénieurs IA",
+      "card1": {
+        "title": "Meetups Mensuels",
+        "description": "Rejoignez notre communauté chaque mois pour des présentations, démos et networking. Rencontrez des ingénieurs travaillant sur l'orchestration IA, discutez des défis et collaborez sur des solutions."
+      },
+      "card2": {
+        "title": "Roundtables d'Experts",
+        "description": "Des discussions intimes avec les leaders du secteur et les praticiens. Partagez vos expériences, découvrez les techniques de pointe et développez votre réseau professionnel."
+      },
+      "card3": {
+        "title": "Communauté En Ligne",
+        "description": "Accès 24h/24 à une communauté Slack dynamique. Posez des questions, partagez des ressources, célébrez vos succès et restez à jour sur les dernières actualités de l'orchestration IA."
+      }
+    },
+    "do": {
+      "title": "Faire",
+      "description": "Expérience pratique de la construction de systèmes IA",
+      "card1": {
+        "title": "Série d'Ateliers",
+        "description": "Mains à la pâte avec des ateliers guidés. Construisez votre premier pipeline IA orchestré, déboguez de vrais workflows et implémentez des solutions de niveau production."
+      },
+      "card2": {
+        "title": "Collaborations de Projets",
+        "description": "Formez des équipes pour résoudre des problèmes d'orchestration complexes. Qu'il s'agisse d'optimiser des pipelines, intégrer de nouveaux outils ou construire des solutions spécialisées—collaborez et déployez."
+      },
+      "card3": {
+        "title": "Présentez Votre Travail",
+        "description": "Présentez vos projets d'orchestration à la communauté. Obtenez des retours, trouvez des collaborateurs et inspirez d'autres par vos implémentations."
+      }
+    },
+    "features": {
+      "bilingual": "Communauté bilingue (anglais & français)",
+      "inclusive": "Tous les niveaux d'expérience bienvenus",
+      "practical": "Accent sur les applications réelles",
+      "collaborative": "Construisez ensemble, apprenez ensemble",
+      "location": "Basée à Paris avec une portée mondiale"
+    },
+    "upcoming": {
+      "title": "Événements Futurs d'Orchestration IA",
+      "subtitle": "Rejoignez-nous pour des discussions spécialisées et de l'apprentissage pratique",
+      "cta": "Voir le calendrier des événements"
+    },
+    "testimonials": {
+      "title": "Ce que les Membres de la Communauté Disent",
+      "quote1": {
+        "text": "Enfin, une communauté focalisée sur la couche d'orchestration des systèmes IA. Les insights que j'ai gagnés ont transformé notre façon de construire les pipelines.",
+        "author": "Alex, Ingénieur ML"
+      },
+      "quote2": {
+        "text": "J'adore l'équilibre entre l'apprentissage et la pratique. Ce ne sont pas juste des présentations—nous construisons réellement des choses ensemble.",
+        "author": "Jordan, Ingénieur Platform"
+      },
+      "quote3": {
+        "text": "Le meilleur, c'est de rencontrer des gens qui comprennent les vrais défis de l'orchestration IA en production. Un réseau inestimable."
+      }
+    },
+    "faq": {
+      "q1": "Quel niveau d'expérience faut-il ?",
+      "a1": "Tous les niveaux bienvenus ! Que vous découvriez l'orchestration ou que vous déploiez des systèmes en production, il y a quelque chose pour vous. Nous avons des présentations allant des fondamentaux aux patterns avancés.",
+      "q2": "À quelle fréquence vous vous réunissez ?",
+      "a2": "Nous organisons des meetups spécialisés d'Orchestration IA mensuellement, plus des ateliers bonus et des roundtables tout au long du trimestre. Les membres restent connectés dans notre communauté en ligne.",
+      "q3": "Dois-je connaître un outil spécifique ?",
+      "a3": "Non ! Nous couvrons plusieurs frameworks d'orchestration et nous nous concentrons sur les concepts sous-jacents. Vous apprendrez ce qui a du sens pour votre tech stack.",
+      "q4": "C'est juste pour l'entreprise ?",
+      "a4": "Pas du tout. Nous accueillons les développeurs indépendants, les startups et les entreprises. Nos discussions couvrent les projets personnels aux systèmes d'entreprise."
+    },
+    "cta": {
+      "primary": "Commencez avec l'Orchestration IA",
+      "secondary": "En Savoir Plus Sur Notre Approche"
+    }
+  }
 }

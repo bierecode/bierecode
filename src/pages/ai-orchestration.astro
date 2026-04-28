@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/main-layout.astro';
+import { AIOrchestrationPage } from '../components/pages/ai-orchestration/ai-orchestration';
+import Footer from '../components/Footer.astro';
+
+const title = 'Bière & Code: AI Orchestration - Master AI Workflow Automation';
+const description = 'A dedicated community hub for engineers passionate about AI orchestration, workflow automation, and intelligent systems in Paris. Learn, connect, and build with industry leaders.';
+const image = '/og-image.png';
+---
+
+<Layout title={title} description={description} image={image}>
+  <AIOrchestrationPage client:load>
+    <Footer />
+  </AIOrchestrationPage>
+</Layout>
