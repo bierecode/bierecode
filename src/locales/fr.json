@@ -1,138 +1,169 @@
 {
-  "title": "Bière & Code Paris",
-  "tagline": "Où la technologie rencontre la communauté",
-  "description": "Un espace accueillant pour les développeurs, ingénieurs et passionnés de tech qui souhaitent explorer des idées, partager leurs connaissances et échanger autour de conversations enrichissantes et de bières artisanales.",
-  "socialProof": "Rejoignez plus de 150 passionnés de tech à Paris",
-  "meetupLink": "Rejoindre notre prochain meetup",
-  "updatesLink": "Actualités de la communauté",
-  "aboutLink": "À Propos",
-  "events": {
-    "title": "Rejoignez-nous",
-    "monthly": {
-      "title": "Meetups Mensuels",
-      "description": "Chaque mois, nous nous retrouvons pour des présentations tech, démos de projets et networking. Format typique : 18h arrivée, 18h30 présentations éclair, 19h discussions ouvertes. Apportez vos projets, questions ou simplement votre curiosité.",
-      "cta": "S'inscrire sur Meetup"
-    },
-    "updates": {
-      "title": "Actualités de la Communauté",
-      "description": "Récaps d'événements, portraits de membres, tendances tech et présentations de projets. Des posts hebdomadaires pour rester connecté à ce que notre communauté construit et apprend ensemble.",
-      "cta": "Lire les dernières news"
-    },
-    "community": {
-      "title": "Ouvert à Tous",
-      "description": "Tous les langages, frameworks et niveaux d'expérience sont les bienvenus. Des étudiants aux ingénieurs seniors, des reconversions aux fondateurs-si vous êtes curieux de tech, vous avez votre place ici.",
-      "cta": "En savoir plus"
-    }
+  "title": "Biere & Code Paris",
+  "tagline": "Chaque jeudi a Paris",
+  "description": "Biere, code et bonnes conversations. Un meetup hebdomadaire pour les developpeurs, ingenieurs et passionnes de tech.",
+  "socialProof": "176 membres et ca continue",
+  "meetupLink": "Rejoignez-nous ce jeudi",
+  "updatesLink": "Actualites",
+  "aboutLink": "A Propos",
+  "language": "Langue :",
+  "french": "FR",
+  "english": "EN",
+  "nextEvent": {
+    "badge": "CE JEUDI",
+    "title": "Meetup Hebdomadaire",
+    "date": "Chaque jeudi",
+    "time": "19h00",
+    "venue": "Le Hasard Ludique",
+    "address": "128 Avenue de Saint-Ouen, 75018 Paris",
+    "description": "Venez pour des talks tech, demos de projets et networking. Tous niveaux bienvenus.",
+    "cta": "S'inscrire sur Meetup"
   },
   "firstTime": {
-    "title": "Première Fois ?",
-    "subtitle": "Voici à Quoi S'Attendre",
+    "title": "Premiere Fois ?",
+    "subtitle": "Voici a Quoi S'Attendre",
     "points": [
-      "Pas d'inscription nécessaire-venez simplement et présentez-vous",
-      "Tous les niveaux bienvenus, des débutants aux experts",
-      "Ambiance décontractée : apportez projets, questions ou juste votre curiosité",
+      "Pas d'inscription necessaire - venez simplement et presentez-vous",
+      "Tous les niveaux bienvenus, des debutants aux experts",
+      "Ambiance decontractee : apportez projets, questions ou juste votre curiosite",
       "Faites des rencontres, trouvez des collaborateurs ou profitez simplement de bonnes conversations"
     ]
   },
+  "community": {
+    "title": "Dernieres Nouvelles",
+    "description": "Recaps d'evenements, portraits de membres et presentations de projets.",
+    "cta": "Lire les actualites"
+  },
+  "events": {
+    "title": "Rejoignez-nous",
+    "monthly": {
+      "title": "Meetups Hebdomadaires",
+      "description": "Chaque jeudi, nous nous retrouvons pour des presentations tech, demos de projets et networking. Apportez vos projets, questions ou simplement votre curiosite.",
+      "cta": "S'inscrire sur Meetup"
+    },
+    "updates": {
+      "title": "Actualites de la Communaute",
+      "description": "Recaps d'evenements, portraits de membres, tendances tech et presentations de projets. Des posts hebdomadaires pour rester connecte a ce que notre communaute construit et apprend ensemble.",
+      "cta": "Lire les dernieres news"
+    },
+    "community": {
+      "title": "Ouvert a Tous",
+      "description": "Tous les langages, frameworks et niveaux d'experience sont les bienvenus. Des etudiants aux ingenieurs seniors, des reconversions aux fondateurs - si vous etes curieux de tech, vous avez votre place ici.",
+      "cta": "En savoir plus"
+    }
+  },
   "why": {
-    "title": "Pourquoi Bière & Code ?",
+    "title": "Pourquoi Biere & Code ?",
     "learnTogether": {
       "title": "Apprendre Ensemble",
-      "description": "Partagez des connaissances, discutez des technologies émergentes et explorez diverses perspectives. Des sessions de débogage aux débats d'architecture, nous grandissons en apprenant les uns des autres."
+      "description": "Partagez des connaissances, discutez des technologies emergentes et explorez diverses perspectives. Des sessions de debogage aux debats d'architecture, nous grandissons en apprenant les uns des autres."
     },
     "relax": {
-      "title": "Se Détendre & Se Connecter",
-      "description": "La tech n'a pas besoin d'être intense. Rencontrez-vous dans un cadre décontracté où vous pouvez être vous-même, construire de vraies amitiés et trouver votre équilibre vie pro-perso dans la communauté."
+      "title": "Se Detendre & Se Connecter",
+      "description": "La tech n'a pas besoin d'etre intense. Rencontrez-vous dans un cadre decontracte ou vous pouvez etre vous-meme, construire de vraies amities et trouver votre equilibre vie pro-perso dans la communaute."
     },
     "network": {
-      "title": "Développer Votre Réseau",
-      "description": "Connectez-vous avec d'autres développeurs, découvrez des opportunités de collaboration, trouvez des mentors ou mentorés. Certaines des meilleures amitiés tech de Paris ont commencé autour d'une bière."
+      "title": "Developper Votre Reseau",
+      "description": "Connectez-vous avec d'autres developpeurs, decouvrez des opportunites de collaboration, trouvez des mentors ou mentores. Certaines des meilleures amities tech de Paris ont commence autour d'une biere."
     }
   },
   "about": {
-    "title": "À Propos",
-    "description": "Rencontrez l'équipe derrière Bière & Code Paris.",
+    "title": "A Propos",
+    "description": "Rencontrez l'equipe derriere Biere & Code Paris.",
+    "stats": {
+      "members": "176+",
+      "membersLabel": "Membres",
+      "regulars": "30+",
+      "regularsLabel": "Reguliers Hebdo",
+      "meetups": "50+",
+      "meetupsLabel": "Meetups Organises"
+    },
+    "story": {
+      "title": "Notre Histoire",
+      "description": "Ce qui a commence comme deux amis prenant une biere en parlant de code est devenu l'une des communautes tech les plus accueillantes de Paris. Chaque jeudi, plus de 30 developpeurs, ingenieurs et passionnes de tech se retrouvent pour partager des idees, presenter des projets et echanger autour d'une biere artisanale. Pas d'agenda corporate, pas de gatekeeping - juste des gens qui aiment construire."
+    },
+    "venue": {
+      "title": "Ou Nous Retrouver",
+      "description": "Nous nous retrouvons chaque semaine au Hasard Ludique dans le 18eme arrondissement. Bonnes bieres, beaucoup d'espace et une ambiance decontractee parfaite pour parler code."
+    },
     "raph": {
-      "role": "Fondateur et Hôte",
-      "bio": "Senior Developer Evangelist chez Defang et entrepreneur en série, Raph est profondément ancré dans l'écosystème startup. Fondateur d'Ephemere Creative et de Tembo Tech, il allie expertise technique et passion pour le mentorat, créant des ponts entre les technologies cloud complexes et les développeurs."
+      "role": "Fondateur et Hote",
+      "bio": "Senior Developer Evangelist chez Defang et entrepreneur en serie, Raph est profondement ancre dans l'ecosysteme startup. Fondateur d'Ephemere Creative et de Tembo Tech, il allie expertise technique et passion pour le mentorat, creant des ponts entre les technologies cloud complexes et les developpeurs."
     },
     "miguel": {
-      "role": "Co-hôte",
-      "bio": "Senior Software Engineer chez Gencove (NYC), spécialisé dans les infrastructures Cloud à grande échelle et les systèmes Backend pour l'analyse génomique. Contributeur open-source actif et ancien digital nomad, Miguel apporte une perspective internationale et un fort esprit entrepreneurial, ayant conçu et lancé des produits à succès sur multiples plateformes."
+      "role": "Co-hote",
+      "bio": "Senior Software Engineer chez Gencove (NYC), specialise dans les infrastructures Cloud a grande echelle et les systemes Backend pour l'analyse genomique. Contributeur open-source actif et ancien digital nomad, Miguel apporte une perspective internationale et un fort esprit entrepreneurial, ayant concu et lance des produits a succes sur multiples plateformes."
     }
   },
   "footer": {
-    "mission": "Construire une communauté tech accueillante à Paris, une bière à la fois.",
+    "mission": "Construire une communaute tech accueillante a Paris, une biere a la fois.",
     "quickLinks": "Liens Rapides",
     "connect": "Se Connecter",
     "info": "Infos",
     "location": "Paris, France",
     "codeOfConduct": "Code de Conduite",
-    "builtWith": "Fait avec ❤️ par la communauté"
+    "builtWith": "Fait avec amour par la communaute"
   },
-  "language": "Langue :",
-  "french": "Français",
-  "english": "Anglais",
   "aiOrchestration": {
-    "title": "Bière & Code : Orchestration IA",
-    "tagline": "Un nouvel événement en préparation pour les builders parisiens",
-    "description": "Nous explorons un nouvel événement Bière & Code centré sur l'orchestration IA : agents, workflows multi-étapes, évaluation, outils et retours d'expérience de déploiement. Cette page reste volontairement simple parce que le format est encore en construction.",
-    "status": "Premier événement en préparation",
-    "coBrandingNote": "Une initiative spécialisée de Bière & Code",
+    "title": "Biere & Code : Orchestration IA",
+    "tagline": "Un nouvel evenement en preparation pour les builders parisiens",
+    "description": "Nous explorons un nouvel evenement Biere & Code centre sur l'orchestration IA : agents, workflows multi-etapes, evaluation, outils et retours d'experience de deploiement. Cette page reste volontairement simple parce que le format est encore en construction.",
+    "status": "Premier evenement en preparation",
+    "coBrandingNote": "Une initiative specialisee de Biere & Code",
     "heroCtaLink": "Suivre le Meetup",
-    "heroCtaDescription": "Utilisez Meetup pour signaler votre intérêt pendant que nous définissons la première session.",
-    "secondaryCta": "Lire les actualités",
+    "heroCtaDescription": "Utilisez Meetup pour signaler votre interet pendant que nous definissons la premiere session.",
+    "secondaryCta": "Lire les actualites",
     "themes": {
       "title": "Ce que nous voulons aborder",
-      "description": "L'objectif est une discussion pratique, pas un discours abstrait. Nous voulons une première soirée utile pour comparer les approches, partager les compromis et apprendre à partir de systèmes réels.",
+      "description": "L'objectif est une discussion pratique, pas un discours abstrait. Nous voulons une premiere soiree utile pour comparer les approches, partager les compromis et apprendre a partir de systemes reels.",
       "cards": [
         {
           "title": "Agents et conception de workflows",
-          "description": "Comment les équipes structurent des systèmes multi-étapes, décident où les agents sont utiles et gardent un workflow compréhensible quand la complexité commence à monter."
+          "description": "Comment les equipes structurent des systemes multi-etapes, decident ou les agents sont utiles et gardent un workflow comprehensible quand la complexite commence a monter."
         },
         {
-          "title": "Évaluation et réalité opérationnelle",
-          "description": "Ce qui casse réellement en production : outils instables, latence, manque d'observabilité, dérive de prompt, retries et échecs de handoff entre composants."
+          "title": "Evaluation et realite operationnelle",
+          "description": "Ce qui casse reellement en production : outils instables, latence, manque d'observabilite, derive de prompt, retries et echecs de handoff entre composants."
         },
         {
-          "title": "Démos, études de cas et code",
-          "description": "Des démos courtes, des revues d'architecture et des exemples issus de vrais projets plutôt que de larges présentations produit."
+          "title": "Demos, etudes de cas et code",
+          "description": "Des demos courtes, des revues d'architecture et des exemples issus de vrais projets plutot que de larges presentations produit."
         }
       ]
     },
     "firstEvent": {
-      "title": "À quoi pourrait ressembler la première soirée",
-      "description": "Nous concevons la première session comme une expérimentation légère, pas comme une sous-marque déjà établie avec une cadence fixe.",
+      "title": "A quoi pourrait ressembler la premiere soiree",
+      "description": "Nous concevons la premiere session comme une experimentation legere, pas comme une sous-marque deja etablie avec une cadence fixe.",
       "items": [
-        "Un format de soirée compact avec une ou deux interventions courtes puis une seconde partie plus orientée discussion.",
+        "Un format de soiree compact avec une ou deux interventions courtes puis une seconde partie plus orientee discussion.",
         "Des exemples de builders qui utilisent des agents, des outils d'orchestration ou leurs propres stacks de workflows.",
-        "Un Q&A ouvert sur la fiabilité, l'évaluation, les choix d'outils et les cas où l'orchestration vaut réellement le coût."
+        "Un Q&A ouvert sur la fiabilite, l'evaluation, les choix d'outils et les cas ou l'orchestration vaut reellement le cout."
       ]
     },
     "audience": {
       "title": "Pour qui",
       "points": [
-        "Les développeurs qui construisent des workflows d'agents, des outils internes ou des fonctionnalités IA en production.",
-        "Les personnes qui comparent des frameworks et cherchent à comprendre quand l'orchestration apporte une vraie valeur.",
-        "Les équipes qui se soucient du débogage, de l'évaluation, de la fiabilité et du déploiement de systèmes concrets."
+        "Les developpeurs qui construisent des workflows d'agents, des outils internes ou des fonctionnalites IA en production.",
+        "Les personnes qui comparent des frameworks et cherchent a comprendre quand l'orchestration apporte une vraie valeur.",
+        "Les equipes qui se soucient du debogage, de l'evaluation, de la fiabilite et du deploiement de systemes concrets."
       ]
     },
     "faq": {
       "title": "FAQ",
-      "q1": "L'événement est-il déjà annoncé ?",
-      "a1": "Pas complètement. Cette page sert à clarifier la direction et à recueillir de l'intérêt pendant que la première session est encore en préparation.",
-      "q2": "Avez-vous déjà une date ?",
-      "a2": "Pas encore. Nous testons encore la demande, le format et le périmètre avant d'ajouter une date au calendrier.",
-      "q3": "À qui cela s'adresse-t-il ?",
-      "a3": "Aux ingénieurs, builders produit, fondateurs et leads techniques qui expérimentent activement avec les systèmes agentiques, l'orchestration ou l'évaluation.",
-      "q4": "Puis-je proposer un sujet ou une démo ?",
-      "a4": "Oui. Rejoignez la communauté Meetup et indiquez que vous souhaitez présenter, partager une étude de cas ou aider à définir la première session."
+      "q1": "L'evenement est-il deja annonce ?",
+      "a1": "Pas completement. Cette page sert a clarifier la direction et a recueillir de l'interet pendant que la premiere session est encore en preparation.",
+      "q2": "Avez-vous deja une date ?",
+      "a2": "Pas encore. Nous testons encore la demande, le format et le perimetre avant d'ajouter une date au calendrier.",
+      "q3": "A qui cela s'adresse-t-il ?",
+      "a3": "Aux ingenieurs, builders produit, fondateurs et leads techniques qui experimentent activement avec les systemes agentiques, l'orchestration ou l'evaluation.",
+      "q4": "Puis-je proposer un sujet ou une demo ?",
+      "a4": "Oui. Rejoignez la communaute Meetup et indiquez que vous souhaitez presenter, partager une etude de cas ou aider a definir la premiere session."
     },
     "cta": {
-      "title": "Aidez-nous à définir la première soirée orchestration IA",
-      "description": "Si ce sujet est pertinent pour votre travail, suivez le Meetup et gardez un œil sur les actualités. Ce signal aidera à décider du premier format, des sujets et des intervenants.",
-      "primary": "Montrer son intérêt sur Meetup",
-      "secondary": "Voir les dernières actualités"
+      "title": "Aidez-nous a definir la premiere soiree orchestration IA",
+      "description": "Si ce sujet est pertinent pour votre travail, suivez le Meetup et gardez un oeil sur les actualites. Ce signal aidera a decider du premier format, des sujets et des intervenants.",
+      "primary": "Montrer son interet sur Meetup",
+      "secondary": "Voir les dernieres actualites"
     }
   }
 }
