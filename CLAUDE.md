@@ -12,7 +12,7 @@ If `SAM_WORKSPACE_ID` is present, this repo is running inside a SAM workspace.
 - **This repo lives inside the `global` submodule workspace.** If your task changes this repo, push here first. If the parent repo also needs the new submodule pointer, update `global/` after the submodule push.
 - **Check shared files before editing.** `src/locales/en.json`, `src/locales/fr.json`, `src/content/updates/`, `src/layouts/main-layout.astro`, and shared page components are common conflict points. Use `list_project_agents` before modifying them.
 - **Use SAM network tools for previews.** When the human needs to see a page, run `npm run dev` or `npm run preview` and register the port with `expose_port` instead of only describing the result.
-- **Verify honestly.** Run `npm run build` after every change. After pushing, check `get_ci_status` if CI exists for the branch. Do not claim deployment unless `get_deployment_status` or the hosting pipeline actually confirms it.
+- **Verify honestly.** Run `npm run build` after every change. After pushing, use `gh` if you need to inspect workflow status for the branch. Do not claim deployment unless `get_deployment_status` or the hosting pipeline actually confirms it.
 
 ## Commands
 
