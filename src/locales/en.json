@@ -14,9 +14,8 @@
     "title": "Weekly Meetup",
     "date": "Every Thursday",
     "time": "7:00 PM",
-    "venue": "Le Hasard Ludique",
-    "address": "128 Avenue de Saint-Ouen, 75018 Paris",
-    "description": "Drop in for tech talks, project demos, and open networking. All levels welcome.",
+    "vibe": "Different bar each week - check Meetup for this week's spot",
+    "description": "Tech talks, project demos, and open networking. All levels welcome.",
     "cta": "RSVP on Meetup"
   },
   "firstTime": {
@@ -84,7 +83,7 @@
     },
     "venue": {
       "title": "Where We Meet",
-      "description": "We meet weekly at Le Hasard Ludique in the 18th arrondissement. Great beer, plenty of space, and a relaxed atmosphere perfect for coding conversations."
+      "description": "We try a different bar every week across Paris. Check our Meetup page for this week's spot. The only constant: good beer and good conversation."
     },
     "raph": {
       "role": "Founder and Host",

@@ -14,9 +14,8 @@
     "title": "Meetup Hebdomadaire",
     "date": "Chaque jeudi",
     "time": "19h00",
-    "venue": "Le Hasard Ludique",
-    "address": "128 Avenue de Saint-Ouen, 75018 Paris",
-    "description": "Venez pour des talks tech, demos de projets et networking. Tous niveaux bienvenus.",
+    "vibe": "Un bar different chaque semaine - consultez Meetup pour le lieu",
+    "description": "Talks tech, demos de projets et networking. Tous niveaux bienvenus.",
     "cta": "S'inscrire sur Meetup"
   },
   "firstTime": {
@@ -84,7 +83,7 @@
     },
     "venue": {
       "title": "Ou Nous Retrouver",
-      "description": "Nous nous retrouvons chaque semaine au Hasard Ludique dans le 18eme arrondissement. Bonnes bieres, beaucoup d'espace et une ambiance decontractee parfaite pour parler code."
+      "description": "On change de bar chaque semaine a travers Paris. Consultez notre page Meetup pour le lieu de la semaine. La seule constante : bonnes bieres et bonnes conversations."
     },
     "raph": {
       "role": "Fondateur et Hote",

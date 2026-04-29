@@ -150,7 +150,7 @@ export function AboutPage(): JSX.Element {
         </div>
 
         {/* Where We Meet */}
-        <div class="mb-16 bg-[#FFE221]/10 border border-[#FFE221]/30 rounded-2xl p-8">
+        <div class="mb-16 bg-gray-50 border border-gray-100 rounded-2xl p-8">
           <h2 class="text-2xl font-bold text-[#1a1a1a] font-grotesk mb-4">{t().about.venue.title}</h2>
           <p class="text-gray-600 leading-relaxed">{t().about.venue.description}</p>
         </div>
