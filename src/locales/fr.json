@@ -20,7 +20,7 @@
     },
     "community": {
       "title": "Ouvert à Tous",
-      "description": "Tous les langages, frameworks et niveaux d'expérience sont les bienvenus. Des étudiants aux ingénieurs seniors, des reconversions aux fondateurs—si vous êtes curieux de tech, vous avez votre place ici.",
+      "description": "Tous les langages, frameworks et niveaux d'expérience sont les bienvenus. Des étudiants aux ingénieurs seniors, des reconversions aux fondateurs-si vous êtes curieux de tech, vous avez votre place ici.",
       "cta": "En savoir plus"
     }
   },
@@ -28,7 +28,7 @@
     "title": "Première Fois ?",
     "subtitle": "Voici à Quoi S'Attendre",
     "points": [
-      "Pas d'inscription nécessaire—venez simplement et présentez-vous",
+      "Pas d'inscription nécessaire-venez simplement et présentez-vous",
       "Tous les niveaux bienvenus, des débutants aux experts",
       "Ambiance décontractée : apportez projets, questions ou juste votre curiosité",
       "Faites des rencontres, trouvez des collaborateurs ou profitez simplement de bonnes conversations"
@@ -75,98 +75,64 @@
   "english": "Anglais",
   "aiOrchestration": {
     "title": "Bière & Code : Orchestration IA",
-    "tagline": "Maîtrisez l'art de l'automatisation des workflows IA",
-    "description": "Un hub communautaire dédié aux ingénieurs et développeurs passionnés par l'orchestration IA, l'automatisation des workflows et les systèmes intelligents. Apprenez auprès des leaders du secteur, collaborez sur des projets et façonnez l'avenir de l'intelligence automatisée.",
+    "tagline": "Un nouvel événement en préparation pour les builders parisiens",
+    "description": "Nous explorons un nouvel événement Bière & Code centré sur l'orchestration IA : agents, workflows multi-étapes, évaluation, outils et retours d'expérience de déploiement. Cette page reste volontairement simple parce que le format est encore en construction.",
+    "status": "Premier événement en préparation",
     "coBrandingNote": "Une initiative spécialisée de Bière & Code",
-    "heroCtaLink": "Rejoindre la Communauté Orchestration IA",
-    "heroCtaDescription": "Connectez-vous avec les ingénieurs qui construisent la prochaine génération de systèmes IA",
-    "learn": {
-      "title": "Apprendre",
-      "description": "Maîtrisez les concepts et pratiques de l'orchestration IA",
-      "card1": {
-        "title": "Fondamentaux de l'Orchestration",
-        "description": "Des approfondissements sur l'orchestration de workflows, la planification des tâches et les systèmes distribués. Apprenez à concevoir des pipelines IA scalables et fiables qui alimentent les applications modernes."
-      },
-      "card2": {
-        "title": "Outils & Frameworks du Secteur",
-        "description": "Exploration pratique des principaux frameworks d'orchestration : Airflow, Temporal, Prefect, et plus. Comparez les approches et découvrez ce qui correspond à votre cas d'usage."
-      },
-      "card3": {
-        "title": "Études de Cas Réelles",
-        "description": "Apprenez auprès de praticiens qui ont construit des systèmes IA en production. Comprenez les défis, solutions et bonnes pratiques du terrain."
-      }
+    "heroCtaLink": "Suivre le Meetup",
+    "heroCtaDescription": "Utilisez Meetup pour signaler votre intérêt pendant que nous définissons la première session.",
+    "secondaryCta": "Lire les actualités",
+    "themes": {
+      "title": "Ce que nous voulons aborder",
+      "description": "L'objectif est une discussion pratique, pas un discours abstrait. Nous voulons une première soirée utile pour comparer les approches, partager les compromis et apprendre à partir de systèmes réels.",
+      "cards": [
+        {
+          "title": "Agents et conception de workflows",
+          "description": "Comment les équipes structurent des systèmes multi-étapes, décident où les agents sont utiles et gardent un workflow compréhensible quand la complexité commence à monter."
+        },
+        {
+          "title": "Évaluation et réalité opérationnelle",
+          "description": "Ce qui casse réellement en production : outils instables, latence, manque d'observabilité, dérive de prompt, retries et échecs de handoff entre composants."
+        },
+        {
+          "title": "Démos, études de cas et code",
+          "description": "Des démos courtes, des revues d'architecture et des exemples issus de vrais projets plutôt que de larges présentations produit."
+        }
+      ]
     },
-    "connect": {
-      "title": "Connecter",
-      "description": "Construisez des relations avec d'autres ingénieurs IA",
-      "card1": {
-        "title": "Meetups Mensuels",
-        "description": "Rejoignez notre communauté chaque mois pour des présentations, démos et networking. Rencontrez des ingénieurs travaillant sur l'orchestration IA, discutez des défis et collaborez sur des solutions."
-      },
-      "card2": {
-        "title": "Roundtables d'Experts",
-        "description": "Des discussions intimes avec les leaders du secteur et les praticiens. Partagez vos expériences, découvrez les techniques de pointe et développez votre réseau professionnel."
-      },
-      "card3": {
-        "title": "Communauté En Ligne",
-        "description": "Accès 24h/24 à une communauté Slack dynamique. Posez des questions, partagez des ressources, célébrez vos succès et restez à jour sur les dernières actualités de l'orchestration IA."
-      }
+    "firstEvent": {
+      "title": "À quoi pourrait ressembler la première soirée",
+      "description": "Nous concevons la première session comme une expérimentation légère, pas comme une sous-marque déjà établie avec une cadence fixe.",
+      "items": [
+        "Un format de soirée compact avec une ou deux interventions courtes puis une seconde partie plus orientée discussion.",
+        "Des exemples de builders qui utilisent des agents, des outils d'orchestration ou leurs propres stacks de workflows.",
+        "Un Q&A ouvert sur la fiabilité, l'évaluation, les choix d'outils et les cas où l'orchestration vaut réellement le coût."
+      ]
     },
-    "do": {
-      "title": "Faire",
-      "description": "Expérience pratique de la construction de systèmes IA",
-      "card1": {
-        "title": "Série d'Ateliers",
-        "description": "Mains à la pâte avec des ateliers guidés. Construisez votre premier pipeline IA orchestré, déboguez de vrais workflows et implémentez des solutions de niveau production."
-      },
-      "card2": {
-        "title": "Collaborations de Projets",
-        "description": "Formez des équipes pour résoudre des problèmes d'orchestration complexes. Qu'il s'agisse d'optimiser des pipelines, intégrer de nouveaux outils ou construire des solutions spécialisées—collaborez et déployez."
-      },
-      "card3": {
-        "title": "Présentez Votre Travail",
-        "description": "Présentez vos projets d'orchestration à la communauté. Obtenez des retours, trouvez des collaborateurs et inspirez d'autres par vos implémentations."
-      }
-    },
-    "features": {
-      "bilingual": "Communauté bilingue (anglais & français)",
-      "inclusive": "Tous les niveaux d'expérience bienvenus",
-      "practical": "Accent sur les applications réelles",
-      "collaborative": "Construisez ensemble, apprenez ensemble",
-      "location": "Basée à Paris avec une portée mondiale"
-    },
-    "upcoming": {
-      "title": "Événements Futurs d'Orchestration IA",
-      "subtitle": "Rejoignez-nous pour des discussions spécialisées et de l'apprentissage pratique",
-      "cta": "Voir le calendrier des événements"
-    },
-    "testimonials": {
-      "title": "Ce que les Membres de la Communauté Disent",
-      "quote1": {
-        "text": "Enfin, une communauté focalisée sur la couche d'orchestration des systèmes IA. Les insights que j'ai gagnés ont transformé notre façon de construire les pipelines.",
-        "author": "Alex, Ingénieur ML"
-      },
-      "quote2": {
-        "text": "J'adore l'équilibre entre l'apprentissage et la pratique. Ce ne sont pas juste des présentations—nous construisons réellement des choses ensemble.",
-        "author": "Jordan, Ingénieur Platform"
-      },
-      "quote3": {
-        "text": "Le meilleur, c'est de rencontrer des gens qui comprennent les vrais défis de l'orchestration IA en production. Un réseau inestimable."
-      }
+    "audience": {
+      "title": "Pour qui",
+      "points": [
+        "Les développeurs qui construisent des workflows d'agents, des outils internes ou des fonctionnalités IA en production.",
+        "Les personnes qui comparent des frameworks et cherchent à comprendre quand l'orchestration apporte une vraie valeur.",
+        "Les équipes qui se soucient du débogage, de l'évaluation, de la fiabilité et du déploiement de systèmes concrets."
+      ]
     },
     "faq": {
-      "q1": "Quel niveau d'expérience faut-il ?",
-      "a1": "Tous les niveaux bienvenus ! Que vous découvriez l'orchestration ou que vous déploiez des systèmes en production, il y a quelque chose pour vous. Nous avons des présentations allant des fondamentaux aux patterns avancés.",
-      "q2": "À quelle fréquence vous vous réunissez ?",
-      "a2": "Nous organisons des meetups spécialisés d'Orchestration IA mensuellement, plus des ateliers bonus et des roundtables tout au long du trimestre. Les membres restent connectés dans notre communauté en ligne.",
-      "q3": "Dois-je connaître un outil spécifique ?",
-      "a3": "Non ! Nous couvrons plusieurs frameworks d'orchestration et nous nous concentrons sur les concepts sous-jacents. Vous apprendrez ce qui a du sens pour votre tech stack.",
-      "q4": "C'est juste pour l'entreprise ?",
-      "a4": "Pas du tout. Nous accueillons les développeurs indépendants, les startups et les entreprises. Nos discussions couvrent les projets personnels aux systèmes d'entreprise."
+      "title": "FAQ",
+      "q1": "L'événement est-il déjà annoncé ?",
+      "a1": "Pas complètement. Cette page sert à clarifier la direction et à recueillir de l'intérêt pendant que la première session est encore en préparation.",
+      "q2": "Avez-vous déjà une date ?",
+      "a2": "Pas encore. Nous testons encore la demande, le format et le périmètre avant d'ajouter une date au calendrier.",
+      "q3": "À qui cela s'adresse-t-il ?",
+      "a3": "Aux ingénieurs, builders produit, fondateurs et leads techniques qui expérimentent activement avec les systèmes agentiques, l'orchestration ou l'évaluation.",
+      "q4": "Puis-je proposer un sujet ou une démo ?",
+      "a4": "Oui. Rejoignez la communauté Meetup et indiquez que vous souhaitez présenter, partager une étude de cas ou aider à définir la première session."
     },
     "cta": {
-      "primary": "Commencez avec l'Orchestration IA",
-      "secondary": "En Savoir Plus Sur Notre Approche"
+      "title": "Aidez-nous à définir la première soirée orchestration IA",
+      "description": "Si ce sujet est pertinent pour votre travail, suivez le Meetup et gardez un œil sur les actualités. Ce signal aidera à décider du premier format, des sujets et des intervenants.",
+      "primary": "Montrer son intérêt sur Meetup",
+      "secondary": "Voir les dernières actualités"
     }
   }
 }

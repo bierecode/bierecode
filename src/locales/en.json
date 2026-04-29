@@ -20,7 +20,7 @@
     },
     "community": {
       "title": "Open to All",
-      "description": "All languages, frameworks, and experience levels welcome. From students to senior engineers, career-switchers to founders—if you're curious about tech, you belong here.",
+      "description": "All languages, frameworks, and experience levels welcome. From students to senior engineers, career-switchers to founders-if you're curious about tech, you belong here.",
       "cta": "Learn about us"
     }
   },
@@ -28,7 +28,7 @@
     "title": "First Time?",
     "subtitle": "Here's What to Expect",
     "points": [
-      "No registration needed—just show up and introduce yourself",
+      "No registration needed-just show up and introduce yourself",
       "All skill levels welcome, from beginners to experts",
       "Relaxed atmosphere: bring projects, questions, or just curiosity",
       "Make friends, find collaborators, or simply enjoy good conversation"
@@ -75,98 +75,64 @@
   "english": "English",
   "aiOrchestration": {
     "title": "Bière & Code: AI Orchestration",
-    "tagline": "Master the art of AI workflow automation",
-    "description": "A dedicated community hub for engineers and developers passionate about AI orchestration, workflow automation, and intelligent systems. Learn from industry leaders, collaborate on projects, and shape the future of automated intelligence.",
+    "tagline": "A new event in planning for Paris builders",
+    "description": "We are exploring a new Bière & Code event focused on AI orchestration: agents, multi-step workflows, evaluation, tooling, and real deployment stories. This page is intentionally simple because the format is still being shaped.",
+    "status": "First event in planning",
     "coBrandingNote": "A specialized initiative by Bière & Code",
-    "heroCtaLink": "Join the AI Orchestration Community",
-    "heroCtaDescription": "Connect with engineers building the next generation of AI systems",
-    "learn": {
-      "title": "Learn",
-      "description": "Master AI orchestration concepts and practices",
-      "card1": {
-        "title": "Orchestration Fundamentals",
-        "description": "Deep dives into workflow orchestration, task scheduling, and distributed systems. Learn how to design scalable, reliable AI pipelines that power modern applications."
-      },
-      "card2": {
-        "title": "Industry Tools & Frameworks",
-        "description": "Hands-on exploration of leading orchestration frameworks: Airflow, Temporal, Prefect, and more. Compare approaches and discover which fits your use case."
-      },
-      "card3": {
-        "title": "Real-World Case Studies",
-        "description": "Learn from practitioners who've built production AI systems. Understand the challenges, solutions, and best practices from the trenches."
-      }
+    "heroCtaLink": "Follow the meetup",
+    "heroCtaDescription": "Use Meetup to show interest while we shape the first session.",
+    "secondaryCta": "Read community updates",
+    "themes": {
+      "title": "What we want to cover",
+      "description": "The goal is practical discussion, not abstract hype. We want a first event that helps builders compare approaches, share tradeoffs, and learn from real systems.",
+      "cards": [
+        {
+          "title": "Agents and workflow design",
+          "description": "How people structure multi-step systems, decide where agents help, and keep the workflow understandable when complexity starts to grow."
+        },
+        {
+          "title": "Evaluation and operational reality",
+          "description": "What actually breaks in production: flaky tools, latency, observability gaps, prompt drift, retries, and handoff failures between components."
+        },
+        {
+          "title": "Demos, case studies, and code",
+          "description": "Short demos, architecture walk-throughs, and examples from real projects instead of broad product pitches."
+        }
+      ]
     },
-    "connect": {
-      "title": "Connect",
-      "description": "Build relationships with fellow AI engineers",
-      "card1": {
-        "title": "Monthly Meetups",
-        "description": "Join our community every month for talks, demos, and networking. Meet engineers working on AI orchestration, discuss challenges, and collaborate on solutions."
-      },
-      "card2": {
-        "title": "Expert Roundtables",
-        "description": "Intimate discussions with industry leaders and practitioners. Share war stories, learn cutting-edge techniques, and grow your professional network."
-      },
-      "card3": {
-        "title": "Online Community",
-        "description": "24/7 access to a vibrant Slack community. Ask questions, share resources, celebrate wins, and stay updated on the latest in AI orchestration."
-      }
+    "firstEvent": {
+      "title": "What the first event may look like",
+      "description": "We are designing the first session as a lightweight experiment, not as a fully formed sub-brand with a fixed cadence.",
+      "items": [
+        "A compact evening format with one or two short talks and a discussion-heavy second half.",
+        "Examples from real builders using agents, orchestration tools, or custom workflow stacks.",
+        "Open Q&A around reliability, evaluation, tooling choices, and when orchestration is worth the cost."
+      ]
     },
-    "do": {
-      "title": "Do",
-      "description": "Hands-on experience building AI systems",
-      "card1": {
-        "title": "Workshop Series",
-        "description": "Get hands-on with guided workshops. Build your first orchestrated AI pipeline, debug real workflows, and implement production-grade solutions."
-      },
-      "card2": {
-        "title": "Project Collaborations",
-        "description": "Form teams to tackle challenging orchestration problems. Whether it's optimizing pipelines, integrating new tools, or building specialized solutions—collaborate and ship."
-      },
-      "card3": {
-        "title": "Showcase Your Work",
-        "description": "Present your orchestration projects to the community. Get feedback, find collaborators, and inspire others with your implementations."
-      }
-    },
-    "features": {
-      "bilingual": "Bilingual community (English & French)",
-      "inclusive": "All experience levels welcome",
-      "practical": "Focus on real-world applications",
-      "collaborative": "Build together, learn together",
-      "location": "Paris-based with global reach"
-    },
-    "upcoming": {
-      "title": "Upcoming AI Orchestration Events",
-      "subtitle": "Join us for specialized discussions and hands-on learning",
-      "cta": "See full event calendar"
-    },
-    "testimonials": {
-      "title": "What Community Members Say",
-      "quote1": {
-        "text": "Finally, a community focused on the orchestration layer of AI systems. The insights I've gained have transformed how we build pipelines.",
-        "author": "Alex, ML Engineer"
-      },
-      "quote2": {
-        "text": "Love the balance between learning and doing. These aren't just talks—we're actually building things together.",
-        "author": "Jordan, Platform Engineer"
-      },
-      "quote3": {
-        "text": "The best part is meeting people who understand the real challenges of production AI orchestration. Invaluable network."
-      }
+    "audience": {
+      "title": "Who should come",
+      "points": [
+        "Developers building agent workflows, internal tools, or production AI features.",
+        "People comparing frameworks and trying to understand where orchestration adds value.",
+        "Teams that care about debugging, evaluation, reliability, and shipping practical systems."
+      ]
     },
     "faq": {
-      "q1": "What experience level do I need?",
-      "a1": "All levels welcome! Whether you're new to orchestration or shipping production systems, there's something for you. We have talks ranging from fundamentals to advanced patterns.",
-      "q2": "How often do you meet?",
-      "a2": "We host specialized AI Orchestration meetups monthly, plus bonus workshops and roundtables throughout the quarter. Members also stay connected in our online community.",
-      "q3": "Do I need to know a specific tool?",
-      "a3": "No! We cover multiple orchestration frameworks and focus on underlying concepts. You'll learn what makes sense for your tech stack.",
-      "q4": "Is this for enterprise only?",
-      "a4": "Not at all. We welcome individual developers, startups, and enterprises. Our discussions span from personal projects to enterprise systems."
+      "title": "FAQ",
+      "q1": "Is the event already announced?",
+      "a1": "Not fully. This page is here so people can understand the direction and register interest while the first session is still being planned.",
+      "q2": "Do you already have a date?",
+      "a2": "Not yet. We are still testing demand, format, and scope before putting a date on the calendar.",
+      "q3": "Who is this for?",
+      "a3": "Engineers, product builders, founders, and technical leads who are actively experimenting with agentic systems, orchestration, or evaluation.",
+      "q4": "Can I propose a topic or demo?",
+      "a4": "Yes. Join the Meetup community and mention that you would like to present, share a case study, or help shape the first session."
     },
     "cta": {
-      "primary": "Get Started with AI Orchestration",
-      "secondary": "Learn More About Our Approach"
+      "title": "Help us shape the first AI orchestration night",
+      "description": "If this topic is relevant to your work, follow the Meetup and keep an eye on community updates. That signal will help decide the first format, topics, and speakers.",
+      "primary": "Show interest on Meetup",
+      "secondary": "Check the latest updates"
     }
   }
 }

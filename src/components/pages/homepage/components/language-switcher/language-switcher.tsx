@@ -19,13 +19,14 @@ export function LanguageSwitcher(props: Props): JSX.Element {
   };
 
   return (
-    <div class="flex items-center gap-2 pl-4 pr-2 py-2 bg-[#f6f3ec]/90 backdrop-blur-md rounded-full shadow-sm border border-[#fff0cb]/50">
-      <label for="lang-select" class="text-sm font-medium text-[#3f573e]">{props.translation.language}</label>
+    <div class="flex min-w-0 items-center gap-2 rounded-full border border-[#fff0cb]/50 bg-[#f6f3ec]/90 px-3 py-2 shadow-sm backdrop-blur-md sm:px-4">
+      <label for="lang-select" class="hidden text-sm font-medium text-[#3f573e] sm:block">{props.translation.language}</label>
       <select
         id="lang-select"
         value={props.language}
         onInput={handleChange}
-        class="border-none bg-transparent text-sm px-3 py-1 focus:outline-none text-[#3f573e] font-medium"
+        aria-label={props.translation.language}
+        class="min-w-0 rounded-full border border-[#d8d1c3] bg-white/80 px-3 py-2 text-sm font-medium text-[#3f573e] focus:outline-none focus:ring-2 focus:ring-[#cc6c11]/30 sm:border-none sm:bg-transparent sm:px-1 sm:py-1 sm:focus:ring-0"
       >
         <option value="fr">{props.translation.french}</option>
         <option value="en">{props.translation.english}</option>
