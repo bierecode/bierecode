@@ -1,16 +1,43 @@
 {
-  "title": "Bière & Code Paris",
-  "tagline": "Where technology meets community",
-  "description": "A welcoming space for developers, engineers, and tech enthusiasts to explore ideas, share knowledge, and connect over great conversation and craft beer.",
-  "socialProof": "Join 150+ tech enthusiasts in Paris",
-  "meetupLink": "Join our next meetup",
-  "updatesLink": "Community updates",
+  "title": "Biere & Code Paris",
+  "tagline": "Every Thursday in Paris",
+  "description": "Beer, code, and good conversation. A weekly meetup for developers, engineers, and tech enthusiasts.",
+  "socialProof": "176 members and counting",
+  "meetupLink": "Join us this Thursday",
+  "updatesLink": "Updates",
   "aboutLink": "About",
+  "language": "Language:",
+  "french": "FR",
+  "english": "EN",
+  "nextEvent": {
+    "badge": "THIS THURSDAY",
+    "title": "Weekly Meetup",
+    "date": "Every Thursday",
+    "time": "7:00 PM",
+    "vibe": "Different bar each week - check Meetup for this week's spot",
+    "description": "Tech talks, project demos, and open networking. All levels welcome.",
+    "cta": "RSVP on Meetup"
+  },
+  "firstTime": {
+    "title": "First Time?",
+    "subtitle": "Here's What to Expect",
+    "points": [
+      "No registration needed - just show up and introduce yourself",
+      "All skill levels welcome, from beginners to experts",
+      "Relaxed atmosphere: bring projects, questions, or just curiosity",
+      "Make friends, find collaborators, or simply enjoy good conversation"
+    ]
+  },
+  "community": {
+    "title": "Latest from the Community",
+    "description": "Event recaps, member spotlights, and project showcases.",
+    "cta": "Read updates"
+  },
   "events": {
     "title": "Connect With Us",
     "monthly": {
-      "title": "Monthly Meetups",
-      "description": "Every month, we gather for tech talks, project demos, and open networking. Typical format: 6pm arrival, 6:30 lightning talks, 7pm open discussion. Bring your projects, questions, or just your curiosity.",
+      "title": "Weekly Meetups",
+      "description": "Every Thursday, we gather for tech talks, project demos, and open networking. Bring your projects, questions, or just your curiosity.",
       "cta": "RSVP on Meetup"
     },
     "updates": {
@@ -20,22 +47,12 @@
     },
     "community": {
       "title": "Open to All",
-      "description": "All languages, frameworks, and experience levels welcome. From students to senior engineers, career-switchers to founders-if you're curious about tech, you belong here.",
+      "description": "All languages, frameworks, and experience levels welcome. From students to senior engineers, career-switchers to founders - if you're curious about tech, you belong here.",
       "cta": "Learn about us"
     }
   },
-  "firstTime": {
-    "title": "First Time?",
-    "subtitle": "Here's What to Expect",
-    "points": [
-      "No registration needed-just show up and introduce yourself",
-      "All skill levels welcome, from beginners to experts",
-      "Relaxed atmosphere: bring projects, questions, or just curiosity",
-      "Make friends, find collaborators, or simply enjoy good conversation"
-    ]
-  },
   "why": {
-    "title": "Why Bière & Code?",
+    "title": "Why Biere & Code?",
     "learnTogether": {
       "title": "Learn Together",
       "description": "Share knowledge, discuss emerging technologies, and explore diverse perspectives. From debugging sessions to architecture debates, we grow by learning from each other."
@@ -51,7 +68,23 @@
   },
   "about": {
     "title": "About Us",
-    "description": "Meet the team behind Bière & Code Paris.",
+    "description": "Meet the team behind Biere & Code Paris.",
+    "stats": {
+      "members": "176+",
+      "membersLabel": "Members",
+      "regulars": "30+",
+      "regularsLabel": "Weekly Regulars",
+      "meetups": "50+",
+      "meetupsLabel": "Meetups Held"
+    },
+    "story": {
+      "title": "Our Story",
+      "description": "What started as two friends grabbing a beer and talking about code has grown into one of Paris's most welcoming tech communities. Every Thursday, 30+ developers, engineers, and tech enthusiasts meet to share ideas, demo projects, and connect over craft beer. No corporate agenda, no gatekeeping - just people who love building things."
+    },
+    "venue": {
+      "title": "Where We Meet",
+      "description": "We try a different bar every week across Paris. Check our Meetup page for this week's spot. The only constant: good beer and good conversation."
+    },
     "raph": {
       "role": "Founder and Host",
       "bio": "Senior Developer Evangelist at Defang and a serial entrepreneur with deep roots in the startup ecosystem. As the founder of Ephemere Creative and Tembo Tech, Raph combines technical expertise with a passion for community building and mentorship, bridging the gap between complex cloud technologies and the developers who use them."
@@ -68,17 +101,14 @@
     "info": "Info",
     "location": "Paris, France",
     "codeOfConduct": "Code of Conduct",
-    "builtWith": "Built with ❤️ by the community"
+    "builtWith": "Built with love by the community"
   },
-  "language": "Language:",
-  "french": "French",
-  "english": "English",
   "aiOrchestration": {
-    "title": "Bière & Code: AI Orchestration",
+    "title": "Biere & Code: AI Orchestration",
     "tagline": "A new event in planning for Paris builders",
-    "description": "We are exploring a new Bière & Code event focused on AI orchestration: agents, multi-step workflows, evaluation, tooling, and real deployment stories. This page is intentionally simple because the format is still being shaped.",
+    "description": "We are exploring a new Biere & Code event focused on AI orchestration: agents, multi-step workflows, evaluation, tooling, and real deployment stories. This page is intentionally simple because the format is still being shaped.",
     "status": "First event in planning",
-    "coBrandingNote": "A specialized initiative by Bière & Code",
+    "coBrandingNote": "A specialized initiative by Biere & Code",
     "heroCtaLink": "Follow the meetup",
     "heroCtaDescription": "Use Meetup to show interest while we shape the first session.",
     "secondaryCta": "Read community updates",

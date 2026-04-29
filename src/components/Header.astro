@@ -1,0 +1,64 @@
+---
+interface Props {
+  activePage?: 'about' | 'updates';
+}
+
+const { activePage } = Astro.props;
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100" id="site-header">
+  <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+      <img src="/logo.svg" alt="Biere Code Logo" width={36} height={36} />
+      <span class="text-lg font-bold text-[#1a1a1a] font-grotesk hidden sm:block">Biere & Code</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-6">
+      <a href="/about" class={`text-sm font-medium transition-colors ${activePage === 'about' ? 'text-[#1a1a1a] relative' : 'text-gray-500 hover:text-[#1a1a1a]'}`}>
+        About
+        {activePage === 'about' && <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1a1a1a]"></span>}
+      </a>
+      <a href="/updates" class={`text-sm font-medium transition-colors ${activePage === 'updates' ? 'text-[#1a1a1a] relative' : 'text-gray-500 hover:text-[#1a1a1a]'}`}>
+        Updates
+        {activePage === 'updates' && <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1a1a1a]"></span>}
+      </a>
+    </nav>
+
+    <!-- Mobile hamburger -->
+    <button
+      class="md:hidden p-2 text-gray-500 hover:text-[#1a1a1a]"
+      id="menu-toggle"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+    >
+      <svg class="w-6 h-6" id="menu-icon-open" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg class="w-6 h-6 hidden" id="menu-icon-close" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="md:hidden border-t border-gray-100 bg-white px-6 py-4 space-y-3 hidden" id="mobile-menu">
+    <a href="/about" class={`block text-sm font-medium py-2 ${activePage === 'about' ? 'text-[#1a1a1a]' : 'text-gray-500 hover:text-[#1a1a1a]'}`}>About</a>
+    <a href="/updates" class={`block text-sm font-medium py-2 ${activePage === 'updates' ? 'text-[#1a1a1a]' : 'text-gray-500 hover:text-[#1a1a1a]'}`}>Updates</a>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden');
+    iconOpen?.classList.toggle('hidden');
+    iconClose?.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+  });
+</script>
