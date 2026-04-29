@@ -11,6 +11,10 @@ import icon from 'astro-icon';
 export default defineConfig({
   site: 'https://www.bierecode.com',
 
+  server: {
+    allowedHosts: ['ws-01kqcp2g21jznv7ppz9zghhbsg--4321.simple-agent-manager.org']
+  },
+
   integrations: [mdx(), solidJs(), sitemap(), icon()],
 
   markdown: {
