@@ -31,6 +31,8 @@ function NodeGraph(): JSX.Element {
     const ctx = canvasRef.getContext('2d');
     if (!ctx) return;
 
+    const isMobile = window.innerWidth < 768;
+
     const resize = () => {
       canvasRef!.width = window.innerWidth;
       canvasRef!.height = window.innerHeight * 2.5;
@@ -38,8 +40,14 @@ function NodeGraph(): JSX.Element {
     resize();
     window.addEventListener('resize', resize);
 
-    const nodeCount = 35;
-    const connectionDist = 200;
+    // Fewer but larger, more visible nodes on mobile
+    const nodeCount = isMobile ? 20 : 35;
+    const connectionDist = isMobile ? 160 : 200;
+    const baseRadius = isMobile ? 3 : 1.5;
+    const radiusRange = isMobile ? 2.5 : 2;
+    const connectionAlphaMultiplier = isMobile ? 0.3 : 0.12;
+    const nodeAlphaMultiplier = isMobile ? 0.5 : 0.25;
+    const lineWidth = isMobile ? 1 : 0.5;
     const nodes: Node[] = [];
     const pulses: Pulse[] = [];
 
@@ -49,7 +57,7 @@ function NodeGraph(): JSX.Element {
         y: Math.random() * canvasRef.height,
         vx: (Math.random() - 0.5) * 0.3,
         vy: (Math.random() - 0.5) * 0.3,
-        radius: Math.random() * 2 + 1.5,
+        radius: Math.random() * radiusRange + baseRadius,
         pulsePhase: Math.random() * Math.PI * 2,
       });
     }
@@ -86,18 +94,20 @@ function NodeGraph(): JSX.Element {
         for (let j = i + 1; j < nodeCount; j++) {
           const dist = Math.hypot(nodes[i].x - nodes[j].x, nodes[i].y - nodes[j].y);
           if (dist < connectionDist) {
-            const alpha = (1 - dist / connectionDist) * 0.12;
+            const alpha = (1 - dist / connectionDist) * connectionAlphaMultiplier;
             ctx.beginPath();
             ctx.moveTo(nodes[i].x, nodes[i].y);
             ctx.lineTo(nodes[j].x, nodes[j].y);
             ctx.strokeStyle = `rgba(204, 108, 17, ${alpha})`;
-            ctx.lineWidth = 0.5;
+            ctx.lineWidth = lineWidth;
             ctx.stroke();
           }
         }
       }
 
       // Draw pulses
+      const pulseRadius = isMobile ? 4.5 : 3;
+      const pulseGlowRadius = isMobile ? 12 : 8;
       for (let i = pulses.length - 1; i >= 0; i--) {
         const p = pulses[i];
         p.progress += p.speed;
@@ -111,28 +121,30 @@ function NodeGraph(): JSX.Element {
         const y = from.y + (to.y - from.y) * p.progress;
         const alpha = Math.sin(p.progress * Math.PI) * 0.8;
         ctx.beginPath();
-        ctx.arc(x, y, 3, 0, Math.PI * 2);
+        ctx.arc(x, y, pulseRadius, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(204, 108, 17, ${alpha})`;
         ctx.fill();
         // Glow
         ctx.beginPath();
-        ctx.arc(x, y, 8, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(204, 108, 17, ${alpha * 0.2})`;
+        ctx.arc(x, y, pulseGlowRadius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(204, 108, 17, ${alpha * 0.3})`;
         ctx.fill();
       }
 
       // Draw nodes
+      const outerRingSize = isMobile ? 5 : 3;
+      const outerRingAlpha = isMobile ? 0.15 : 0.08;
       for (const node of nodes) {
         const pulse = Math.sin(node.pulsePhase) * 0.3 + 0.7;
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(204, 108, 17, ${0.25 * pulse})`;
+        ctx.fillStyle = `rgba(204, 108, 17, ${nodeAlphaMultiplier * pulse})`;
         ctx.fill();
         // Outer ring
         ctx.beginPath();
-        ctx.arc(node.x, node.y, node.radius + 3, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(204, 108, 17, ${0.08 * pulse})`;
-        ctx.lineWidth = 0.5;
+        ctx.arc(node.x, node.y, node.radius + outerRingSize, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(204, 108, 17, ${outerRingAlpha * pulse})`;
+        ctx.lineWidth = isMobile ? 0.8 : 0.5;
         ctx.stroke();
       }
 
@@ -151,7 +163,7 @@ function NodeGraph(): JSX.Element {
   return (
     <canvas
       ref={canvasRef}
-      class="fixed inset-0 w-full h-full pointer-events-none opacity-60"
+      class="fixed inset-0 w-full h-full pointer-events-none opacity-90 md:opacity-60"
       style={{ 'z-index': '0' }}
       aria-hidden="true"
     />
