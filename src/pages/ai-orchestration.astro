@@ -1,15 +1,12 @@
 ---
 import Layout from '../layouts/main-layout.astro';
-import { AIOrchestrationPage } from '../components/pages/ai-orchestration/ai-orchestration';
-import Footer from '../components/Footer.astro';
+import { AIOrchestrationBranded } from '../components/pages/ai-orchestration/ai-orchestration-branded';
 
-const title = 'Bière & Code: AI Orchestration in Paris';
-const description = 'A new Bière & Code event in planning for people interested in AI orchestration, agents, workflows, and evaluation in Paris.';
+const title = 'AI Agent Orchestration — Biere & Code Paris';
+const description = 'A focused evening for builders shipping agent systems in production. Short talks, real demos, honest conversations.';
 const image = '/og-image.png';
 ---
 
 <Layout title={title} description={description} image={image}>
-  <AIOrchestrationPage client:load>
-    <Footer />
-  </AIOrchestrationPage>
+  <AIOrchestrationBranded client:load />
 </Layout>
