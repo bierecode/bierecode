@@ -362,12 +362,12 @@ export function AIOrchestrationBranded(): JSX.Element {
 
                 <div class="flex flex-col sm:flex-row gap-4">
                   <a
-                    href="https://www.meetup.com/biere-code-beer-paris/"
+                    href="https://luma.com/0iy2sk2b"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#cc6c11] to-[#e07d1c] px-8 py-4 text-base font-bold text-white shadow-[0_0_30px_-5px_rgba(204,108,17,0.4)] hover:shadow-[0_0_40px_-5px_rgba(204,108,17,0.6)] transition-all duration-300 hover:scale-[1.02]"
                   >
-                    Register Interest
+                    RSVP on Luma
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
@@ -570,12 +570,12 @@ export function AIOrchestrationBranded(): JSX.Element {
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
-                    href="https://www.meetup.com/biere-code-beer-paris/"
+                    href="https://luma.com/0iy2sk2b"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#cc6c11] to-[#e07d1c] px-8 py-4 text-base font-bold text-white shadow-[0_0_30px_-5px_rgba(204,108,17,0.4)] hover:shadow-[0_0_40px_-5px_rgba(204,108,17,0.6)] transition-all duration-300 hover:scale-[1.02]"
                   >
-                    Register on Meetup
+                    RSVP on Luma
                   </a>
                   <a
                     href="mailto:raphael@bierecode.com"

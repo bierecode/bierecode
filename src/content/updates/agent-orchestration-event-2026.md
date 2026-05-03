@@ -26,6 +26,6 @@ We've been running our own agent orchestration setup with [SAM](https://github.c
 
 ## Want in?
 
-No date or venue yet. We want to gauge interest first. If you'd want to come — or even better, if you've got something to demo — tell us at a Thursday meetup or ping us on [Meetup](https://www.meetup.com/biere-code-beer-paris/).
+If you'd want to come — or even better, if you've got something to demo — RSVP on [Luma](https://luma.com/0iy2sk2b) or tell us at a Thursday meetup.
 
-More details once we figure out the logistics.
+More details on the event page once we lock down speakers.
