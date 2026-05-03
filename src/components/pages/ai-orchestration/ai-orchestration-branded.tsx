@@ -236,20 +236,20 @@ export function AIOrchestrationBranded(): JSX.Element {
     {
       slot: '01',
       name: 'Speaker TBD',
-      topic: 'Agent management with custom tooling',
-      desc: 'How they built and manage their agent fleet — internal tools, deployment, monitoring.',
+      topic: 'Parallel agents on a real codebase',
+      desc: 'Running multiple Claude Code or Codex instances on the same repo. Worktrees, task splitting, keeping agents from conflicting.',
     },
     {
       slot: '02',
       name: 'Speaker TBD',
-      topic: 'Framework-driven orchestration',
-      desc: 'Using LangGraph, CrewAI, or similar to coordinate multi-agent workflows in production.',
+      topic: 'Tooling for the multi-agent mess',
+      desc: 'Harnesses, dashboards, or scripts they built to coordinate agents. What broke until they built it.',
     },
     {
       slot: '03',
       name: 'Speaker TBD',
-      topic: 'Evaluation & debugging agents',
-      desc: 'Techniques for knowing if your agents are working — tracing, evals, and regression testing.',
+      topic: 'What actually landed',
+      desc: 'How they review, test, and merge the output of a dozen agents. And what they threw away.',
     },
   ];
 
@@ -300,7 +300,7 @@ export function AIOrchestrationBranded(): JSX.Element {
               <div>
                 <div class="inline-flex items-center gap-2 rounded-full border border-[#cc6c11]/30 bg-[#cc6c11]/10 px-4 py-1.5 mb-8">
                   <span class="w-2 h-2 rounded-full bg-[#cc6c11] animate-pulse" />
-                  <span class="text-xs font-semibold text-[#cc6c11] uppercase tracking-wider">New Event Series</span>
+                  <span class="text-xs font-semibold text-[#cc6c11] uppercase tracking-wider">New Event</span>
                 </div>
 
                 {/* Terminal-style title block */}
@@ -326,12 +326,12 @@ export function AIOrchestrationBranded(): JSX.Element {
                   Three speakers demo how they{' '}
                   <TypewriterText
                     texts={[
-                      'manage agent fleets',
-                      'debug failing runs',
-                      'orchestrate multi-agent workflows',
-                      'evaluate agent performance',
-                      'deploy agents to production',
-                      'handle tool-use errors',
+                      'ship code with parallel agents',
+                      'run 10 Claude instances on one repo',
+                      'split work across Codex tasks',
+                      'stop agents from stomping on each other',
+                      'review what a fleet of agents actually wrote',
+                      'figure out which agent broke the build',
                     ]}
                     class="text-white/80 font-medium"
                   />
@@ -394,7 +394,7 @@ export function AIOrchestrationBranded(): JSX.Element {
           <div ref={formatRef} class="max-w-5xl mx-auto">
             <h2 data-card class="font-grotesk text-2xl md:text-3xl font-bold text-white mb-3">The format</h2>
             <p data-card class="text-white/40 mb-14 max-w-2xl text-lg">
-              Each speaker gets 20 minutes to demo how they manage their agents — tools, techniques, workflows — followed by 10 minutes of questions.
+              Each speaker gets 20 minutes to show how they actually use coding agents to get work done, then 10 minutes of whatever you want to ask.
             </p>
 
             <div class="grid gap-6 md:grid-cols-3">
@@ -407,7 +407,7 @@ export function AIOrchestrationBranded(): JSX.Element {
                 </div>
                 <h3 class="font-grotesk font-bold text-white text-lg mb-2">20-min live demo</h3>
                 <p class="text-sm text-white/40 leading-relaxed">
-                  Show your screen. Walk through your agent setup — the real thing, not slides.
+                  Show your screen. Walk through your actual setup. No slides.
                 </p>
               </div>
 
@@ -420,7 +420,7 @@ export function AIOrchestrationBranded(): JSX.Element {
                 </div>
                 <h3 class="font-grotesk font-bold text-white text-lg mb-2">10-min Q&A</h3>
                 <p class="text-sm text-white/40 leading-relaxed">
-                  Audience asks anything — architecture, failure modes, costs, what they'd change.
+                  Audience asks anything. How it breaks, what it costs, what they'd do differently.
                 </p>
               </div>
 
@@ -433,7 +433,7 @@ export function AIOrchestrationBranded(): JSX.Element {
                 </div>
                 <h3 class="font-grotesk font-bold text-white text-lg mb-2">3 speakers per night</h3>
                 <p class="text-sm text-white/40 leading-relaxed">
-                  Different stacks, different scales, different approaches to the same problem.
+                  Different tools, different team sizes, different ways to wrangle the same chaos.
                 </p>
               </div>
             </div>
@@ -444,7 +444,7 @@ export function AIOrchestrationBranded(): JSX.Element {
         <section class="px-6 py-24 border-t border-white/5">
           <div ref={speakersRef} class="max-w-5xl mx-auto">
             <h2 class="font-grotesk text-2xl md:text-3xl font-bold text-white mb-3">Speakers</h2>
-            <p class="text-white/40 mb-14 text-lg">Three demo slots. Want to show how you run your agents?</p>
+            <p class="text-white/40 mb-14 text-lg">Three demo slots. Got a setup that works? Show us.</p>
 
             {/* Orchestrator dispatch visual */}
             <div class="relative">
@@ -484,7 +484,7 @@ export function AIOrchestrationBranded(): JSX.Element {
 
             <div class="mt-10 text-center">
               <a
-                href="mailto:miguel@bierecode.com"
+                href="mailto:raphael@bierecode.com"
                 class="inline-flex items-center gap-2 text-sm font-semibold text-[#cc6c11] hover:text-[#e07d1c] transition-colors"
               >
                 Interested in speaking? Reach out
@@ -527,18 +527,18 @@ export function AIOrchestrationBranded(): JSX.Element {
           <div class="max-w-5xl mx-auto">
             <h2 class="font-grotesk text-2xl md:text-3xl font-bold text-white mb-3">What demos look like</h2>
             <p class="text-white/40 mb-14 max-w-2xl text-lg">
-              Show your screen. Walk us through how you actually manage your agents day-to-day.
+              Show your screen. Walk us through how you're using multiple agents to write and ship code.
             </p>
 
             <div class="grid gap-4 md:grid-cols-2">
               {(() => {
                 const examples = [
-                  'Your agent deployment pipeline — how code becomes a running agent',
-                  'The dashboard you use to monitor agent health and costs',
-                  'How you handle failures, retries, and human-in-the-loop',
-                  'Your evaluation setup — how you know agents are working correctly',
-                  'Multi-agent coordination — routing, handoffs, shared state',
-                  'The debugging workflow when an agent goes off the rails',
+                  'Your tmux or screen setup with 8 agents running, and how you keep track',
+                  'How you split a big feature across parallel agents without merge hell',
+                  'The moment you realized you needed a harness, and what you built',
+                  'How you review and merge output from agents that don\'t know about each other',
+                  'Your worktree strategy: isolation, shared state, and when it falls apart',
+                  'What your git log looks like after a multi-agent session (and how you clean it up)',
                 ];
                 return (
                   <For each={examples}>
@@ -562,11 +562,11 @@ export function AIOrchestrationBranded(): JSX.Element {
               <div class="absolute inset-0 bg-gradient-to-br from-[#cc6c11]/5 via-transparent to-[#1f7cec]/5 opacity-50" />
               <div class="relative">
                 <h2 class="font-grotesk text-3xl md:text-4xl font-bold text-white mb-4">
-                  Ship agents?<br />
-                  <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#cc6c11] to-[#FFE221]">Show us how you run them.</span>
+                  Running a fleet of coding agents?<br />
+                  <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#cc6c11] to-[#FFE221]">Show us how you keep it together.</span>
                 </h2>
                 <p class="text-white/40 text-lg mb-10 max-w-xl mx-auto">
-                  No vendor pitches. No sponsored content. Just builders demoing their real setups over beers in Paris.
+                  No slides. No vendor stuff. Just people showing how they actually use multiple agents to ship code, over beers in Paris.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
@@ -578,7 +578,7 @@ export function AIOrchestrationBranded(): JSX.Element {
                     Register on Meetup
                   </a>
                   <a
-                    href="mailto:miguel@bierecode.com"
+                    href="mailto:raphael@bierecode.com"
                     class="inline-flex items-center justify-center rounded-full border border-white/10 px-8 py-4 text-base font-semibold text-white/70 hover:text-white hover:border-white/20 transition-all"
                   >
                     Propose a demo
