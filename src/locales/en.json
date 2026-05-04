@@ -2,7 +2,7 @@
   "title": "Biere & Code Paris",
   "tagline": "Every Thursday in Paris",
   "description": "Beer, code, and good conversation. A weekly meetup for developers, engineers, and tech enthusiasts.",
-  "socialProof": "176 members and counting",
+  "socialProof": "220 members and counting",
   "meetupLink": "Join us this Thursday",
   "updatesLink": "Updates",
   "aboutLink": "About",
@@ -70,7 +70,7 @@
     "title": "About Us",
     "description": "Meet the team behind Biere & Code Paris.",
     "stats": {
-      "members": "176+",
+      "members": "20+",
       "membersLabel": "Members",
       "regulars": "30+",
       "regularsLabel": "Weekly Regulars",
