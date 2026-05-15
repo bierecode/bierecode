@@ -152,7 +152,7 @@ function TypewriterText(props: { texts: string[]; class?: string }): JSX.Element
 }
 
 // --- Main Page ---
-export function AIOrchestrationBranded(): JSX.Element {
+export function MultiAgentOrchestrationBranded(): JSX.Element {
   let formatRef: HTMLDivElement | undefined;
   let speakersRef: HTMLDivElement | undefined;
   let agendaRef: HTMLDivElement | undefined;
@@ -312,7 +312,7 @@ export function AIOrchestrationBranded(): JSX.Element {
                     class="font-grotesk font-bold text-white leading-[1.0] mb-2"
                     style={{ 'font-size': 'clamp(2.6rem, 6.5vw, 4.5rem)' }}
                   >
-                    AI Agent<br />
+                    Multi Agent<br />
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#cc6c11] to-[#FFE221]">
                       Orchestration
                     </span>

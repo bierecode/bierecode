@@ -104,9 +104,9 @@
     "builtWith": "Fait avec amour par la communaute"
   },
   "aiOrchestration": {
-    "title": "Biere & Code : Orchestration IA",
+    "title": "Biere & Code : Orchestration Multi-Agents",
     "tagline": "Un nouvel evenement en preparation pour les builders parisiens",
-    "description": "Nous explorons un nouvel evenement Biere & Code centre sur l'orchestration IA : agents, workflows multi-etapes, evaluation, outils et retours d'experience de deploiement. Cette page reste volontairement simple parce que le format est encore en construction.",
+    "description": "Nous explorons un nouvel evenement Biere & Code centre sur l'orchestration multi-agents : coordination de flottes d'agents de code, workflows paralleles, evaluation, outils et retours d'experience de deploiement. Cette page reste volontairement simple parce que le format est encore en construction.",
     "status": "Premier evenement en preparation",
     "coBrandingNote": "Une initiative specialisee de Biere & Code",
     "heroCtaLink": "Suivre le Meetup",
@@ -159,7 +159,7 @@
       "a4": "Oui. Rejoignez la communaute Meetup et indiquez que vous souhaitez presenter, partager une etude de cas ou aider a definir la premiere session."
     },
     "cta": {
-      "title": "Aidez-nous a definir la premiere soiree orchestration IA",
+      "title": "Aidez-nous a definir la premiere soiree orchestration multi-agents",
       "description": "Si ce sujet est pertinent pour votre travail, suivez le Meetup et gardez un oeil sur les actualites. Ce signal aidera a decider du premier format, des sujets et des intervenants.",
       "primary": "Montrer son interet sur Meetup",
       "secondary": "Voir les dernieres actualites"

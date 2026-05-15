@@ -104,9 +104,9 @@
     "builtWith": "Built with love by the community"
   },
   "aiOrchestration": {
-    "title": "Biere & Code: AI Orchestration",
+    "title": "Biere & Code: Multi Agent Orchestration",
     "tagline": "A new event in planning for Paris builders",
-    "description": "We are exploring a new Biere & Code event focused on AI orchestration: agents, multi-step workflows, evaluation, tooling, and real deployment stories. This page is intentionally simple because the format is still being shaped.",
+    "description": "We are exploring a new Biere & Code event focused on multi agent orchestration: coordinating fleets of coding agents, parallel workflows, evaluation, tooling, and real deployment stories. This page is intentionally simple because the format is still being shaped.",
     "status": "First event in planning",
     "coBrandingNote": "A specialized initiative by Biere & Code",
     "heroCtaLink": "Follow the meetup",
@@ -159,7 +159,7 @@
       "a4": "Yes. Join the Meetup community and mention that you would like to present, share a case study, or help shape the first session."
     },
     "cta": {
-      "title": "Help us shape the first AI orchestration night",
+      "title": "Help us shape the first multi agent orchestration night",
       "description": "If this topic is relevant to your work, follow the Meetup and keep an eye on community updates. That signal will help decide the first format, topics, and speakers.",
       "primary": "Show interest on Meetup",
       "secondary": "Check the latest updates"
