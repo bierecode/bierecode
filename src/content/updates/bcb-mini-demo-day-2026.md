@@ -13,7 +13,7 @@ We're inviting our community to come share the projects you've been working on! 
 
 **When:** Thursday, March 19, 2026 · 7:30 PM – 9:30 PM (UTC+1)  
 **Where:** Chez Ernest, 4 Imp. de Joinville, 75019 Paris  
-**RSVP:** [Meetup Event](https://www.meetup.com/biere-code-beer-paris/events/313615740/)
+**Upcoming events:** See our [Luma calendar](https://luma.com/bierecode) for current dates, venues, and registration.
 
 ## About the Venue
 

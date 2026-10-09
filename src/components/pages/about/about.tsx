@@ -8,7 +8,7 @@ import miguelImg from '../../../assets/miguel.jpg';
 interface Translation {
   title: string;
   description: string;
-  meetupLink: string;
+  calendarLink: string;
   updatesLink: string;
   aboutLink: string;
   language: string;
@@ -17,14 +17,6 @@ interface Translation {
   about: {
     title: string;
     description: string;
-    stats: {
-      members: string;
-      membersLabel: string;
-      regulars: string;
-      regularsLabel: string;
-      meetups: string;
-      meetupsLabel: string;
-    };
     story: {
       title: string;
       description: string;
@@ -127,22 +119,6 @@ export function AboutPage(): JSX.Element {
           <p class="text-gray-500 max-w-2xl mx-auto text-lg">{t().about.description}</p>
         </div>
 
-        {/* Stats Bar */}
-        <div class="grid grid-cols-3 gap-4 mb-16">
-          <div class="text-center py-6 bg-gray-50 rounded-xl">
-            <p class="text-3xl md:text-4xl font-bold text-[#1a1a1a] font-grotesk">{t().about.stats.members}</p>
-            <p class="text-sm text-gray-500 mt-1">{t().about.stats.membersLabel}</p>
-          </div>
-          <div class="text-center py-6 bg-gray-50 rounded-xl">
-            <p class="text-3xl md:text-4xl font-bold text-[#1a1a1a] font-grotesk">{t().about.stats.regulars}</p>
-            <p class="text-sm text-gray-500 mt-1">{t().about.stats.regularsLabel}</p>
-          </div>
-          <div class="text-center py-6 bg-gray-50 rounded-xl">
-            <p class="text-3xl md:text-4xl font-bold text-[#1a1a1a] font-grotesk">{t().about.stats.meetups}</p>
-            <p class="text-sm text-gray-500 mt-1">{t().about.stats.meetupsLabel}</p>
-          </div>
-        </div>
-
         {/* Our Story */}
         <div class="mb-16">
           <h2 class="text-2xl font-bold text-[#1a1a1a] font-grotesk mb-4">{t().about.story.title}</h2>
@@ -153,6 +129,7 @@ export function AboutPage(): JSX.Element {
         <div class="mb-16 bg-gray-50 border border-gray-100 rounded-2xl p-8">
           <h2 class="text-2xl font-bold text-[#1a1a1a] font-grotesk mb-4">{t().about.venue.title}</h2>
           <p class="text-gray-600 leading-relaxed">{t().about.venue.description}</p>
+          <a href="https://luma.com/bierecode" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 font-semibold text-[#cc6c11] hover:underline">{t().calendarLink}</a>
         </div>
 
         {/* Team */}

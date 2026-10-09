@@ -1,28 +1,27 @@
 {
   "title": "Biere & Code Paris",
-  "tagline": "Every Thursday in Paris",
-  "description": "Beer, code, and good conversation. A weekly meetup for developers, engineers, and tech enthusiasts.",
-  "socialProof": "220 members and counting",
-  "meetupLink": "Join us this Thursday",
+  "tagline": "Tech, beer, and conversation in Paris",
+  "description": "Beer, code, and good conversation. A community for developers, engineers, and tech enthusiasts.",
+  "socialProof": "All experience levels welcome",
+  "calendarLink": "Find events on Luma",
   "updatesLink": "Updates",
   "aboutLink": "About",
   "language": "Language:",
   "french": "FR",
   "english": "EN",
   "nextEvent": {
-    "badge": "THIS THURSDAY",
-    "title": "Weekly Meetup",
-    "date": "Every Thursday",
-    "time": "7:00 PM",
-    "vibe": "Different bar each week - check Meetup for this week's spot",
+    "badge": "OUR EVENTS",
+    "title": "Join us in Paris",
+    "date": "Dates and times on Luma",
+    "vibe": "Check each event on Luma for the venue",
     "description": "Tech talks, project demos, and open networking. All levels welcome.",
-    "cta": "RSVP on Meetup"
+    "cta": "View Luma calendar"
   },
   "firstTime": {
     "title": "First Time?",
     "subtitle": "Here's What to Expect",
     "points": [
-      "No registration needed - just show up and introduce yourself",
+      "Choose an event on Luma and follow its registration details",
       "All skill levels welcome, from beginners to experts",
       "Relaxed atmosphere: bring projects, questions, or just curiosity",
       "Make friends, find collaborators, or simply enjoy good conversation"
@@ -36,9 +35,9 @@
   "events": {
     "title": "Connect With Us",
     "monthly": {
-      "title": "Weekly Meetups",
-      "description": "Every Thursday, we gather for tech talks, project demos, and open networking. Bring your projects, questions, or just your curiosity.",
-      "cta": "RSVP on Meetup"
+      "title": "Community Gatherings",
+      "description": "Find upcoming dates, venues, and registration on Luma. Bring your projects, questions, or just your curiosity.",
+      "cta": "View Luma calendar"
     },
     "updates": {
       "title": "Community Updates",
@@ -69,21 +68,13 @@
   "about": {
     "title": "About Us",
     "description": "Meet the team behind Biere & Code Paris.",
-    "stats": {
-      "members": "20+",
-      "membersLabel": "Members",
-      "regulars": "30+",
-      "regularsLabel": "Weekly Regulars",
-      "meetups": "50+",
-      "meetupsLabel": "Meetups Held"
-    },
     "story": {
       "title": "Our Story",
-      "description": "What started as two friends grabbing a beer and talking about code has grown into one of Paris's most welcoming tech communities. Every Thursday, 30+ developers, engineers, and tech enthusiasts meet to share ideas, demo projects, and connect over craft beer. No corporate agenda, no gatekeeping - just people who love building things."
+      "description": "What started as two friends grabbing a beer and talking about code has grown into a welcoming tech community in Paris. Developers, engineers, and tech enthusiasts meet to share ideas, demo projects, and connect over craft beer. No corporate agenda, no gatekeeping - just people who love building things."
     },
     "venue": {
       "title": "Where We Meet",
-      "description": "We try a different bar every week across Paris. Check our Meetup page for this week's spot. The only constant: good beer and good conversation."
+      "description": "Find upcoming dates, times, venues, and registration details on our Luma calendar. Good beer and good conversation await."
     },
     "raph": {
       "role": "Founder and Host",
@@ -102,67 +93,5 @@
     "location": "Paris, France",
     "codeOfConduct": "Code of Conduct",
     "builtWith": "Built with love by the community"
-  },
-  "aiOrchestration": {
-    "title": "Biere & Code: AI Orchestration",
-    "tagline": "A new event in planning for Paris builders",
-    "description": "We are exploring a new Biere & Code event focused on AI orchestration: agents, multi-step workflows, evaluation, tooling, and real deployment stories. This page is intentionally simple because the format is still being shaped.",
-    "status": "First event in planning",
-    "coBrandingNote": "A specialized initiative by Biere & Code",
-    "heroCtaLink": "Follow the meetup",
-    "heroCtaDescription": "Use Meetup to show interest while we shape the first session.",
-    "secondaryCta": "Read community updates",
-    "themes": {
-      "title": "What we want to cover",
-      "description": "The goal is practical discussion, not abstract hype. We want a first event that helps builders compare approaches, share tradeoffs, and learn from real systems.",
-      "cards": [
-        {
-          "title": "Agents and workflow design",
-          "description": "How people structure multi-step systems, decide where agents help, and keep the workflow understandable when complexity starts to grow."
-        },
-        {
-          "title": "Evaluation and operational reality",
-          "description": "What actually breaks in production: flaky tools, latency, observability gaps, prompt drift, retries, and handoff failures between components."
-        },
-        {
-          "title": "Demos, case studies, and code",
-          "description": "Short demos, architecture walk-throughs, and examples from real projects instead of broad product pitches."
-        }
-      ]
-    },
-    "firstEvent": {
-      "title": "What the first event may look like",
-      "description": "We are designing the first session as a lightweight experiment, not as a fully formed sub-brand with a fixed cadence.",
-      "items": [
-        "A compact evening format with one or two short talks and a discussion-heavy second half.",
-        "Examples from real builders using agents, orchestration tools, or custom workflow stacks.",
-        "Open Q&A around reliability, evaluation, tooling choices, and when orchestration is worth the cost."
-      ]
-    },
-    "audience": {
-      "title": "Who should come",
-      "points": [
-        "Developers building agent workflows, internal tools, or production AI features.",
-        "People comparing frameworks and trying to understand where orchestration adds value.",
-        "Teams that care about debugging, evaluation, reliability, and shipping practical systems."
-      ]
-    },
-    "faq": {
-      "title": "FAQ",
-      "q1": "Is the event already announced?",
-      "a1": "Not fully. This page is here so people can understand the direction and register interest while the first session is still being planned.",
-      "q2": "Do you already have a date?",
-      "a2": "Not yet. We are still testing demand, format, and scope before putting a date on the calendar.",
-      "q3": "Who is this for?",
-      "a3": "Engineers, product builders, founders, and technical leads who are actively experimenting with agentic systems, orchestration, or evaluation.",
-      "q4": "Can I propose a topic or demo?",
-      "a4": "Yes. Join the Meetup community and mention that you would like to present, share a case study, or help shape the first session."
-    },
-    "cta": {
-      "title": "Help us shape the first AI orchestration night",
-      "description": "If this topic is relevant to your work, follow the Meetup and keep an eye on community updates. That signal will help decide the first format, topics, and speakers.",
-      "primary": "Show interest on Meetup",
-      "secondary": "Check the latest updates"
-    }
   }
 }

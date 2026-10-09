@@ -12,7 +12,7 @@ Join us for the final Bière & Code of 2025! This will be our last gathering of 
 
 **When:** Thursday, December 18, 2025  
 **Where:** Bar The Bombardier, 2 Place Du Panthéon, Paris, FR 75005  
-**RSVP:** [Meetup Event](https://www.meetup.com/biere-code-beer-paris/events/312212837/)
+**Upcoming events:** See our [Luma calendar](https://luma.com/bierecode) for current dates, venues, and registration.
 
 Come share a drink, talk about your latest coding adventures, and celebrate the end of the year with the community.
 

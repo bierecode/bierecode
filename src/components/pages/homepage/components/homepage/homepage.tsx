@@ -7,7 +7,6 @@ interface NextEvent {
   badge: string;
   title: string;
   date: string;
-  time: string;
   vibe: string;
   description: string;
   cta: string;
@@ -24,7 +23,7 @@ interface Translation {
   tagline: string;
   description: string;
   socialProof: string;
-  meetupLink: string;
+  calendarLink: string;
   updatesLink: string;
   aboutLink: string;
   language: string;
@@ -129,12 +128,12 @@ export function Homepage(props: { children?: JSX.Element }): JSX.Element {
           <p class="text-gray-500 leading-relaxed max-w-xl mx-auto text-lg">{t().description}</p>
           <div class="flex flex-col items-center gap-3 pt-2">
             <a
-              href="https://www.meetup.com/biere-code-beer-paris/"
+              href="https://luma.com/bierecode"
               target="_blank"
               rel="noopener noreferrer"
               class="inline-block bg-[#1a1a1a] hover:bg-[#333] text-white font-semibold px-10 py-4 rounded-full transition-all duration-200 hover:scale-[1.02]"
             >
-              {t().meetupLink}
+              {t().calendarLink}
             </a>
             <p class="text-sm font-medium text-[#cc6c11]">{t().socialProof}</p>
           </div>
@@ -156,7 +155,7 @@ export function Homepage(props: { children?: JSX.Element }): JSX.Element {
                     <svg class="w-4.5 h-4.5 text-[#cc6c11]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
-                    {t().nextEvent.date} &middot; {t().nextEvent.time}
+                    {t().nextEvent.date}
                   </p>
                   <p class="flex items-center gap-2.5">
                     <svg class="w-4.5 h-4.5 text-[#cc6c11]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -170,7 +169,7 @@ export function Homepage(props: { children?: JSX.Element }): JSX.Element {
               </div>
               <div class="flex-shrink-0">
                 <a
-                  href="https://www.meetup.com/biere-code-beer-paris/"
+                  href="https://luma.com/bierecode"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="inline-block bg-[#cc6c11] hover:bg-[#e07d1c] text-white font-bold px-8 py-3.5 rounded-full transition-all duration-200 hover:scale-[1.02] whitespace-nowrap"
