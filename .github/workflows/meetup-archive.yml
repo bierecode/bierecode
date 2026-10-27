@@ -3,11 +3,7 @@ on:
   push:
     branches: [archive/meetup-2026-10-27]
   pull_request:
-    paths:
-      - 'src/**'
-      - 'public/meetup-archive/**'
-      - 'scripts/*meetup*'
-      - '.github/workflows/meetup-archive.yml'
+    paths: ['src/**', 'public/meetup-archive/**', 'scripts/*meetup*', '.github/workflows/meetup-archive.yml']
 permissions:
   contents: read
 concurrency:
@@ -16,9 +12,10 @@ concurrency:
 jobs:
   verify:
     runs-on: ubuntu-24.04
-    timeout-minutes: 20
+    timeout-minutes: 15
     permissions:
       contents: write
+      actions: read
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -27,9 +24,16 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx playwright install chromium
-      - name: Capture public Meetup source once
+      - name: Restore already captured public source and image bytes
         if: github.event_name == 'push' && hashFiles('public/meetup-archive/source.json') == ''
-        run: node scripts/capture-meetup-source.mjs
+        uses: actions/download-artifact@v4
+        with:
+          name: meetup-archive-verification
+          run-id: 40538843585
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Complete remaining public group albums
+        if: github.event_name == 'push'
+        run: node scripts/complete-meetup-source.mjs
       - name: Preserve public Meetup images
         if: github.event_name == 'push'
         run: node scripts/capture-meetup-assets.mjs
