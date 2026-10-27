@@ -1,0 +1,66 @@
+name: Verify Meetup archive
+
+on:
+  push:
+    branches: [archive/meetup-2026-10-27]
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'public/meetup-archive/**'
+      - 'scripts/*meetup*'
+      - '.github/workflows/meetup-archive.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: meetup-archive-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Preserve public Meetup images
+        if: github.event_name == 'push' && hashFiles('scripts/capture-meetup-assets.mjs') != ''
+        run: node scripts/capture-meetup-assets.mjs
+      - name: Validate archive data
+        if: hashFiles('scripts/meetup-archive.test.mjs') != ''
+        run: node --test scripts/meetup-archive.test.mjs
+      - run: npm run build
+      - name: Check generated archive pages
+        if: hashFiles('scripts/check-meetup-build.mjs') != ''
+        run: node scripts/check-meetup-build.mjs
+      - name: Browser checks
+        if: hashFiles('scripts/check-meetup-browser.mjs') != ''
+        run: |
+          npx playwright install --with-deps chromium
+          node scripts/check-meetup-browser.mjs
+      - name: Commit preserved images and manifest to this branch
+        if: github.event_name == 'push' && hashFiles('scripts/capture-meetup-assets.mjs') != ''
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/meetup-archive/
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: preserve Meetup archive image assets'
+            git push origin HEAD:${{ github.ref_name }}
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: meetup-archive-verification
+          path: |
+            dist/archive/meetup/
+            public/meetup-archive/
+            test-results/meetup-archive/
+          if-no-files-found: ignore
