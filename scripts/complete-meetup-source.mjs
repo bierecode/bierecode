@@ -24,8 +24,8 @@ async function schema(name) {
   }
   return schemas.get(name);
 }
-const fieldsAllowed = new Set(['id','title','description','caption','photoCount','highResUrl','source','standardUrl','thumbUrl','baseUrl','url','link','eventId','event','photoSample','photos','photo','photoInfo','album','data','payload','edges','node','totalCount','pageInfo','hasNextPage','endCursor','cursor','createdAt','createdTime','updatedAt','updatedTime','dateTime']);
-async function selection(typeName, depth = 5, seen = []) {
+const fieldsAllowed = new Set(['id','title','description','caption','photoCount','photoId','highResUrl','source','standardUrl','thumbUrl','baseUrl','url','link','eventId','event','photoSample','photos','photo','photoInfo','albumPhotos','album','data','payload','edges','node','totalCount','pageInfo','hasNextPage','endCursor','cursor','createdAt','createdTime','updatedAt','updatedTime','dateTime','creationDate','recentActivity','type']);
+async function selection(typeName, depth = 6, seen = []) {
   const type = await schema(typeName);
   if (!type?.fields || depth < 0 || seen.includes(typeName)) return '';
   const selected = [];
@@ -54,13 +54,10 @@ function allObjects(value) {
 }
 try {
   const root = await schema('Query');
-  const listField = root.fields.find(field => field.name === 'photoAlbums');
-  const listSelection = await selection(unwrap(listField.type).name);
-  console.log('Album selection:', listSelection);
-  const listing = await query(`query { photoAlbums(chapterId:"37879641") { ${listSelection} } }`);
-  const rows = listing.photoAlbums;
-  assert.ok(Array.isArray(rows), 'Public album listing returned an array');
-  console.log('Public album listing:', JSON.stringify(rows).slice(0,5000));
+  const listing = await query('query { photoAlbums(chapterId:"37879641") { id title photoCount eventId creationDate recentActivity type } }');
+  assert.ok(Array.isArray(listing.photoAlbums), 'Public album listing returned an array');
+  // Meetup includes virtual, empty event albums. The nine non-empty albums contain all public images.
+  const rows = listing.photoAlbums.filter(album => album.photoCount > 0);
   const payloadType = unwrap(root.fields.find(field => field.name === 'photoAlbum').type).name;
   const payloadSelection = await selection(payloadType, 7);
   console.log('Album payload selection:', payloadSelection);
@@ -69,26 +66,22 @@ try {
   for (const row of rows) {
     const result = await query(`query { photoAlbum(albumId:${JSON.stringify(String(row.id))}) { ${payloadSelection} } }`);
     originalAlbums.push({ id: String(row.id), result });
-    const objects = allObjects(result);
+    const objects = allObjects(result.photoAlbum.albumPhotos);
     const photoMap = new Map();
-    // Photo payloads may wrap the immutable PhotoInfo in a caption-bearing parent.
     for (const item of objects) {
       const info = item.photoInfo || item.photo || item;
       const url = info.highResUrl || info.source || info.standardUrl;
-      if (info.id && url && /meetupstatic\.com/.test(url)) {
-        const id = String(info.id);
+      const photoId = info.id || item.photoId;
+      if (photoId && url && /meetupstatic\.com/.test(url)) {
+        const id = String(photoId);
         const previous = photoMap.get(id);
         photoMap.set(id, { id, url, caption: item.caption || item.description || previous?.caption || '', original: { ...previous?.original, ...item } });
       }
     }
-    for (const photo of allObjects(row)) {
-      const url = photo.highResUrl || photo.source || photo.standardUrl;
-      if (photo.id && url && !photoMap.has(String(photo.id))) photoMap.set(String(photo.id), { id: String(photo.id), url, caption: photo.caption || '', original: photo });
-    }
+    assert.equal(photoMap.size, row.photoCount, `All photos captured for album ${row.id}`);
     const previous = source.archive.albums.find(album => album.id === String(row.id));
-    const linkedEvent = objects.find(item => item.event?.id)?.event;
-    albums.push({ id: String(row.id), title: row.title || objects.find(item => item.title)?.title || '', eventId: previous?.eventId || (linkedEvent ? String(linkedEvent.id) : null), photos: [...photoMap.values()] });
-    console.log(`Album ${row.id}: ${photoMap.size} photos; ${albums.at(-1).title}`);
+    albums.push({ id: String(row.id), title: row.title, eventId: previous?.eventId || row.eventId || null, createdAt: row.creationDate, updatedAt: row.recentActivity, photos: [...photoMap.values()] });
+    console.log(`Album ${row.id}: ${photoMap.size} photos; ${row.title}`);
   }
   source.archive.albums = albums;
   source.original.groupAlbums = { listing, details: originalAlbums };
