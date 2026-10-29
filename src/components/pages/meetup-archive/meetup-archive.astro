@@ -3,19 +3,20 @@ import '../../../styles/global.css';
 import './archive.css';
 import en from '../../../locales/meetup-archive/en.json';
 import fr from '../../../locales/meetup-archive/fr.json';
-import { readArchive, localImage } from '../../../lib/meetup-archive.mjs';
+import { readArchive, localImage, eventPath } from '../../../lib/meetup-archive.mjs';
 
-interface Props { lang?: 'en' | 'fr'; eventId?: string; }
-const { lang = 'en', eventId } = Astro.props;
+interface Props { lang?: 'en' | 'fr'; source?: 'meetup' | 'luma'; eventId?: string; }
+const { lang = 'en', source, eventId } = Astro.props;
 const t = lang === 'fr' ? fr : en;
 const archive = readArchive();
 const events = [...archive.events].sort((a, b) => Date.parse(b.start) - Date.parse(a.start));
-const event = eventId ? events.find((item) => item.id === eventId) : undefined;
+const event = eventId ? events.find((item) => item.source === source && item.id === eventId) : undefined;
 if (eventId && !event) throw new Error(`Unknown archived event: ${eventId}`);
 const group = archive.group;
-const base = lang === 'fr' ? '/fr/archive/meetup/' : '/archive/meetup/';
-const path = `${base}${event ? `${event.id}/` : ''}`;
-const otherPath = `${lang === 'fr' ? '/archive/meetup/' : '/fr/archive/meetup/'}${event ? `${event.id}/` : ''}`;
+const base = lang === 'fr' ? '/fr/archive/' : '/archive/';
+const current = event ? eventPath(event) : '';
+const path = `${base}${current}`;
+const otherPath = `${lang === 'fr' ? '/archive/' : '/fr/archive/'}${current}`;
 const title = event ? `${event.title} | ${t.archive} | Bière & Code` : `${t.archive} | Bière & Code Paris`;
 const site = Astro.site ?? new URL('https://www.bierecode.com');
 const canonical = new URL(path, site);
@@ -31,11 +32,14 @@ const escapeHtml = (text) => text.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<
 const richText = (text = '') => escapeHtml(text.replace(/\\([\\`*_{}\[\]()#+\-.!])/g, '$1'))
   .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)|(https?:\/\/[^\s<]+)/g, (_, label, href, bare) => `<a href="${href || bare}" rel="noopener noreferrer">${label || bare}</a>`);
 const image = localImage(event?.cover || group.cover);
-const currentIndex = event ? events.findIndex((item) => item.id === event.id) : -1;
+const currentIndex = event ? events.indexOf(event) : -1;
 const newer = currentIndex > 0 ? events[currentIndex - 1] : null;
 const older = currentIndex >= 0 ? events[currentIndex + 1] : null;
-const enPath = `/archive/meetup/${event ? `${event.id}/` : ''}`;
-const frPath = `/fr/archive/meetup/${event ? `${event.id}/` : ''}`;
+const enPath = `/archive/${current}`;
+const frPath = `/fr/archive/${current}`;
+const sourceName = { meetup: 'Meetup', luma: 'Luma' };
+const sources = (item) => [{ name: sourceName[item.source], url: item.url }, ...(item.luma ? [{ name: 'Luma', url: item.luma.url }] : [])];
+const rsvps = (item) => item.rsvpCount ?? item.luma?.rsvpCount ?? null;
 ---
 <!doctype html>
 <html lang={lang}>
@@ -84,12 +88,13 @@ const frPath = `/fr/archive/meetup/${event ? `${event.id}/` : ''}`;
             <div class="search"><label for="archive-search">{t.search}</label><input id="archive-search" type="search" /></div>
             <div><label for="archive-year">{t.year}</label><select id="archive-year"><option value="">{t.allYears}</option>{years.map((value) => <option value={value}>{value}</option>)}</select></div>
             <div><label for="archive-status">{t.status}</label><select id="archive-status"><option value="">{t.allStatuses}</option><option value="past">{t.past}</option><option value="cancelled">{t.cancelled}</option></select></div>
+            <div><label for="archive-source">{t.platform}</label><select id="archive-source"><option value="">{t.allPlatforms}</option><option value="meetup">Meetup</option><option value="luma">Luma</option></select></div>
           </div>
           <p class="result-count" aria-live="polite"><span id="archive-result-count">{events.length}</span> {t.results}</p>
           <div class="events">
-            {events.map((item) => <article class="event-card" data-event-id={item.id} data-year={year(item)} data-status={item.status} data-search={`${item.title} ${item.venue?.name || ''} ${item.venue?.address || ''} ${item.description}`}>
-              <a href={`${base}${item.id}/`}><time datetime={item.start}>{date(item.start, item.timezone)}</time><h3>{item.title}</h3><p>{item.venue?.name || t.missing}</p>{item.venue?.address && <p>{item.venue.address}</p>}</a>
-              <div class="card-bottom"><span class:list={['status', { cancelled: item.status === 'cancelled' }]}>{item.status === 'cancelled' ? t.cancelled : t.pastBadge}</span>{item.rsvpCount !== null && <span>{item.rsvpCount} {t.rsvps}</span>}{photoCount(item.id) > 0 && <span>📷 {photoCount(item.id)}</span>}</div>
+            {events.map((item) => <article class="event-card" data-event-id={item.id} data-year={year(item)} data-status={item.status} data-source={sources(item).map((s) => s.name.toLowerCase()).join(' ')} data-search={`${item.title} ${item.venue?.name || ''} ${item.venue?.address || ''} ${item.description}`}>
+              <a href={`${base}${eventPath(item)}`}><time datetime={item.start}>{date(item.start, item.timezone)}</time><h3>{item.title}</h3><p>{item.venue?.name || t.missing}</p>{item.venue?.address && <p>{item.venue.address}</p>}</a>
+              <div class="card-bottom"><span class:list={['status', { cancelled: item.status === 'cancelled' }]}>{item.status === 'cancelled' ? t.cancelled : t.pastBadge}</span><span class="via">{sources(item).map((s) => s.name).join(' · ')}</span>{rsvps(item) !== null && <span>{rsvps(item)} {t.rsvps}</span>}{photoCount(item.id) > 0 && <span>📷 {photoCount(item.id)}</span>}</div>
             </article>)}
           </div>
           <p class="empty" id="archive-empty" hidden>{t.empty}</p>
@@ -103,22 +108,23 @@ const frPath = `/fr/archive/meetup/${event ? `${event.id}/` : ''}`;
             <dt>{t.when}</dt><dd><time datetime={event.start}>{date(event.start, event.timezone)}</time></dd>
             {event.end && <><dt>{t.end}</dt><dd><time datetime={event.end}>{date(event.end, event.timezone)}</time></dd></>}
             <dt>{t.timezone}</dt><dd>{event.timezone}</dd>
-            <dt>{t.where}</dt><dd>{event.venue?.name || t.missing}{event.venue?.address && <><br />{event.venue.address}</>}{event.venue?.city && <><br />{event.venue.city}</>}</dd>
+            <dt>{t.where}</dt><dd>{event.venue?.name || t.missing}{event.venue?.address && <><br />{event.venue.address}</>}{event.venue?.city && !event.venue.address?.includes(event.venue.city) && <><br />{event.venue.city}</>}</dd>
             <dt>{t.hosts}</dt><dd>{event.hosts.length ? event.hosts.join(', ') : t.missing}</dd>
-            <dt>{t.rsvps}</dt><dd>{event.rsvpCount ?? t.missing}</dd>
-          </dl><a class="source-link" href={event.url} rel="noopener noreferrer">{t.source} ↗</a><a class="button" href="https://luma.com/bierecode">{t.luma} ↗</a></aside>
+            <dt>{t.rsvps}</dt><dd>{event.luma && event.rsvpCount !== null ? <>{event.rsvpCount} (Meetup) · {event.luma.rsvpCount} (Luma)</> : rsvps(event) ?? t.missing}</dd>
+          </dl>{sources(event).map((s) => <a class="source-link" href={s.url} rel="noopener noreferrer">{t.sourceOn} {s.name} ↗</a>)}<a class="button" href="https://luma.com/bierecode">{t.luma} ↗</a></aside>
         </div>
       </>}
       {selectedPhotos.length > 0 && <section class="section"><h2>{t.gallery}</h2><div class="gallery">{selectedPhotos.map((photo) => ({ photo, img: localImage(photo.url) })).filter(({ img }) => img).map(({ photo, img }) => <figure><a href={img.src} target="_blank" rel="noopener noreferrer"><img src={img.srcset.split(' ')[0]} srcset={img.srcset} sizes="(min-width: 900px) 360px, 50vw" loading="lazy" decoding="async" width={img.width} height={img.height} alt={photo.caption || t.photo} /></a>{photo.caption && <figcaption>{photo.caption}</figcaption>}</figure>)}</div></section>}
-      {event && <nav class="adjacent" aria-label={t.history}>{newer ? <a href={`${base}${newer.id}/`}>← {t.newer}<br />{date(newer.start, newer.timezone, false)}</a> : <span />}{older && <a href={`${base}${older.id}/`}>{t.older} →<br />{date(older.start, older.timezone, false)}</a>}</nav>}
+      {event && <nav class="adjacent" aria-label={t.history}>{newer ? <a href={`${base}${eventPath(newer)}`}>← {t.newer}<br />{date(newer.start, newer.timezone, false)}</a> : <span />}{older && <a href={`${base}${eventPath(older)}`}>{t.older} →<br />{date(older.start, older.timezone, false)}</a>}</nav>}
     </main>
-    <footer><div class="wrap"><div class="footer-links"><a href="/archive/meetup/data.json" download="biere-code-meetup-archive.json">{t.download}</a><a href="/meetup-archive/images.json">{t.manifest}</a><a href={group.url} rel="noopener noreferrer">{t.source} ↗</a></div><p>{t.captured}: <time datetime={archive.capturedAt}>{date(archive.capturedAt, 'Europe/Paris')}</time> · {events.length} {t.records} · {photos.length} {t.photos.toLowerCase()}</p><p>{t.exportNote}</p><details><summary>{t.limitations}</summary><p>{t.limitationsBody}</p></details></div></footer>
+    <footer><div class="wrap"><div class="footer-links"><a href="/archive/data.json" download="biere-code-meetup-archive.json">{t.download}</a><a href="/meetup-archive/images.json">{t.manifest}</a><a href={group.url} rel="noopener noreferrer">{t.source} ↗</a></div><p>{t.captured}: <time datetime={archive.capturedAt}>{date(archive.capturedAt, 'Europe/Paris')}</time> (Meetup) · <time datetime={archive.lumaCapturedAt}>{date(archive.lumaCapturedAt, 'Europe/Paris')}</time> (Luma) · {events.length} {t.records} · {photos.length} {t.photos.toLowerCase()}</p><p>{t.exportNote}</p><details><summary>{t.limitations}</summary><p>{t.limitationsBody}</p></details></div></footer>
     <script>
       const filters = document.querySelector<HTMLElement>('[data-archive-filters]');
       if (filters) {
         const search = document.querySelector<HTMLInputElement>('#archive-search')!;
         const year = document.querySelector<HTMLSelectElement>('#archive-year')!;
         const status = document.querySelector<HTMLSelectElement>('#archive-status')!;
+        const platform = document.querySelector<HTMLSelectElement>('#archive-source')!;
         const count = document.querySelector<HTMLElement>('#archive-result-count')!;
         const empty = document.querySelector<HTMLElement>('#archive-empty')!;
         const normalise = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
@@ -127,7 +133,7 @@ const frPath = `/fr/archive/meetup/${event ? `${event.id}/` : ''}`;
           const query = normalise(search.value.trim());
           let visible = 0;
           for (const { card, text } of cards) {
-            const matches = (!query || text.includes(query)) && (!year.value || card.dataset.year === year.value) && (!status.value || card.dataset.status === status.value);
+            const matches = (!query || text.includes(query)) && (!year.value || card.dataset.year === year.value) && (!status.value || card.dataset.status === status.value) && (!platform.value || (card.dataset.source || '').split(' ').includes(platform.value));
             card.hidden = !matches;
             if (matches) visible++;
           }
@@ -137,6 +143,7 @@ const frPath = `/fr/archive/meetup/${event ? `${event.id}/` : ''}`;
         search.addEventListener('input', update);
         year.addEventListener('change', update);
         status.addEventListener('change', update);
+        platform.addEventListener('change', update);
         filters.hidden = false;
       }
     </script>

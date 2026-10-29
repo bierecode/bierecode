@@ -56,8 +56,8 @@ jobs:
         with:
           name: meetup-archive-verification
           path: |
-            dist/archive/meetup/
-            dist/fr/archive/meetup/
+            dist/archive/
+            dist/fr/archive/
             public/meetup-archive/
             test-results/meetup-archive/
           if-no-files-found: ignore

@@ -1,0 +1,6 @@
+# Cloudflare Pages redirects. The archive index moved when Luma events were added.
+/archive/meetup /archive/ 301
+/archive/meetup/ /archive/ 301
+/fr/archive/meetup /fr/archive/ 301
+/fr/archive/meetup/ /fr/archive/ 301
+/archive/meetup/data.json /archive/data.json 301

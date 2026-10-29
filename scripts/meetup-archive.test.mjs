@@ -1,21 +1,22 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync, statSync } from 'node:fs';
-import { readArchive, localImage } from '../src/lib/meetup-archive.mjs';
+import { readArchive, readLuma, localImage } from '../src/lib/meetup-archive.mjs';
 
 const archive = readArchive();
+const meetupEvents = archive.events.filter((event) => event.source === 'meetup');
 test('complete 55-record public event census, including cancellations', () => {
-  assert.equal(archive.events.length, 55);
-  assert.equal(new Set(archive.events.map((event) => event.id)).size, 55);
-  assert.equal(archive.events.filter((event) => event.status === 'cancelled').length, 3);
-  assert.equal(archive.events.filter((event) => event.status === 'past').length, 52);
+  assert.equal(meetupEvents.length, 55);
+  assert.equal(new Set(meetupEvents.map((event) => event.id)).size, 55);
+  assert.equal(meetupEvents.filter((event) => event.status === 'cancelled').length, 3);
+  assert.equal(meetupEvents.filter((event) => event.status === 'past').length, 52);
   assert.ok(archive.events.some((event) => event.id === '305841188'));
   assert.ok(archive.events.some((event) => event.id === '315053424'));
 });
 test('original descriptions, URLs and timezones exist for every event', () => {
   for (const event of archive.events) {
-    assert.match(event.id, /^\d+$/);
-    assert.equal(event.url, `https://www.meetup.com/biere-code-beer-paris/events/${event.id}/`);
+    assert.match(event.id, event.source === 'luma' ? /^[a-z0-9]+$/ : /^\d+$/);
+    assert.equal(event.url, event.source === 'luma' ? `https://luma.com/${event.id}` : `https://www.meetup.com/biere-code-beer-paris/events/${event.id}/`);
     assert.ok(event.title.length > 0);
     assert.ok(event.description.length > 50, `Missing full description: ${event.id}`);
     assert.ok(Number.isFinite(Date.parse(event.start)), `Invalid date: ${event.id}`);
@@ -47,6 +48,16 @@ test('every displayed source image has optimized local variants', () => {
 test('albums are linked to their events', () => {
   assert.equal(archive.albums.filter((album) => album.eventId).length, 7);
   assert.equal(archive.albums.find((album) => album.title.includes('Demo Night')).eventId, '313615740');
+});
+test('Luma events are merged without duplicates or guest data', () => {
+  const luma = readLuma();
+  assert.equal(luma.events.length, 15);
+  assert.equal(archive.events.filter((event) => event.source === 'luma').length, 9);
+  assert.equal(archive.events.filter((event) => event.luma).length, 6);
+  assert.equal(archive.events.find((event) => event.id === '313615740').luma.url, 'https://luma.com/ypyzfm7e');
+  assert.equal(archive.events.length, 64);
+  const raw = JSON.stringify(luma);
+  for (const key of ['guest_data', 'featured_guests', 'email', 'avatar_url']) assert.ok(!raw.includes(key), `Luma snapshot leaks ${key}`);
 });
 test('French and English interface translations have identical keys', () => {
   const en = JSON.parse(readFileSync('src/locales/meetup-archive/en.json', 'utf8'));
