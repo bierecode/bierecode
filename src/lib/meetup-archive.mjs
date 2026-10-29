@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 let source;
+let luma;
 let images;
 let archive;
 
@@ -27,11 +28,42 @@ function linkAlbum(album, events) {
   return { ...album, eventId: match?.id ?? null };
 }
 
+/** Load the Luma calendar snapshot captured by scripts/capture-luma-source.mjs. */
+export function readLuma() {
+  luma ??= JSON.parse(readFileSync(resolve('public/meetup-archive/luma.json'), 'utf8'));
+  return luma;
+}
+
+const parisDay = (iso) => new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Paris' }).format(new Date(iso));
+
+/**
+ * Combine both platforms into one event list. Events published on both Meetup and Luma
+ * (same Paris date) stay a single Meetup record that also links to its Luma page.
+ */
+function mergeEvents(meetupEvents, lumaEvents) {
+  const events = meetupEvents.map((event) => ({ ...event, source: 'meetup', luma: null }));
+  const byDay = new Map(events.filter((event) => event.status !== 'cancelled').map((event) => [parisDay(event.start), event]));
+  for (const event of lumaEvents) {
+    const twin = byDay.get(parisDay(event.start));
+    if (twin) twin.luma = { url: event.url, rsvpCount: event.rsvpCount };
+    else events.push({ ...event, luma: null });
+  }
+  return events;
+}
+
+/** Site path of an event page, relative to the archive root. */
+export const eventPath = (event) => `${event.source}/${event.id}/`;
+
 /** Return the presentation schema while retaining all captured fields in the source export. */
 export function readArchive() {
   if (!archive) {
     const raw = readSource().archive;
-    archive = { ...raw, albums: raw.albums.map((album) => linkAlbum(album, raw.events)) };
+    archive = {
+      ...raw,
+      lumaCapturedAt: readLuma().capturedAt,
+      events: mergeEvents(raw.events, readLuma().events),
+      albums: raw.albums.map((album) => linkAlbum(album, raw.events)),
+    };
   }
   return archive;
 }

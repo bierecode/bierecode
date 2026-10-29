@@ -2,7 +2,7 @@
 import MeetupArchive from '../../../../components/pages/meetup-archive/meetup-archive.astro';
 import { readArchive } from '../../../../lib/meetup-archive.mjs';
 export function getStaticPaths() {
-  return readArchive().events.map((event) => ({ params: { eventId: event.id } }));
+  return readArchive().events.filter((event) => event.source === 'meetup').map((event) => ({ params: { eventId: event.id } }));
 }
 ---
-<MeetupArchive lang="fr" eventId={Astro.params.eventId} />
+<MeetupArchive lang="fr" source="meetup" eventId={Astro.params.eventId} />

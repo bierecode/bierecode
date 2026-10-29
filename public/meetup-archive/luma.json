@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-10-29T11:33:55.213Z",
+  "calendar": {
+    "apiId": "cal-eY4yTc8unz1fs1b",
+    "url": "https://luma.com/bierecode"
+  },
+  "events": [
+    {
+      "id": "lwa09heh",
+      "source": "luma",
+      "lumaApiId": "evt-9P7ZP8Q69XDHoN9",
+      "url": "https://luma.com/lwa09heh",
+      "title": "Bière & Code & Beer",
+      "start": "2026-10-22T18:00:00.000Z",
+      "end": "2026-10-22T20:00:00.000Z",
+      "timezone": "Europe/Paris",
+      "status": "past",
+      "description": "🇫🇷 Bière & Code & Beer est un meetup informel pour les passionné(e)s de technologie et de développement qui souhaitent échanger dans une ambiance conviviale. Rejoignez-nous pour discuter de code, partager des idées, et savourer une bière (ou une autre boisson de votre choix) dans un cadre décontracté. 🍻\nPas de longues conférences ni de présentations formelles : c’est juste une occasion de discuter et de se faire des amis.\n---\n🇬🇧 Bière & Code & Beer is an informal meetup for tech enthusiasts and developers who want to connect in a friendly atmosphere. Join us to chat about code, share ideas, and enjoy a beer (or any drink of your choice) in a relaxed setting. 🍻\nNo lengthy talks or formal presentations: it’s just a chance to chat and make techy friends.",
+      "venue": {
+        "name": "Vin Bis",
+        "address": "20 Bis Rue La Boétie, 75008 Paris",
+        "city": "Paris"
+      },
+      "hosts": [
+        "Raphaël Titsworth-Morin"
+      ],
+      "rsvpCount": 5,
+      "cover": "https://images.lumacdn.com/uploads/l3/d806cca8-bcc8-4a15-824a-c0415ce25550.png"
+    },
+    {
+      "id": "5xaycmlj",
+      "source": "luma",
+      "lumaApiId": "evt-jSuO4NzbW0fO02u",
+      "url": "https://luma.com/5xaycmlj",
+      "title": "Bière & Code & Beer",
+      "start": "2026-10-15T18:30:00.000Z",
+      "end": "2026-10-15T20:00:00.000Z",
+      "timezone": "Europe/Paris",
+      "status": "past",
+      "description": "🇫🇷 Bière & Code & Beer\nLa prochaine version est prête à être déployée !\n---\n🇬🇧 Bière & Code & Beer\nThe latest version is ready to be deployed!\n\n🇫🇷 Bière & Code & Beer est un meetup informel pour les passionné(e)s de technologie et de développement qui souhaitent échanger dans une ambiance conviviale. Rejoignez-nous pour discuter de code, partager des idées, et savourer une bière (ou une autre boisson de votre choix) dans un cadre décontracté. 🍻\nPas de longues conférences ni de présentations formelles : c’est juste une occasion de discuter et de se faire des amis.\n---\n🇬🇧 Bière & Code & Beer is an informal meetup for tech enthusiasts and developers who want to connect in a friendly atmosphere. Join us to chat about code, share ideas, and enjoy a beer (or any drink of your choice) in a relaxed setting. 🍻\nNo lengthy talks or formal presentations: it’s just a chance to chat and make techy friends.",
+      "venue": {
+        "name": "The Frog & Rosbif",
+        "address": "116 Rue St Denis, 75002 Paris",
+        "city": "Paris"
+      },
+      "hosts": [
+        "Raphaël Titsworth-Morin"
+      ],
+      "rsvpCount": 6,
+      "cover": "https://images.lumacdn.com/uploads/l3/d806cca8-bcc8-4a15-824a-c0415ce25550.png"
+    },
+    {
+      "id": "k3kgu7gq",
+      "source": "luma",
+      "lumaApiId": "evt-gAnUb41rpIDCydY",
+      "url": "https://luma.com/k3kgu7gq",
+      "title": "Bière & Code & Beer",
+      "start": "2026-10-08T18:00:00.000Z",
+      "end": "2026-10-08T20:00:00.000Z",
+      "timezone": "Europe/Paris",
+      "status": "past",
+      "description": "🇫🇷 Bière & Code & Beer\nLa prochaine version est prête à être déployée !\n---\n🇬🇧 Bière & Code & Beer\nThe latest version is ready to be deployed!\n\n🇫🇷 Bière & Code & Beer est un meetup informel pour les passionné(e)s de technologie et de développement qui souhaitent échanger dans une ambiance conviviale. Rejoignez-nous pour discuter de code, partager des idées, et savourer une bière (ou une autre boisson de votre choix) dans un cadre décontracté. 🍻\nPas de longues conférences ni de présentations formelles : c’est juste une occasion de discuter et de se faire des amis.\n---\n🇬🇧 Bière & Code & Beer is an informal meetup for tech enthusiasts and developers who want to connect in a friendly atmosphere. Join us to chat about code, share ideas, and enjoy a beer (or any drink of your choice) in a relaxed setting. 🍻\nNo lengthy talks or formal presentations: it’s just a chance to chat and make techy friends.",
+      "venue": {
+        "name": "L’Asphalte",
+        "address": "115 Bd de Grenelle, 75015 Paris",
+        "city": "Paris"
+      },
+      "hosts": [
+        "Raphaël Titsworth-Morin"
+      ],
+      "rsvpCount": 8,
+      "cover": "https://images.lumacdn.com/uploads/l3/d806cca8-bcc8-4a15-824a-c0415ce25550.png"
+    },
+    {
+      "id": "rb2j8wri",
+      "source": "luma",
+      "lumaApiId": "evt-TvTnQ4eHPTuBuaE",
+      "url": "https://luma.com/rb2j8wri",
+      "title": "Bière & Code & Beer",
+      "start": "2026-10-01T18:00:00.000Z",
+      "end": "2026-10-01T20:00:00.000Z",
+      "timezone": "Europe/Paris",
+      "status": "past",
+      "description": "🇫🇷 Bière & Code & Beer\nLa prochaine version est prête à être déployée !\n---\n🇬🇧 Bière & Code & Beer\nThe latest version is ready to be deployed!\n\n🇫🇷 Bière & Code & Beer est un meetup informel pour les passionné(e)s de technologie et de développement qui souhaitent échanger dans une ambiance conviviale. Rejoignez-nous pour discuter de code, partager des idées, et savourer une bière (ou une autre boisson de votre choix) dans un cadre décontracté. 🍻\nPas de longues conférences ni de présentations formelles : c’est juste une occasion de discuter et de se faire des amis.\n---\n🇬🇧 Bière & Code & Beer is an informal meetup for tech enthusiasts and developers who want to connect in a friendly atmosphere. Join us to chat about code, share ideas, and enjoy a beer (or any drink of your choice) in a relaxed setting. 🍻\nNo lengthy talks or formal presentations: it’s just a chance to chat and make techy friends.",
+      "venue": {
+        "name": "Luppolo Bar",
+        "address": "31 Rue Victor Massé, 75009 Paris",
+        "city": "Paris"
+      },
+      "hosts": [
+        "Raphaël Titsworth-Morin"
+      ],
+      "rsvpCount": 6,
+      "cover": "https://images.lumacdn.com/uploads/l3/d806cca8-bcc8-4a15-824a-c0415ce25550.png"
+    },
+    {
+      "id": "qpomaxo6",
+      "source": "luma",
+      "lumaApiId": "evt-p2GRUlBEw8OM5cx",
+      "url": "https://luma.com/qpomaxo6",
+      "title": "Bière & Code & Beer",
+      "start": "2026-09-10T18:00:00.000Z",
+      "end": "2026-09-10T20:00:00.000Z",
+      "timezone": "Europe/Paris",
+      "status": "past",
+      "description": "🇫🇷 Bière & Code & Beer\nLa prochaine version est prête à être déployée !\n---\n🇬🇧 Bière & Code & Beer\nThe latest version is ready to be deployed!\n\n🇫🇷 Bière & Code & Beer est un meetup informel pour les passionné(e)s de technologie et de développement qui souhaitent échanger dans une ambiance conviviale. Rejoignez-nous pour discuter de code, partager des idées, et savourer une bière (ou une autre boisson de votre choix) dans un cadre décontracté. 🍻\nPas de longues conférences ni de présentations formelles : c’est juste une occasion de discuter et de se faire des amis.\n---\n🇬🇧 Bière & Code & Beer is an informal meetup for tech enthusiasts and developers who want to connect in a friendly atmosphere. Join us to chat about code, share ideas, and enjoy a beer (or any drink of your choice) in a relaxed setting. 🍻\nNo lengthy talks or formal presentations: it’s just a chance to chat and make techy friends.",
+      "venue": {
+        "name": "Frog XVI",
+        "address": "110 bis Av. Kléber, 75016 Paris",
+        "city": "Paris"
+      },
+      "hosts": [
+        "Raphaël Titsworth-Morin"
+      ],
+      "rsvpCount": 4,
+      "cover": "https://images.lumacdn.com/uploads/l3/d806cca8-bcc8-4a15-824a-c0415ce25550.png"
+    },
+    {
+      "id": "ejn6wsm4",
+      "source": "luma",
+      "lumaApiId": "evt-tckVaftMlUPMMgi",
+      "url": "https://luma.com/ejn6wsm4",
+      "title": "Bière & Code & Beer",
+      "start": "2026-09-03T18:15:00.000Z",
+      "end": "2026-09-03T20:15:00.000Z",
+      "timezone": "Europe/Paris",
+      "status": "past",
+      "description": "🇫🇷 Bière & Code & Beer\nLa prochaine version est prête à être déployée !\n---\n🇬🇧 Bière & Code & Beer\nThe latest version is ready to be deployed!\n\n🇫🇷 Bière & Code & Beer est un meetup informel pour les passionné(e)s de technologie et de développement qui souhaitent échanger dans une ambiance conviviale. Rejoignez-nous pour discuter de code, partager des idées, et savourer une bière (ou une autre boisson de votre choix) dans un cadre décontracté. 🍻\nPas de longues conférences ni de présentations formelles : c’est juste une occasion de discuter et de se faire des amis.\n---\n🇬🇧 Bière & Code & Beer is an informal meetup for tech enthusiasts and developers who want to connect in a friendly atmosphere. Join us to chat about code, share ideas, and enjoy a beer (or any drink of your choice) in a relaxed setting. 🍻\nNo lengthy talks or formal presentations: it’s just a chance to chat and make techy friends.",
+      "venue": {
+        "name": "The Frog & Rosbif",
+        "address": "116 Rue St Denis, 75002 Paris",
+        "city": "Paris"
+      },
+      "hosts": [
+        "Raphaël Titsworth-Morin"
+      ],
+      "rsvpCount": 5,
+      "cover": "https://images.lumacdn.com/uploads/l3/d806cca8-bcc8-4a15-824a-c0415ce25550.png"
+    },
+    {
+      "id": "2l8r6fl8",
+      "source": "luma",
+      "lumaApiId": "evt-QwGOj2qRjkSzmf8",
+      "url": "https://luma.com/2l8r6fl8",
+      "title": "Bière & Code & Beer",
+      "start": "2026-08-06T18:00:00.000Z",
+      "end": "2026-08-06T20:00:00.000Z",
+      "timezone": "Europe/Paris",
+      "status": "past",
+      "description": "🇫🇷 Bière & Code & Beer\nLa prochaine version est prête à être déployée !\n---\n🇬🇧 Bière & Code & Beer\nThe latest version is ready to be deployed!\n\n🇫🇷 Bière & Code & Beer est un meetup informel pour les passionné(e)s de technologie et de développement qui souhaitent échanger dans une ambiance conviviale. Rejoignez-nous pour discuter de code, partager des idées, et savourer une bière (ou une autre boisson de votre choix) dans un cadre décontracté. 🍻\nPas de longues conférences ni de présentations formelles : c’est juste une occasion de discuter et de se faire des amis.\n---\n🇬🇧 Bière & Code & Beer is an informal meetup for tech enthusiasts and developers who want to connect in a friendly atmosphere. Join us to chat about code, share ideas, and enjoy a beer (or any drink of your choice) in a relaxed setting. 🍻\nNo lengthy talks or formal presentations: it’s just a chance to chat and make techy friends.",
+      "venue": {
+        "name": "Fluctuart - Centre d'art urbain",
+        "address": "2 port du Gros Caillou, 75007 Paris",
+        "city": "Paris"
+      },
+      "hosts": [
+        "Raphaël Titsworth-Morin",
+        "Miguel"
+      ],
+      "rsvpCount": 12,
+      "cover": "https://images.lumacdn.com/uploads/v5/280eb1bc-66a3-4cff-b576-60a7d454a713.png"
+    },
+    {
+      "id": "etbyhe58",
+      "source": "luma",
+      "lumaApiId": "evt-tBDLMHC3Ywbaqr8",
+      "url": "https://luma.com/etbyhe58",
+      "title": "Bière & Code & Beer STRASBOURG",
+      "start": "2026-07-16T18:00:00.000Z",
+      "end": "2026-07-16T20:00:00.000Z",
+      "timezone": "Europe/Paris",
+      "status": "past",
+      "description": "🇫🇷 Bière & Code & Beer ÉDITION ALSACIENNE\nLa prochaine version est prête à être déployée !\n---\n🇬🇧 Bière & Code & Beer ALSATIAN EDITION\nThe latest version is ready to be deployed!\n\n🇫🇷 Bière & Code & Beer est un meetup informel pour les passionné(e)s de technologie et de développement qui souhaitent échanger dans une ambiance conviviale. Rejoignez-nous pour discuter de code, partager des idées, et savourer une bière (ou une autre boisson de votre choix) dans un cadre décontracté. 🍻\nPas de longues conférences ni de présentations formelles : c’est juste une occasion de discuter et de se faire des amis.\n---\n🇬🇧 Bière & Code & Beer is an informal meetup for tech enthusiasts and developers who want to connect in a friendly atmosphere. Join us to chat about code, share ideas, and enjoy a beer (or any drink of your choice) in a relaxed setting. 🍻\nNo lengthy talks or formal presentations: it’s just a chance to chat and make techy friends.",
+      "venue": {
+        "name": "Académie de la Bière - Petite France",
+        "address": "17 R. Adolphe Seyboth, 67000 Strasbourg",
+        "city": "Strasbourg"
+      },
+      "hosts": [
+        "Raphaël Titsworth-Morin",
+        "Lio Lunesu"
+      ],
+      "rsvpCount": 3,
+      "cover": "https://images.lumacdn.com/uploads/b5/71ee9025-fef9-4456-be9b-e5e7a46aad43.png"
+    },
+    {
+      "id": "fbope14z",
+      "source": "luma",
+      "lumaApiId": "evt-PhWyTZ0WJCGllOG",
+      "url": "https://luma.com/fbope14z",
+      "title": "Bière & Code & Beer",
+      "start": "2026-07-09T18:00:00.000Z",
+      "end": "2026-07-09T20:00:00.000Z",
+      "timezone": "Europe/Paris",
+      "status": "past",
+      "description": "🇫🇷 Bière & Code & Beer\nLa prochaine version est prête à être déployée !\n---\n🇬🇧 Bière & Code & Beer\nThe latest version is ready to be deployed!\n\n🇫🇷 Bière & Code & Beer est un meetup informel pour les passionné(e)s de technologie et de développement qui souhaitent échanger dans une ambiance conviviale. Rejoignez-nous pour discuter de code, partager des idées, et savourer une bière (ou une autre boisson de votre choix) dans un cadre décontracté. 🍻\nPas de longues conférences ni de présentations formelles : c’est juste une occasion de discuter et de se faire des amis.\n---\n🇬🇧 Bière & Code & Beer is an informal meetup for tech enthusiasts and developers who want to connect in a friendly atmosphere. Join us to chat about code, share ideas, and enjoy a beer (or any drink of your choice) in a relaxed setting. 🍻\nNo lengthy talks or formal presentations: it’s just a chance to chat and make techy friends.",
+      "venue": {
+        "name": "O'Neil",
+        "address": "20 Rue des Canettes, 75006 Paris",
+        "city": "Paris"
+      },
+      "hosts": [
+        "Raphaël Titsworth-Morin"
+      ],
+      "rsvpCount": 4,
+      "cover": "https://images.lumacdn.com/uploads/l3/d806cca8-bcc8-4a15-824a-c0415ce25550.png"
+    },
+    {
+      "id": "n3obenlt",
+      "source": "luma",
+      "lumaApiId": "evt-7UExL02BnysJQ9R",
+      "url": "https://luma.com/n3obenlt",
+      "title": "Bière & Code & Beer",
+      "start": "2026-06-04T18:00:00.000Z",
+      "end": "2026-06-04T20:00:00.000Z",
+      "timezone": "Europe/Paris",
+      "status": "past",
+      "description": "🇫🇷 Bière & Code & Beer\nLa prochaine version est prête à être déployée !\n---\n🇬🇧 Bière & Code & Beer\nThe latest version is ready to be deployed!\n\n🇫🇷 Bière & Code & Beer est un meetup informel pour les passionné(e)s de technologie et de développement qui souhaitent échanger dans une ambiance conviviale. Rejoignez-nous pour discuter de code, partager des idées, et savourer une bière (ou une autre boisson de votre choix) dans un cadre décontracté. 🍻\nPas de longues conférences ni de présentations formelles : c’est juste une occasion de discuter et de se faire des amis.\n---\n🇬🇧 Bière & Code & Beer is an informal meetup for tech enthusiasts and developers who want to connect in a friendly atmosphere. Join us to chat about code, share ideas, and enjoy a beer (or any drink of your choice) in a relaxed setting. 🍻\nNo lengthy talks or formal presentations: it’s just a chance to chat and make techy friends.",
+      "venue": {
+        "name": "Mez Beer - Bar à bières artisanales",
+        "address": "10 Rue Vandamme, 75014 Paris",
+        "city": "Paris"
+      },
+      "hosts": [
+        "Raphaël Titsworth-Morin"
+      ],
+      "rsvpCount": 1,
+      "cover": "https://images.lumacdn.com/uploads/l3/d806cca8-bcc8-4a15-824a-c0415ce25550.png"
+    },
+    {
+      "id": "mi4i5p9c",
+      "source": "luma",
+      "lumaApiId": "evt-fQetq2U0AlIao1l",
+      "url": "https://luma.com/mi4i5p9c",
+      "title": "Bière & Code & Beer",
+      "start": "2026-05-21T18:00:00.000Z",
+      "end": "2026-05-21T20:00:00.000Z",
+      "timezone": "Europe/Paris",
+      "status": "past",
+      "description": "🇫🇷 Bière & Code & Beer\nLa prochaine version est prête à être déployée !\n---\n🇬🇧 Bière & Code & Beer\nThe latest version is ready to be deployed!\n\n🇫🇷 Bière & Code & Beer est un meetup informel pour les passionné(e)s de technologie et de développement qui souhaitent échanger dans une ambiance conviviale. Rejoignez-nous pour discuter de code, partager des idées, et savourer une bière (ou une autre boisson de votre choix) dans un cadre décontracté. 🍻\nPas de longues conférences ni de présentations formelles : c’est juste une occasion de discuter et de se faire des amis.\n---\n🇬🇧 Bière & Code & Beer is an informal meetup for tech enthusiasts and developers who want to connect in a friendly atmosphere. Join us to chat about code, share ideas, and enjoy a beer (or any drink of your choice) in a relaxed setting. 🍻\nNo lengthy talks or formal presentations: it’s just a chance to chat and make techy friends.",
+      "venue": {
+        "name": "L’Asphalte",
+        "address": "115 Bd de Grenelle, 75015 Paris",
+        "city": "Paris"
+      },
+      "hosts": [
+        "Raphaël Titsworth-Morin"
+      ],
+      "rsvpCount": 4,
+      "cover": "https://images.lumacdn.com/uploads/l3/d806cca8-bcc8-4a15-824a-c0415ce25550.png"
+    },
+    {
+      "id": "oridsyqv",
+      "source": "luma",
+      "lumaApiId": "evt-VZKiMN8CAYpvR4d",
+      "url": "https://luma.com/oridsyqv",
+      "title": "Bière & Code & Beer",
+      "start": "2026-05-14T18:00:00.000Z",
+      "end": "2026-05-14T20:00:00.000Z",
+      "timezone": "Europe/Paris",
+      "status": "past",
+      "description": "🇫🇷 Bière & Code & Beer\nLa prochaine version est prête à être déployée !\n---\n🇬🇧 Bière & Code & Beer\nThe latest version is ready to be deployed!\n\n🇫🇷 Bière & Code & Beer est un meetup informel pour les passionné(e)s de technologie et de développement qui souhaitent échanger dans une ambiance conviviale. Rejoignez-nous pour discuter de code, partager des idées, et savourer une bière (ou une autre boisson de votre choix) dans un cadre décontracté. 🍻\nPas de longues conférences ni de présentations formelles : c’est juste une occasion de discuter et de se faire des amis.\n---\n🇬🇧 Bière & Code & Beer is an informal meetup for tech enthusiasts and developers who want to connect in a friendly atmosphere. Join us to chat about code, share ideas, and enjoy a beer (or any drink of your choice) in a relaxed setting. 🍻\nNo lengthy talks or formal presentations: it’s just a chance to chat and make techy friends.",
+      "venue": {
+        "name": "L’Asphalte",
+        "address": "115 Bd de Grenelle, 75015 Paris",
+        "city": "Paris"
+      },
+      "hosts": [
+        "Raphaël Titsworth-Morin"
+      ],
+      "rsvpCount": 8,
+      "cover": "https://images.lumacdn.com/uploads/l3/d806cca8-bcc8-4a15-824a-c0415ce25550.png"
+    },
+    {
+      "id": "cumoqesn",
+      "source": "luma",
+      "lumaApiId": "evt-J75ObXV8vviHO9y",
+      "url": "https://luma.com/cumoqesn",
+      "title": "Bière & Code & Beer",
+      "start": "2026-05-07T18:00:00.000Z",
+      "end": "2026-05-07T20:00:00.000Z",
+      "timezone": "Europe/Paris",
+      "status": "past",
+      "description": "🇫🇷 Bière & Code & Beer\nLa prochaine version est prête à être déployée !\n---\n🇬🇧 Bière & Code & Beer\nThe latest version is ready to be deployed!\n\n🇫🇷 Bière & Code & Beer est un meetup informel pour les passionné(e)s de technologie et de développement qui souhaitent échanger dans une ambiance conviviale. Rejoignez-nous pour discuter de code, partager des idées, et savourer une bière (ou une autre boisson de votre choix) dans un cadre décontracté. 🍻\nPas de longues conférences ni de présentations formelles : c’est juste une occasion de discuter et de se faire des amis.\n---\n🇬🇧 Bière & Code & Beer is an informal meetup for tech enthusiasts and developers who want to connect in a friendly atmosphere. Join us to chat about code, share ideas, and enjoy a beer (or any drink of your choice) in a relaxed setting. 🍻\nNo lengthy talks or formal presentations: it’s just a chance to chat and make techy friends.",
+      "venue": {
+        "name": "Brewberry Bar",
+        "address": "11 Rue du Pot de Fer, 75005 Paris",
+        "city": "Paris"
+      },
+      "hosts": [
+        "Raphaël Titsworth-Morin",
+        "Miguel"
+      ],
+      "rsvpCount": 2,
+      "cover": "https://images.lumacdn.com/uploads/l3/d806cca8-bcc8-4a15-824a-c0415ce25550.png"
+    },
+    {
+      "id": "g3h7zqvo",
+      "source": "luma",
+      "lumaApiId": "evt-KrpGcEZl9rf6kX3",
+      "url": "https://luma.com/g3h7zqvo",
+      "title": "Bière & Code & Beer",
+      "start": "2026-04-30T18:00:00.000Z",
+      "end": "2026-04-30T20:00:00.000Z",
+      "timezone": "Europe/Paris",
+      "status": "past",
+      "description": "Meetup Event: [https://www.meetup.com/fr-fr/biere-code-beer-paris/events/314521858/?eventOrigin=group_past_events](https://www.meetup.com/fr-fr/biere-code-beer-paris/events/314521858/?eventOrigin=group_past_events)\n\n🇫🇷 Bière & Code & Beer\nLa prochaine version est prête à être déployée ! Shannon Pub cette fois-ci.\n---\n🇬🇧 Bière & Code & Beer\nThe latest version is ready to be deployed! Shannon Pub this time around.\n\n🇫🇷 Bière & Code & Beer est un meetup informel pour les passionné(e)s de technologie et de développement qui souhaitent échanger dans une ambiance conviviale. Rejoignez-nous pour discuter de code, partager des idées, et savourer une bière (ou une autre boisson de votre choix) dans un cadre décontracté. 🍻\nPas de longues conférences ni de présentations formelles : c’est juste une occasion de discuter et de se faire des amis.\n---\n🇬🇧 Bière & Code & Beer is an informal meetup for tech enthusiasts and developers who want to connect in a friendly atmosphere. Join us to chat about code, share ideas, and enjoy a beer (or any drink of your choice) in a relaxed setting. 🍻\nNo lengthy talks or formal presentations: it’s just a chance to chat and make techy friends.",
+      "venue": {
+        "name": "Shannon Pub",
+        "address": "23 Rue Bréa, 75006 Paris",
+        "city": "Paris"
+      },
+      "hosts": [
+        "Raphaël Titsworth-Morin",
+        "Miguel"
+      ],
+      "rsvpCount": 0,
+      "cover": "https://images.lumacdn.com/uploads/l3/d806cca8-bcc8-4a15-824a-c0415ce25550.png"
+    },
+    {
+      "id": "ypyzfm7e",
+      "source": "luma",
+      "lumaApiId": "evt-HR7jugVX8AsCrH4",
+      "url": "https://luma.com/ypyzfm7e",
+      "title": "🔥 BCB Demo Day: Live Projects from the Community",
+      "start": "2026-03-19T18:30:00.000Z",
+      "end": "2026-03-19T22:00:00.000Z",
+      "timezone": "Europe/Paris",
+      "status": "past",
+      "description": "BCB Mini Demo Day!\n\nWe're inviting our community to come share the projects you've been working on. We'll meet up at Chez Ernest, which is a wonderful resto/bar that has an additional mission of serving free food to students and people in need. They have great food and drinks. We just request that you buy some as we are not paying for the space and we want to support this wonderful social organization!\n\nWhen you register, let us know if you're interested in presenting your project. Fill in the form [here](https://forms.gle/Yt5bHMFYae7vf8Y68). We're looking for demos of running projects. You can show some slides if you want, but the core of your presentation has to be a real, working project.",
+      "venue": {
+        "name": "Chez Ernest",
+        "address": "4 Imp. de Joinville, 75019 Paris",
+        "city": "Paris"
+      },
+      "hosts": [
+        "Miguel",
+        "Raphaël Titsworth-Morin"
+      ],
+      "rsvpCount": 15,
+      "cover": "https://images.lumacdn.com/event-covers/mm/71057161-083c-4e00-9d56-a199bffd6a95.jpg"
+    }
+  ]
+}

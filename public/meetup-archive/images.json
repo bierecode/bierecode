@@ -702,8 +702,112 @@
           }
         ]
       }
+    },
+    "https://images.lumacdn.com/uploads/l3/d806cca8-bcc8-4a15-824a-c0415ce25550.png": {
+      "path": "/meetup-archive/images/0a6b58fe0ce491228aa86365.png",
+      "source": "https://images.lumacdn.com/uploads/l3/d806cca8-bcc8-4a15-824a-c0415ce25550.png",
+      "contentType": "image/png",
+      "bytes": 199725,
+      "sha256": "a05ef28e7d04747676f078ee58caba5f9525ec4fbd92fb3b5aa16116cb936608",
+      "capturedAt": "2026-10-29T11:33:55.411Z",
+      "optimized": {
+        "width": 1000,
+        "height": 1000,
+        "variants": [
+          {
+            "path": "/meetup-archive/optimized/0a6b58fe0ce491228aa86365-640.webp",
+            "width": 640,
+            "height": 640,
+            "bytes": 12262
+          },
+          {
+            "path": "/meetup-archive/optimized/0a6b58fe0ce491228aa86365-1280.webp",
+            "width": 1000,
+            "height": 1000,
+            "bytes": 19758
+          }
+        ]
+      }
+    },
+    "https://images.lumacdn.com/uploads/v5/280eb1bc-66a3-4cff-b576-60a7d454a713.png": {
+      "path": "/meetup-archive/images/aa6277bbad5ec1f97f72f986.png",
+      "source": "https://images.lumacdn.com/uploads/v5/280eb1bc-66a3-4cff-b576-60a7d454a713.png",
+      "contentType": "image/png",
+      "bytes": 2100260,
+      "sha256": "55a115f14b78b40ea66e40d212c4f25241c4916a89d30845edea94ef4161fc88",
+      "capturedAt": "2026-10-29T11:33:57.012Z",
+      "optimized": {
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "path": "/meetup-archive/optimized/aa6277bbad5ec1f97f72f986-640.webp",
+            "width": 640,
+            "height": 640,
+            "bytes": 27934
+          },
+          {
+            "path": "/meetup-archive/optimized/aa6277bbad5ec1f97f72f986-1280.webp",
+            "width": 1254,
+            "height": 1254,
+            "bytes": 69424
+          }
+        ]
+      }
+    },
+    "https://images.lumacdn.com/uploads/b5/71ee9025-fef9-4456-be9b-e5e7a46aad43.png": {
+      "path": "/meetup-archive/images/875874427e4f46e94319c961.png",
+      "source": "https://images.lumacdn.com/uploads/b5/71ee9025-fef9-4456-be9b-e5e7a46aad43.png",
+      "contentType": "image/png",
+      "bytes": 1133644,
+      "sha256": "b6b1e7e2c597d6cc0cd2971a0b303306e2de80bd18b92991a62e1f7020216e3d",
+      "capturedAt": "2026-10-29T11:33:57.613Z",
+      "optimized": {
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "path": "/meetup-archive/optimized/875874427e4f46e94319c961-640.webp",
+            "width": 640,
+            "height": 640,
+            "bytes": 17424
+          },
+          {
+            "path": "/meetup-archive/optimized/875874427e4f46e94319c961-1280.webp",
+            "width": 1254,
+            "height": 1254,
+            "bytes": 38028
+          }
+        ]
+      }
+    },
+    "https://images.lumacdn.com/event-covers/mm/71057161-083c-4e00-9d56-a199bffd6a95.jpg": {
+      "path": "/meetup-archive/images/a03c8f875ee05128080083cb.jpg",
+      "source": "https://images.lumacdn.com/event-covers/mm/71057161-083c-4e00-9d56-a199bffd6a95.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 48850,
+      "sha256": "33a9f3aa87db1748f0e381d9aee1b57e221ac6209cc3aef1d3e301db126979bd",
+      "capturedAt": "2026-10-29T11:33:58.096Z",
+      "optimized": {
+        "width": 1280,
+        "height": 720,
+        "variants": [
+          {
+            "path": "/meetup-archive/optimized/a03c8f875ee05128080083cb-640.webp",
+            "width": 640,
+            "height": 360,
+            "bytes": 6532
+          },
+          {
+            "path": "/meetup-archive/optimized/a03c8f875ee05128080083cb-1280.webp",
+            "width": 1280,
+            "height": 720,
+            "bytes": 13512
+          }
+        ]
+      }
     }
   },
   "errors": [],
-  "totalImages": 27
+  "totalImages": 31
 }
