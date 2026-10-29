@@ -1,7 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
-import { createHash } from 'node:crypto';
+import { existsSync, readFileSync, statSync } from 'node:fs';
 import { readArchive, localImage } from '../src/lib/meetup-archive.mjs';
 
 const archive = readArchive();
@@ -34,15 +33,20 @@ test('group snapshot and all public album photographs are retained', () => {
   assert.equal(photos.size, 27);
   for (const album of archive.albums) if (album.eventId) assert.ok(archive.events.some((event) => event.id === album.eventId));
 });
-test('every displayed source image has a verified local file', () => {
-  const manifest = JSON.parse(readFileSync('public/meetup-archive/images.json', 'utf8'));
+test('every displayed source image has optimized local variants', () => {
   const urls = [archive.group.cover, ...archive.events.map((event) => event.cover), ...archive.albums.flatMap((album) => album.photos.map((photo) => photo.url))].filter(Boolean);
   for (const url of new Set(urls)) {
-    const path = localImage(url);
-    assert.ok(path?.startsWith('/meetup-archive/images/'), `Missing image: ${url}`);
-    const bytes = readFileSync(`public${path}`);
-    assert.equal(createHash('sha256').update(bytes).digest('hex'), manifest.images[url].sha256);
+    const image = localImage(url);
+    assert.ok(image?.src.startsWith('/meetup-archive/optimized/'), `Missing image: ${url}`);
+    for (const [path] of image.srcset.split(', ').map((entry) => entry.split(' '))) {
+      assert.ok(existsSync(`public${path}`), `Missing variant: ${path}`);
+      assert.ok(statSync(`public${path}`).size < 400_000, `Variant too large: ${path}`);
+    }
   }
+});
+test('albums are linked to their events', () => {
+  assert.equal(archive.albums.filter((album) => album.eventId).length, 7);
+  assert.equal(archive.albums.find((album) => album.title.includes('Demo Night')).eventId, '313615740');
 });
 test('French and English interface translations have identical keys', () => {
   const en = JSON.parse(readFileSync('src/locales/meetup-archive/en.json', 'utf8'));

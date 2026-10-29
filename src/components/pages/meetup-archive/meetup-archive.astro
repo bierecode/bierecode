@@ -25,6 +25,7 @@ const year = (item) => new Intl.DateTimeFormat('en', { year: 'numeric', timeZone
 const years = [...new Set(events.map(year))].sort().reverse();
 const photos = [...new Map(archive.albums.flatMap((album) => album.photos).map((photo) => [photo.id || photo.url, photo])).values()];
 const selectedPhotos = event ? [...new Map(archive.albums.filter((album) => album.eventId === event.id).flatMap((album) => album.photos).map((photo) => [photo.id || photo.url, photo])).values()] : photos;
+const photoCount = (id) => archive.albums.filter((album) => album.eventId === id).reduce((n, album) => n + album.photos.length, 0);
 const image = localImage(event?.cover || group.cover);
 const currentIndex = event ? events.findIndex((item) => item.id === event.id) : -1;
 const newer = currentIndex > 0 ? events[currentIndex - 1] : null;
@@ -48,7 +49,7 @@ const frPath = `/fr/archive/meetup/${event ? `${event.id}/` : ''}`;
     <meta property="og:description" content={t.intro} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
-    {image && <meta property="og:image" content={new URL(image, site)} />}
+    {image && <meta property="og:image" content={new URL(image.src, site)} />}
   </head>
   <body class="archive">
     <a class="skip" href="#main">{t.skip}</a>
@@ -62,7 +63,7 @@ const frPath = `/fr/archive/meetup/${event ? `${event.id}/` : ''}`;
       {!event ? <>
         <section class="hero">
           <div><p class="eyebrow">{t.kicker}</p><h1>{t.title}</h1><p class="lead">{t.intro}</p><a class="button" href="https://luma.com/bierecode">{t.luma} ↗</a></div>
-          {image && <figure><img src={image} alt={group.name} width="1200" height="675" fetchpriority="high" /><figcaption>{group.name} · {group.city}</figcaption></figure>}
+          {image && <figure><img src={image.src} srcset={image.srcset} sizes="(min-width: 900px) 50vw, 100vw" alt={group.name} width={image.width} height={image.height} fetchpriority="high" /><figcaption>{group.name} · {group.city}</figcaption></figure>}
         </section>
         <div class="stats">
           <div class="stat"><strong>{events.filter((item) => item.status !== 'cancelled').length}</strong><span>{t.past}</span></div>
@@ -84,7 +85,7 @@ const frPath = `/fr/archive/meetup/${event ? `${event.id}/` : ''}`;
           <div class="events">
             {events.map((item) => <article class="event-card" data-event-id={item.id} data-year={year(item)} data-status={item.status} data-search={`${item.title} ${item.venue?.name || ''} ${item.venue?.address || ''} ${item.description}`}>
               <a href={`${base}${item.id}/`}><time datetime={item.start}>{date(item.start, item.timezone)}</time><h3>{item.title}</h3><p>{item.venue?.name || t.missing}</p>{item.venue?.address && <p>{item.venue.address}</p>}</a>
-              <div class="card-bottom"><span class:list={['status', { cancelled: item.status === 'cancelled' }]}>{item.status === 'cancelled' ? t.cancelled : t.past}</span>{item.rsvpCount !== null && <span>{item.rsvpCount} {t.rsvps}</span>}</div>
+              <div class="card-bottom"><span class:list={['status', { cancelled: item.status === 'cancelled' }]}>{item.status === 'cancelled' ? t.cancelled : t.past}</span>{item.rsvpCount !== null && <span>{item.rsvpCount} {t.rsvps}</span>}{photoCount(item.id) > 0 && <span>📷 {photoCount(item.id)}</span>}</div>
             </article>)}
           </div>
           <p class="empty" id="archive-empty" hidden>{t.empty}</p>
@@ -93,7 +94,7 @@ const frPath = `/fr/archive/meetup/${event ? `${event.id}/` : ''}`;
         <div class="crumb"><a href={base}>← {t.back}</a></div>
         <section class="event-heading"><p class="eyebrow">{t.archive} · {event.id}</p><span class:list={['status', { cancelled: event.status === 'cancelled' }]}>{event.status === 'cancelled' ? t.cancelled : t.past}</span><h1>{event.title}</h1><p class="lead"><time datetime={event.start}>{date(event.start, event.timezone)}</time></p><p class="notice">{event.status === 'cancelled' ? t.cancelledNotice : t.eventNotice}</p></section>
         <div class="event-layout">
-          <article>{image && <img class="event-image" src={image} alt={t.cover} width="1200" height="675" fetchpriority="high" />}<section class="panel"><h2>{t.details}</h2><div class="original">{event.description}</div></section></article>
+          <article>{image && <img class="event-image" src={image.src} srcset={image.srcset} sizes="(min-width: 900px) 66vw, 100vw" alt={t.cover} width={image.width} height={image.height} fetchpriority="high" />}<section class="panel"><h2>{t.details}</h2><div class="original">{event.description}</div></section></article>
           <aside class="panel"><dl>
             <dt>{t.when}</dt><dd><time datetime={event.start}>{date(event.start, event.timezone)}</time></dd>
             {event.end && <><dt>{t.end}</dt><dd><time datetime={event.end}>{date(event.end, event.timezone)}</time></dd></>}
@@ -104,7 +105,7 @@ const frPath = `/fr/archive/meetup/${event ? `${event.id}/` : ''}`;
           </dl><a class="source-link" href={event.url} rel="noopener noreferrer">{t.source} ↗</a><a class="button" href="https://luma.com/bierecode">{t.luma} ↗</a></aside>
         </div>
       </>}
-      {selectedPhotos.length > 0 && <section class="section"><h2>{t.gallery}</h2><div class="gallery">{selectedPhotos.map((photo) => localImage(photo.url) && <figure><a href={localImage(photo.url)} target="_blank" rel="noopener noreferrer"><img src={localImage(photo.url)} loading="lazy" decoding="async" width="640" height="480" alt={photo.caption || t.photo} /></a>{photo.caption && <figcaption>{photo.caption}</figcaption>}</figure>)}</div></section>}
+      {selectedPhotos.length > 0 && <section class="section"><h2>{t.gallery}</h2><div class="gallery">{selectedPhotos.map((photo) => ({ photo, img: localImage(photo.url) })).filter(({ img }) => img).map(({ photo, img }) => <figure><a href={img.src} target="_blank" rel="noopener noreferrer"><img src={img.srcset.split(' ')[0]} srcset={img.srcset} sizes="(min-width: 900px) 360px, 50vw" loading="lazy" decoding="async" width={img.width} height={img.height} alt={photo.caption || t.photo} /></a>{photo.caption && <figcaption>{photo.caption}</figcaption>}</figure>)}</div></section>}
       {event && <nav class="adjacent" aria-label={t.history}>{newer ? <a href={`${base}${newer.id}/`}>← {t.newer}<br />{date(newer.start, newer.timezone, false)}</a> : <span />}{older && <a href={`${base}${older.id}/`}>{t.older} →<br />{date(older.start, older.timezone, false)}</a>}</nav>}
     </main>
     <footer><div class="wrap"><div class="footer-links"><a href="/archive/meetup/data.json" download="biere-code-meetup-archive.json">{t.download}</a><a href="/meetup-archive/images.json">{t.manifest}</a><a href={group.url} rel="noopener noreferrer">{t.source} ↗</a></div><p>{t.captured}: <time datetime={archive.capturedAt}>{date(archive.capturedAt, 'Europe/Paris')}</time> · {events.length} {t.records} · {photos.length} {t.photos.toLowerCase()}</p><p>{t.exportNote}</p><details><summary>{t.limitations}</summary><p>{t.limitationsBody}</p></details></div></footer>
